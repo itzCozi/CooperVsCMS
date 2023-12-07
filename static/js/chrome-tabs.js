@@ -1,7 +1,7 @@
 ((window, factory) => {
-  if (typeof define == "function" && define.amd) {
+  if (typeof define === "function" && define.amd) {
     define(["draggabilly"], (Draggabilly) => factory(window, Draggabilly));
-  } else if (typeof module == "object" && module.exports) {
+  } else if (typeof module === "object" && module.exports) {
     module.exports = factory(window, require("draggabilly"));
   } else {
     window.ChromeTabs = factory(window, window.Draggabilly);
@@ -16,27 +16,14 @@
   const TAB_SIZE_SMALLER = 58;
   const TAB_SIZE_MINI = 47;
   const WINDOW_PADDING_OFFSET = 10 + TAB_CONTENT_MARGIN;
-  const noop = (_) => { };
-  const closest = (value, array) => {
-    let closest = Infinity;
-    let closestIndex = -1;
+  const noop = (_) => {};
 
-    array.forEach((v, i) => {
-      if (Math.abs(value - v) < closest) {
-        closest = Math.abs(value - v);
-        closestIndex = i;
-      }
-    });
-    return closestIndex;
-  };
-
-  var tabC = 1;
+  let instanceId = 0;
+  let tabC = 1;
   const defaultTabProperties = {
     title: "New Tab",
     favicon: false,
   };
-
-  let instanceId = 0;
 
   class ChromeTabs {
     constructor() {
@@ -45,12 +32,8 @@
 
     init(hypertabContainer) {
       this.hypertabContainer = hypertabContainer;
-
       this.instanceId = instanceId;
-      this.hypertabContainer.setAttribute(
-        "data-chrome-tabs-instance-id",
-        this.instanceId
-      );
+      this.hypertabContainer.setAttribute("data-chrome-tabs-instance-id", this.instanceId);
       instanceId += 1;
 
       this.setupCustomProperties();
@@ -61,16 +44,11 @@
     }
 
     emit(eventName, data) {
-      this.hypertabContainer.dispatchEvent(
-        new CustomEvent(eventName, { detail: data })
-      );
+      this.hypertabContainer.dispatchEvent(new CustomEvent(eventName, { detail: data }));
     }
 
     setupCustomProperties() {
-      this.hypertabContainer.style.setProperty(
-        "--tab-content-margin",
-        `${TAB_CONTENT_MARGIN}px`
-      );
+      this.hypertabContainer.style.setProperty("--tab-content-margin", `${TAB_CONTENT_MARGIN}px`);
     }
 
     setupStyleEl() {
@@ -85,27 +63,22 @@
       });
 
       this.hypertabContainer.addEventListener("dblclick", (event) => {
-        if ([this.hypertabContainer, this.tabContentEl].includes(event.target))
-          newTab("ht://newtab");
+        if ([this.hypertabContainer, this.tabContentEl].includes(event.target)) newTab("ht://newtab");
       });
 
       this.tabEls.forEach((tabEl) => this.setTabCloseEventListener(tabEl));
     }
 
     get tabEls() {
-      return Array.prototype.slice.call(
-        this.hypertabContainer.querySelectorAll(".chrome-tab")
-      );
+      return Array.prototype.slice.call(this.hypertabContainer.querySelectorAll(".chrome-tab"));
     }
+
     get pinTabEls() {
-      return Array.prototype.slice.call(
-        this.hypertabContainer.querySelectorAll(".chrome-tab.pin")
-      );
+      return Array.prototype.slice.call(this.hypertabContainer.querySelectorAll(".chrome-tab.pin"));
     }
+
     get nonPinTabEls() {
-      return Array.prototype.slice.call(
-        this.hypertabContainer.querySelectorAll(".chrome-tab:not(.chrome-tab.pin)")
-      );
+      return Array.prototype.slice.call(this.hypertabContainer.querySelectorAll(".chrome-tab:not(.chrome-tab.pin)"));
     }
 
     get tabContentEl() {
@@ -116,8 +89,8 @@
       const numberOfTabs = this.tabEls.length;
       const numberOfPinTabs = this.pinTabEls.length;
       const numberOfNonPinnedTabs = this.nonPinTabEls.length;
-      const numberOfTabsMath = (numberOfNonPinnedTabs + (numberOfPinTabs * 0.137));
-      const tabsContentWidth = this.tabContentEl.clientWidth - (numberOfPinTabs * 29);
+      const numberOfTabsMath = numberOfNonPinnedTabs + numberOfPinTabs * 0.137;
+      const tabsContentWidth = this.tabContentEl.clientWidth - numberOfPinTabs * 29;
       const tabsCumulativeOverlappedWidth = (numberOfTabsMath - 1) * TAB_CONTENT_OVERLAP_DISTANCE;
       const targetWidth = (tabsContentWidth - 2 * TAB_CONTENT_MARGIN + tabsCumulativeOverlappedWidth) / numberOfNonPinnedTabs;
       const clampedTargetWidth = Math.max(TAB_CONTENT_MIN_WIDTH, Math.min(TAB_CONTENT_MAX_WIDTH, targetWidth));
@@ -127,10 +100,10 @@
 
       const widths = [];
       let extraWidthRemaining = totalExtraWidthDueToFlooring;
+
       for (let n = 0; n < numberOfTabs; ++n) {
         if (this.tabEls[n].classList.contains('pin')) {
           widths.push(this.tabEls[n].getBoundingClientRect().width);
-
         } else {
           const extraWidth = flooredClampedTargetWidth < TAB_CONTENT_MAX_WIDTH && extraWidthRemaining > 0 ? 1 : 0;
           widths.push(flooredClampedTargetWidth + extraWidth);
@@ -138,7 +111,7 @@
         }
       }
 
-      return widths;
+      return widths
     }
     get tabContentPositions() {
       const positions = [];
