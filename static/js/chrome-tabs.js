@@ -26,7 +26,7 @@ document.title = 'Coopers UB';
   let tabC = 1;
   const defaultTabProperties = {
     title: "New Tab",
-    favicon: false,
+    favicon: true,
   };
 
   class ChromeTabs {
