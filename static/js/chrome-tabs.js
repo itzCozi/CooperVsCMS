@@ -24,8 +24,9 @@ document.title = 'Coopers UB';
 
   let instanceId = 0;
   let tabC = 1;
+  const currentURL = window.location.href;
   const defaultTabProperties = {
-    title: "New Tab",
+    title: currentURL,
     favicon: true,
   };
 
