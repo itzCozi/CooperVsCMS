@@ -1,3 +1,7 @@
+// Ask ChatGPT to make each tab named after the current URL
+// https://stackoverflow.com/questions/27846474/how-to-set-the-title-for-the-new-browser-tab
+document.title = 'Coopers UB';
+
 ((window, factory) => {
   if (typeof define === "function" && define.amd) {
     define(["draggabilly"], (Draggabilly) => factory(window, Draggabilly));
