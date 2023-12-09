@@ -12,8 +12,7 @@ const firebaseConfig = {
   projectId: "coopervscms",
   storageBucket: "coopervscms.appspot.com",
   messagingSenderId: "406730745781",
-  appId: "1:406730745781:web:7b537e28c024d898361bfc",
-  measurementId: "G-GTTF3XVXW0"
+  appId: "1:406730745781:web:7b537e28c024d898361bfc"
 };
 
 // Initialize Firebase
