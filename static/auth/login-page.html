@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="login-theme.css" />
+  <!-- Include Firebase Auth module script -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js"></script>
+  <script type="module" defer src="login-logic.js"></script>
+</head>
+
+<body>
+  <div class="desktop">
+    <div class="overlap-group-wrapper">
+      <div class="overlap-group">
+        <div class="login-autofit">
+          <div class="text-wrapper">Login</div>
+        </div>
+
+        <form id="login-form">
+          <input type="text" name="email" id="email-field" class="email-box">
+          <input type="password" name="password" id="password-field" class="password-box">
+          <input type="submit" value="Submit" id="login-form-submit">
+        </form>
+
+        <div class="email-autofit">
+          <div class="email-prompt">Email</div>
+        </div>
+
+        <div class="password-autofit">
+          <div class="password-prompt">Password</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
