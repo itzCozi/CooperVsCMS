@@ -12,8 +12,8 @@ body {
 
 .desktop .overlap-group-wrapper {
   background-color: #303030;
-  width: 1440px;
-  height: 1024px;
+  width: calc(100vw - 480px);
+  height: 100vh;
 }
 
 .desktop .overlap-group {
