@@ -47,7 +47,7 @@
             const user = userCredential.user;
             const validCredentialsPopup = document.getElementById("valid-credentials-popup",);
             const popupContent = validCredentialsPopup.querySelector(".popup-content p");
-            popupContent.textContent = `Welcome ${user.email},\nclose this popup to be redirected`;
+            popupContent.textContent = `Welcome "${user.uid}", close this popup to be redirected.`;
             displayWorkingPopup();
           })
           .catch((error) => {
