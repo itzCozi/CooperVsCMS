@@ -28,7 +28,7 @@ loginButton.addEventListener("click", (e) => {
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       alert("You have successfully logged in.");
-      window.location = "internal/newTab/main.html"
+      window.location = "../internal/newTab/main.html"
       const user = userCredential.user;
     })
     .catch((error) => {
