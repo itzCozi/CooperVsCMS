@@ -1,6 +1,6 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-analytics.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js';
+import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.7.0/firebase-analytics.js';
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
 
 // Initialize Firebase with your config
 const firebaseConfig = {
@@ -37,8 +37,8 @@ loginButton.addEventListener("click", (e) => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      if (errorCode === "auth/invalid-login-credentials") {
-        alert("Invalid email address or password. Please try again.");
+      if (errorCode === "auth/invalid-login-credentials" || errorCode === "auth/invalid-password") {
+        displayPopup();
       }
       else {
         console.error(errorCode, errorMessage);

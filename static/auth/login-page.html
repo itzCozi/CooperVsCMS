@@ -9,6 +9,7 @@
   <!-- Include Firebase Auth module script -->
   <script type="module" src="https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js"></script>
   <script type="module" defer src="login-logic.js"></script>
+  <script src="popup.js"></script>
 </head>
 
 <body>
@@ -34,6 +35,13 @@
         </div>
 
       </div>
+    </div>
+  </div>
+  <!-- Popup container -->
+  <div id="invalid-credentials-popup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="hidePopup()">&times;</span>
+      <p>Invalid password or email address given. Please try again.</p>
     </div>
   </div>
 </body>
