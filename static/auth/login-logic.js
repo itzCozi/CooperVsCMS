@@ -31,7 +31,6 @@ loginButton.addEventListener("click", (e) => {
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       window.location = "../index.html"
-      displayWorkingPopup();
       const user = userCredential.user;
     })
     .catch((error) => {
