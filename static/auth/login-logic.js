@@ -16,7 +16,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const loginForm = document.getElementById("login-form");
 const loginButton = document.getElementById("login-form-submit");
-console.log(auth)
 
 loginButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -34,6 +33,14 @@ loginButton.addEventListener("click", (e) => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.error(errorCode, errorMessage);
+      if (errorCode === "auth/wrong-password") {
+        alert("Invalid password. Please try again.");
+      }
+      else if (errorCode === "auth/user-not-found") {
+        alert("Invalid email address. Please try again.");
+      }
+      else {
+        console.error(errorCode, errorMessage);
+      }
     });
 });
