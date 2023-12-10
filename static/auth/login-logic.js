@@ -30,15 +30,15 @@ loginButton.addEventListener("click", (e) => {
 
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      alert("You have successfully logged in.");
       window.location = "../index.html"
+      displayWorkingPopup();
       const user = userCredential.user;
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       if (errorCode === "auth/invalid-login-credentials" || errorCode === "auth/invalid-password") {
-        displayPopup();
+        displayErrorPopup();
       }
       else {
         console.error(errorCode, errorMessage);

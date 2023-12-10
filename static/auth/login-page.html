@@ -40,8 +40,14 @@
   <!-- Popup container -->
   <div id="invalid-credentials-popup" class="popup">
     <div class="popup-content">
-      <span class="close" onclick="hidePopup()">&times;</span>
+      <span class="close" onclick="hideErrorPopup()">&times;</span>
       <p>Invalid password or email address given. Please try again.</p>
+    </div>
+  </div>
+  <div id="valid-credentials-popup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="hideWorkingPopup()">&times;</span>
+      <p>You have successfully logged in.</p>
     </div>
   </div>
 </body>
