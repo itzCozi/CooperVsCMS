@@ -198,7 +198,17 @@
     <!-- <script src='js/x/sponsorblock.js'></script>  -->
     <!-- <script src='js/x/DarkMode.js'></script> -->
     <script>document.cookie = "oldsmobile=badcar"</script>
-    <script>window.location = "auth/login-page.html"</script>
+    <script>
+      const redirectFlag = document.cookie.includes('redirected=true');
+
+      if (!redirectFlag) {
+        // Redirect to the login page
+        window.location.href = "auth/login-page.html";
+
+        // Set a cookie to indicate that the redirection has occurred
+        document.cookie = "redirected=true; path=/";
+      }
+    </script>
   </div>
 </body>
 
