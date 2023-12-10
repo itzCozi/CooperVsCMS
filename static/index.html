@@ -19,7 +19,7 @@
   <link rel="manifest" href="manifest.json" />
 
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+    import { initializeApp, setPersistence, browserSessionPersistence } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
     import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
 
     // Initialize Firebase with your config
@@ -37,14 +37,22 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        console.log('Staying put on index.html')
-      }
-      else {
-        window.location.href = "auth/login-page.html";
-      }
+    setPersistence(auth, browserSessionPersistence)
+      .then(() => {
+        // Now you can use onAuthStateChanged in the entire application
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            console.log('User is signed in:', user.email);
+          }
+          else {
+            console.log('User is signed out');
+            window.location.href = "auth/login-page.html";
+          }
     });
+  })
+  .catch((error) => {
+    console.error('Error setting persistence:', error);
+  });
   </script>
 
   <script src="/uv/uv.bundle.js"></script>
