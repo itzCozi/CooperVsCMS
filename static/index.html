@@ -199,14 +199,14 @@
     <!-- <script src='js/x/DarkMode.js'></script> -->
     <script>document.cookie = "oldsmobile=badcar"</script>
     <script>
-      const redirectFlag = document.cookie.includes('redirected=true');
+      const redirectFlag = sessionStorage.getItem('redirected');
 
       if (!redirectFlag) {
         // Redirect to the login page
         window.location.href = "auth/login-page.html";
 
-        // Set a cookie to indicate that the redirection has occurred
-        document.cookie = "redirected=true; path=/";
+        // Set a flag in sessionStorage to indicate that the redirection has occurred
+        sessionStorage.setItem('redirected', 'true');
       }
     </script>
   </div>
