@@ -37,15 +37,16 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
+    // If some silly billy changes the address bar to index.html without completing login
     setPersistence(auth, browserSessionPersistence)
       .then(() => {
         // Now you can use onAuthStateChanged in the entire application
         onAuthStateChanged(auth, (user) => {
           if (user) {
-            console.log('User is signed in:', user.email);
+            console.log('User is signed in: ', user.email);
           }
           else {
-            console.log('User is signed out');
+            console.log('Your not crafty bro...');
             window.location.href = "auth/login-page.html";
           }
     });
