@@ -18,6 +18,35 @@
   <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
   <link rel="manifest" href="manifest.json" />
 
+  <script>
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
+
+    // Initialize Firebase with your config
+    const firebaseConfig = {
+      apiKey: "AIzaSyDCdqFYJy9aXN36hTNNdA-1Ks1oPZj3gE0",
+      authDomain: "coopervscms.firebaseapp.com",
+      projectId: "coopervscms",
+      storageBucket: "coopervscms.appspot.com",
+      messagingSenderId: "406730745781",
+      appId: "1:406730745781:web:7b537e28c024d898361bfc",
+      measurementId: "G-GTTF3XVXW0",
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log('Staying put on index.html')
+      }
+      else {
+        window.location.href = "auth/login-page.html";
+      }
+    });
+  </script>
+
   <script src="/uv/uv.bundle.js"></script>
   <script src="/uv/uv.config.js"></script>
   <script src="/bare-client.js"></script>
