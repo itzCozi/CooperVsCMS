@@ -1,5 +1,5 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+import { initializeApp } from "firebase/app";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 // Initialize Firebase with your config
 const firebaseConfig = {
   apiKey: "AIzaSyDCdqFYJy9aXN36hTNNdA-1Ks1oPZj3gE0",
@@ -33,11 +33,8 @@ loginButton.addEventListener("click", (e) => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      if (errorCode === "auth/wrong-password") {
-        alert("Invalid password. Please try again.");
-      }
-      else if (errorCode === "auth/user-not-found") {
-        alert("Invalid email address. Please try again.");
+      if (errorCode === "auth/invalid-login-credentials") {
+        alert("Invalid password or email address. Please try again.");
       }
       else {
         console.error(errorCode, errorMessage);
