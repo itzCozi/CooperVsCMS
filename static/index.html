@@ -29,7 +29,7 @@
         // Now you can use onAuthStateChanged in the entire application
         onAuthStateChanged(auth, (user) => {
           if (user) {
-            console.log('User is signed in: ', user.email);
+            console.log('User is signed in: ', user.uid);
           }
           else {
             console.log('Your not crafty bro...');
