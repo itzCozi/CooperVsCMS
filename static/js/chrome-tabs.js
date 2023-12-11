@@ -1,5 +1,5 @@
 // Tab Title
-document.title = 'Coopers UB';
+document.title = 'CUB';
 
 ((window, factory) => {
   if (typeof define === "function" && define.amd) {
