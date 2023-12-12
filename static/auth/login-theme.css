@@ -21,19 +21,19 @@ body {
 
 .desktop .overlap-group-wrapper {
   background-color: #303030;
-  width: calc(100vw - 480px);
+  width: 60%;
   height: 100vh;
+  margin: 0 auto;
 }
 
 .desktop .overlap-group {
   position: relative;
   width: 850px;
   height: 500px;
-  top: 262px;
-  left: 295px;
   background-color: #454545;
   border-radius: 40px;
   box-shadow: 0px 4px 4px #00000040;
+  margin: 262px auto 0;
 }
 
 .desktop .login-autofit {
