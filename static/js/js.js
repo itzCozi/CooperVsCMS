@@ -449,7 +449,7 @@ window.onbeforeunload = function () {
 };
 
 window.searchEngine =
-	localStorage.getItem('searchEngine') || 'https://duckduckgo.com/?q=';
+	localStorage.getItem('searchEngine') || 'https://www.google.com/search?q=';
 document.getElementById('customSearch').value = window.searchEngine;
 
 //bookmarks
