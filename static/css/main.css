@@ -94,6 +94,7 @@ button {
 }
 
 @supports (-webkit-overflow-scrolling: touch) {
+
   /* Prevent double tap to zoom on iOS https://stackoverflow.com/a/47131647 */
   button {
     touch-action: manipulation;
@@ -196,9 +197,11 @@ button:active {
   #urlbutton {
     font-size: 9px;
   }
+
   #createTab {
     padding-right: 4px;
   }
+
   .iframething {
     height: 89.9%;
   }
