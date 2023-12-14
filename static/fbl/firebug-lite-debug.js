@@ -1,5 +1,4 @@
-// Minified with (https://minify-js.com/)
-// Before minified: (https://github.com/itzCozi/CooperVsCMS/blob/fffa8b583a4820472a9f91a90275be1c3fea1847/static/fbl/firebug-lite-debug.js)
+// DONT MINIFYE THIS FILE IT WILL BREAK EVERYTHING
 
 (function(){
 

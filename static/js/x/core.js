@@ -1,1 +1,1 @@
-// empty file referencing HT core.
+// empty file referencing core.
