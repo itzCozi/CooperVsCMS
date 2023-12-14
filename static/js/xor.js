@@ -1,7 +1,3 @@
-// Call to auth-script because this script has a lot of traffic
-var auth_script = require("../auth/auth-script.js");
-auth_script.auth_function();
-
 // xor function in one place for easy modification
 class xor {
   static encode(str) {
