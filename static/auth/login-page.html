@@ -95,6 +95,13 @@
     <!-- Popup containers -->
     <div id="invalid-credentials-popup" class="popup">
       <div class="popup-content">
+        <script>
+          window.onkeydown = function( event ) {
+            if ( event.keyCode == 27 ) {
+              hideWorkingPopup();
+            }
+          };
+        </script>
         <span class="close" onclick="hideErrorPopup()">&times;</span>
         <p>Invalid email address or password given. Please try again.</p>
       </div>
@@ -103,7 +110,11 @@
     <div id="valid-credentials-popup" class="popup">
       <div class="popup-content">
         <script>
-          // Add the esc listener here
+          window.onkeydown = function( event ) {
+            if ( event.keyCode == 27 ) {
+              hideWorkingPopup();
+            }
+          };
         </script>
         <span class="close" onclick="hideWorkingPopup()">&times;</span>
         <p>placeholder (you shouldn't see this lol)</p>
