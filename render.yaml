@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: hypertabs
+    name: coopervscms
     env: node
     buildCommand: npm install
     startCommand: npm start
