@@ -36,7 +36,7 @@ setPersistence(auth, browserSessionPersistence)
       if (user) {
         console.log('User is signed in: ', user.uid);
       } else {
-        console.log('Your not crafty bro...');
+        console.log('User not authorized, redirecting...');
         window.location.href = "auth/login-page.html";
       }
     });
