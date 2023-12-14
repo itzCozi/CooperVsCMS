@@ -1,20 +1,23 @@
 <!doctype html>
 <html>
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Authentication</title>
     <link rel="stylesheet" href="login-theme.css" />
     <!-- Include Firebase Auth module script -->
-    <script
-      type="module"
-      src="https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js"
-    ></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js"></script>
     <script src="popup.js"></script>
+    <!-- Login auth script -->
     <script type="module" defer>
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-analytics.js";
-      import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
+      import {
+        initializeApp
+      } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword
+      } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
 
       // Initialize Firebase with your config
       const firebaseConfig = {
@@ -30,8 +33,6 @@
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
-      const analytics = getAnalytics(app);
-      console.log(analytics)
 
       const loginForm = document.getElementById("login-form");
       const loginButton = document.getElementById("login-form-submit");
@@ -46,7 +47,7 @@
         signInWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
             const user = userCredential.user;
-            const validCredentialsPopup = document.getElementById("valid-credentials-popup",);
+            const validCredentialsPopup = document.getElementById("valid-credentials-popup", );
             const popupContent = validCredentialsPopup.querySelector(".popup-content p");
             popupContent.textContent = `Welcome "${user.email}", close this popup to be redirected.`;
             displayWorkingPopup();
@@ -55,15 +56,15 @@
             const errorCode = error.code;
             const errorMessage = error.message;
             if (
-              errorCode === "auth/invalid-login-credentials" || errorCode === "auth/invalid-password" 
+              errorCode === "auth/invalid-login-credentials" || errorCode === "auth/invalid-password"
             ) {
               displayErrorPopup();
-            }
-            else {
+            } else {
               console.error(errorCode, errorMessage);
             }
           });
       });
+
     </script>
   </head>
 
@@ -76,8 +77,8 @@
           </div>
 
           <form id="login-form">
-            <input type="text" name="email" id="email-field" class="email-box"/>
-            <input type="password" name="password" id="password-field" class="password-box"/>
+            <input type="text" name="email" id="email-field" class="email-box" />
+            <input type="password" name="password" id="password-field" class="password-box" />
             <input type="submit" value="Submit" id="login-form-submit" />
           </form>
 
@@ -107,4 +108,5 @@
       </div>
     </div>
   </body>
+
 </html>

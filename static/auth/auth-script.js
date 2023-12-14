@@ -3,6 +3,9 @@ import {
   initializeApp
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
 import {
+  getAnalytics
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-analytics.js";
+import {
   getAuth,
   setPersistence,
   browserSessionPersistence,
@@ -22,6 +25,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 const auth = getAuth(app);
 
 // If some silly billy changes the address bar to index.html without completing login
@@ -33,7 +37,7 @@ setPersistence(auth, browserSessionPersistence)
         console.log('User is signed in: ', user.uid);
       } else {
         console.log('Your not crafty bro...');
-        window.location.href = "auth/login-page.html";
+        window.location.href = "./login-page.html";
       }
     });
   })
