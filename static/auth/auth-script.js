@@ -46,6 +46,19 @@ setPersistence(auth, browserSessionPersistence)
   });
 
 var auth_function = function auth_function() {
+  import {
+    initializeApp
+  } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+  import {
+    getAnalytics
+  } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-analytics.js";
+  import {
+    getAuth,
+    setPersistence,
+    browserSessionPersistence,
+    onAuthStateChanged
+  } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
+  
     // Initialize Firebase with your config
     const firebaseConfig = {
       apiKey: "AIzaSyDCdqFYJy9aXN36hTNNdA-1Ks1oPZj3gE0",
