@@ -1,54 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
-<!-- Check user auth if user is logged in or not -->
-<script type="module" src="auth/auth-script.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Tab</title>
+  <link rel="stylesheet" href="/css/css.css" />
+</head>
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Tab</title>
-    <link rel="stylesheet" href="/css/css.css" />
-  </head>
+<body id="body">
+  <script src="/js/xor.js"></script>
+  <script src="/js/bookmarks.js"></script>
+  <script src="/uv/uv.bundle.js"></script>
+  <script src="/uv/uv.config.js"></script>
+  <script>
+    // const ip = "<?php echo $_SERVER['HTTP_X_FORWARDED_FOR'] ?>";
+  </script>
+  <div class="bookmarks"></div>
+  <div class="info">
+    <div id="weather">
+      <!--   Weather Widget in TOP RIGHT   -->
+      <!-- <h2 id="winfo">Loading...</h2>
+            <h2 id="alerts"></h2> -->
+    </div>
+  </div>
+  <div class="center">
+    <h1 id="headtxt">Cooper's Unblocker</h1>
+    <forum id="input" onkeydown="if(event.key == 'Enter'){location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`}" onsubmit="location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`"> <input id="inputb" placeholder="Search....." /> <input id="inputimg" onclick="location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`" type="image" value="Login" src="/search.svg" height="24" width="24" /> <input type="submit" style="display: none" /> </forum>
+    <div class="btns">
+      <!-- idea: maybe include __uv$config.prefix with xor.encode -->
 
-  <body id="body">
-    <script src="/js/xor.js"></script>
-    <script src="/js/bookmarks.js"></script>
-    <script src="/uv/uv.bundle.js"></script>
-    <script src="/uv/uv.config.js"></script>
-    <script>
-      // const ip = "<?php echo $_SERVER['HTTP_X_FORWARDED_FOR'] ?>";
+      <div onclick="location.href=__uv$config.prefix+xor.encode('https://youtube.com')" class="crm">
+        <img class="icn" src="/yt.png" />
+        <a class="btn">Youtube</a>
+      </div>
 
-    </script>
-    <div class="bookmarks"></div>
+      <div onclick="location.href=__uv$config.prefix+xor.encode('https://himovies.sx/home')" class="crm">
+        <img class="icn" src="/movie.png" />
+        <a class="btn">Free Movies</a>
+      </div>
 
-    <div class="center">
-      <h1 id="headtxt">Cooper's Unblocker</h1>
-      <form id="input" onsubmit="location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`">
-        <input id="inputb" placeholder="Search..." />
-        <input id="inputimg" onclick="location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`" type="image" value="Login" src="/search.svg" height="24" width="24" />
-        <input type="submit" style="display: none" />
-      </form>
-      <div class="btns">
-        <!-- idea: maybe include __uv$config.prefix with xor.encode -->
-
-        <div onclick="location.href=__uv$config.prefix+xor.encode('https://youtube.com')" class="crm">
-          <img class="icn" src="/yt.png" />
-          <a class="btn">Youtube</a>
-        </div>
-
-        <div onclick="location.href=__uv$config.prefix+xor.encode('https://himovies.sx/home')" class="crm">
-          <img class="icn" src="/movie.png" />
-          <a class="btn">Free Movies</a>
-        </div>
-
-        <div onclick="location.href=__uv$config.prefix+xor.encode('https://discord.gg/56qC6PEN6v')" class="crm">
-          <img class="icn" src="/dcd.png" />
-          <a class="btn">Join My Discord</a>
-        </div>
-
+      <div onclick="location.href=__uv$config.prefix+xor.encode('https://discord.gg/56qC6PEN6v')" class="crm">
+        <img class="icn" src="/dcd.png" />
+        <a class="btn">Join My Discord</a>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 
 </html>
