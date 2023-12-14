@@ -1,15 +1,11 @@
 // Auth script for uv/service/
 import {
   initializeApp
-}
-from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
 import {
   getAuth,
-  setPersistence,
-  browserSessionPersistence,
   onAuthStateChanged
-}
-from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
 
 // Initialize Firebase with your config
 const firebaseConfig = {
@@ -26,22 +22,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// If some silly billy changes the address bar to index.html without completing login
-setPersistence(auth, browserSessionPersistence)
-  .then(() => {
-    // Now you can use onAuthStateChanged in the entire application
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        console.log('User is signed in: ', user.uid);
-      } else {
-        console.log('Your not crafty bro...');
-        window.location.href = "auth/login-page.html";
-      }
-    });
-  })
-  .catch((error) => {
-    console.error('Error setting persistence:', error);
-  });
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log('User is signed in: ', user.uid);
+  } else {
+    console.log('Your not crafty bro...');
+    window.location.href = "auth/login-page.html";
+  }
+});
 
 importScripts('/uv/uv.sw.js');
 const sw = new UVServiceWorker();
