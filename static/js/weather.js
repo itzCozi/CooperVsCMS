@@ -60,8 +60,8 @@ async function StartWeather() {
   document.getElementById(
     "winfo"
   ).innerHTML = `<a id="wst"style="text-align: center;">${ipdat.city}</a><br><a id="wde">${weather.temp}&degF | ${weather.weather}</a>`;
-  console.log(weather.alert.length);
-  if (!alert == null) {
+  console.log(alert.length);
+  if (alert != null) {
     document.getElementById('alerts').setAttribute('onclick', `location.href = '/fetch/aHR0cHM6Ly9mb3JlY2FzdC53ZWF0aGVyLmdvdg==/MapClick.php?&lat=${ipdat.latlon.replace(',', '&lon=')}'`);
     document.getElementById('alerts').innerHTML = `${alert}`;
   } else {
