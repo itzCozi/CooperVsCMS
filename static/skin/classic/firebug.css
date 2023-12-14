@@ -15,35 +15,35 @@
 /* IE6 need a separated rule, otherwise it will not recognize it */
 .collapsed {
     display: none;
-}
-
-[collapsed="true"] {
+  }
+  
+  [collapsed="true"] {
     display: none;
-}
-
-#fbCSS {
+  }
+  
+  #fbCSS {
     padding: 0 !important;
-}
-
-.cssPropDisable {
+  }
+  
+  .cssPropDisable {
     float: left;
     display: block;
     width: 2em;
     cursor: default;
-}
-
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/* panelBase */
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-
-/************************************************************************************************/
-
-.infoTip {
+  }
+  
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /* panelBase */
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  
+  /************************************************************************************************/
+  
+  .infoTip {
     z-index: 2147483647;
     position: fixed;
     padding: 2px 3px;
@@ -54,35 +54,35 @@
     display: none;
     white-space: nowrap;
     pointer-events: none;
-}
-
-.infoTip[active="true"] {
+  }
+  
+  .infoTip[active="true"] {
     display: block;
-}
-
-.infoTipLoading {
+  }
+  
+  .infoTipLoading {
     width: 16px;
     height: 16px;
     background: url(chrome://firebug/skin/loading_16.gif) no-repeat;
-}
-
-.infoTipImageBox {
+  }
+  
+  .infoTipImageBox {
     min-width: 100px;
     text-align: center;
-}
-
-.infoTipCaption {
+  }
+  
+  .infoTipCaption {
     font: message-box;
-}
-
-.infoTipLoading > .infoTipImage,
-.infoTipLoading > .infoTipCaption {
+  }
+  
+  .infoTipLoading>.infoTipImage,
+  .infoTipLoading>.infoTipCaption {
     display: none;
-}
-
-/************************************************************************************************/
-
-h1.groupHeader {
+  }
+  
+  /************************************************************************************************/
+  
+  h1.groupHeader {
     padding: 2px 4px;
     margin: 0 0 4px 0;
     border-top: 1px solid #CCCCCC;
@@ -91,295 +91,293 @@ h1.groupHeader {
     font-size: 11px;
     font-weight: bold;
     _position: relative;
-}
-
-/************************************************************************************************/
-
-.inlineEditor,
-.fixedWidthEditor {
+  }
+  
+  /************************************************************************************************/
+  
+  .inlineEditor,
+  .fixedWidthEditor {
     z-index: 2147483647;
     position: absolute;
     display: none;
-}
-
-.inlineEditor {
+  }
+  
+  .inlineEditor {
     margin-left: -6px;
     margin-top: -3px;
     /*
-    _margin-left: -7px;
-    _margin-top: -5px;
-    /**/
-}
-
-.textEditorInner,
-.fixedWidthEditor {
+      _margin-left: -7px;
+      _margin-top: -5px;
+      /**/
+  }
+  
+  .textEditorInner,
+  .fixedWidthEditor {
     margin: 0 0 0 0 !important;
     padding: 0;
     border: none !important;
     font: inherit;
     text-decoration: inherit;
     background-color: #FFFFFF;
-}
-
-.fixedWidthEditor {
+  }
+  
+  .fixedWidthEditor {
     border-top: 1px solid #888888 !important;
     border-bottom: 1px solid #888888 !important;
-}
-
-.textEditorInner {
+  }
+  
+  .textEditorInner {
     position: relative;
     top: -7px;
     left: -5px;
-    
+  
     outline: none;
     resize: none;
-    
+  
     /*
-    _border: 1px solid #999 !important;
-    _padding: 1px !important;
-    _filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="#55404040");
-    /**/
-}
-
-.textEditorInner1 {
+      _border: 1px solid #999 !important;
+      _padding: 1px !important;
+      _filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="#55404040");
+      /**/
+  }
+  
+  .textEditorInner1 {
     padding-left: 11px;
     background: url(textEditorBorders.png) repeat-y;
     _background: url(textEditorBorders.gif) repeat-y;
     _overflow: hidden;
-}
-
-.textEditorInner2 {
+  }
+  
+  .textEditorInner2 {
     position: relative;
     padding-right: 2px;
     background: url(textEditorBorders.png) repeat-y 100% 0;
     _background: url(textEditorBorders.gif) repeat-y 100% 0;
     _position: fixed;
-}
-
-.textEditorTop1 {
+  }
+  
+  .textEditorTop1 {
     background: url(textEditorCorners.png) no-repeat 100% 0;
     margin-left: 11px;
     height: 10px;
     _background: url(textEditorCorners.gif) no-repeat 100% 0;
     _overflow: hidden;
-}
-
-.textEditorTop2 {
+  }
+  
+  .textEditorTop2 {
     position: relative;
     left: -11px;
     width: 11px;
     height: 10px;
     background: url(textEditorCorners.png) no-repeat;
     _background: url(textEditorCorners.gif) no-repeat;
-}
-
-.textEditorBottom1 {
+  }
+  
+  .textEditorBottom1 {
     position: relative;
     background: url(textEditorCorners.png) no-repeat 100% 100%;
     margin-left: 11px;
     height: 12px;
     _background: url(textEditorCorners.gif) no-repeat 100% 100%;
-}
-
-.textEditorBottom2 {
+  }
+  
+  .textEditorBottom2 {
     position: relative;
     left: -11px;
     width: 11px;
     height: 12px;
     background: url(textEditorCorners.png) no-repeat 0 100%;
     _background: url(textEditorCorners.gif) no-repeat 0 100%;
-}
-
-
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/* CSS */
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-
-/* See license.txt for terms of usage */
-
-.panelNode-css {
+  }
+  
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /* CSS */
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  
+  /* See license.txt for terms of usage */
+  
+  .panelNode-css {
     overflow-x: hidden;
-}
-
-.cssSheet > .insertBefore {
+  }
+  
+  .cssSheet>.insertBefore {
     height: 1.5em;
-}
-
-.cssRule {
+  }
+  
+  .cssRule {
     position: relative;
     margin: 0;
     padding: 1em 0 0 6px;
     font-family: Monaco, monospace;
     color: #000000;
-}
-
-.cssRule:first-child {
+  }
+  
+  .cssRule:first-child {
     padding-top: 6px;
-}
-
-.cssElementRuleContainer {
+  }
+  
+  .cssElementRuleContainer {
     position: relative;
-}
-
-.cssHead {
+  }
+  
+  .cssHead {
     padding-right: 150px;
-}
-
-.cssProp {
+  }
+  
+  .cssProp {
     /*padding-left: 2em;*/
-}
-
-.cssPropName {
+  }
+  
+  .cssPropName {
     color: DarkGreen;
-}
-
-.cssPropValue {
+  }
+  
+  .cssPropValue {
     margin-left: 8px;
     color: DarkBlue;
-}
-
-.cssOverridden span {
+  }
+  
+  .cssOverridden span {
     text-decoration: line-through;
-}
-
-.cssInheritedRule {
-}
-
-.cssInheritLabel {
+  }
+  
+  .cssInheritedRule {}
+  
+  .cssInheritLabel {
     margin-right: 0.5em;
     font-weight: bold;
-}
-
-.cssRule .objectLink-sourceLink {
+  }
+  
+  .cssRule .objectLink-sourceLink {
     top: 0;
-}
-
-.cssProp.editGroup:hover {
+  }
+  
+  .cssProp.editGroup:hover {
     background: url(disable.png) no-repeat 2px 1px;
     _background: url(disable.gif) no-repeat 2px 1px;
-}
-
-.cssProp.editGroup.editing {
+  }
+  
+  .cssProp.editGroup.editing {
     background: none;
-}
-
-.cssProp.disabledStyle {
+  }
+  
+  .cssProp.disabledStyle {
     background: url(disableHover.png) no-repeat 2px 1px;
     _background: url(disableHover.gif) no-repeat 2px 1px;
     opacity: 1;
     color: #CCCCCC;
-}
-
-.disabledStyle .cssPropName,
-.disabledStyle .cssPropValue {
+  }
+  
+  .disabledStyle .cssPropName,
+  .disabledStyle .cssPropValue {
     color: #CCCCCC;
-}
-
-.cssPropValue.editing + .cssSemi,
-.inlineExpander + .cssSemi {
+  }
+  
+  .cssPropValue.editing+.cssSemi,
+  .inlineExpander+.cssSemi {
     display: none;
-}
-
-.cssPropValue.editing {
+  }
+  
+  .cssPropValue.editing {
     white-space: nowrap;
-}
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-.stylePropName {
+  }
+  
+  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+  
+  .stylePropName {
     font-weight: bold;
     padding: 0 4px 4px 4px;
     width: 50%;
-}
-
-.stylePropValue {
+  }
+  
+  .stylePropValue {
     width: 50%;
-}
-/*
-.useA11y .a11yCSSView .focusRow:focus {
-    outline: none;
-    background-color: transparent
- }
- 
- .useA11y .a11yCSSView .focusRow:focus .cssSelector, 
- .useA11y .a11yCSSView .focusRow:focus .cssPropName, 
- .useA11y .a11yCSSView .focusRow:focus .cssPropValue,
- .useA11y .a11yCSSView .computedStyleRow:focus, 
- .useA11y .a11yCSSView .groupHeader:focus {
-    outline: 2px solid #FF9933;
-    outline-offset: -2px;
-    background-color: #FFFFD6;
- }
- 
- .useA11y .a11yCSSView .groupHeader:focus {
-    outline-offset: -2px;
- }
-/**/
-
-
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/* Net */
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-
-/* See license.txt for terms of usage */
-
-.panelNode-net {
+  }
+  
+  /*
+  .useA11y .a11yCSSView .focusRow:focus {
+      outline: none;
+      background-color: transparent
+   }
+   
+   .useA11y .a11yCSSView .focusRow:focus .cssSelector, 
+   .useA11y .a11yCSSView .focusRow:focus .cssPropName, 
+   .useA11y .a11yCSSView .focusRow:focus .cssPropValue,
+   .useA11y .a11yCSSView .computedStyleRow:focus, 
+   .useA11y .a11yCSSView .groupHeader:focus {
+      outline: 2px solid #FF9933;
+      outline-offset: -2px;
+      background-color: #FFFFD6;
+   }
+   
+   .useA11y .a11yCSSView .groupHeader:focus {
+      outline-offset: -2px;
+   }
+  /**/
+  
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /* Net */
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  
+  /* See license.txt for terms of usage */
+  
+  .panelNode-net {
     overflow-x: hidden;
-}
-
-.netTable {
+  }
+  
+  .netTable {
     width: 100%;
-}
-
-/************************************************************************************************/
-
-.hideCategory-undefined .category-undefined,
-.hideCategory-html .category-html,
-.hideCategory-css .category-css,
-.hideCategory-js .category-js,
-.hideCategory-image .category-image,
-.hideCategory-xhr .category-xhr,
-.hideCategory-flash .category-flash,
-.hideCategory-txt .category-txt,
-.hideCategory-bin .category-bin {
+  }
+  
+  /************************************************************************************************/
+  
+  .hideCategory-undefined .category-undefined,
+  .hideCategory-html .category-html,
+  .hideCategory-css .category-css,
+  .hideCategory-js .category-js,
+  .hideCategory-image .category-image,
+  .hideCategory-xhr .category-xhr,
+  .hideCategory-flash .category-flash,
+  .hideCategory-txt .category-txt,
+  .hideCategory-bin .category-bin {
     display: none;
-}
-
-/************************************************************************************************/
-
-.netHeadRow {
+  }
+  
+  /************************************************************************************************/
+  
+  .netHeadRow {
     background: url(chrome://firebug/skin/group.gif) repeat-x #FFFFFF;
-}
-
-.netHeadCol {
+  }
+  
+  .netHeadCol {
     border-bottom: 1px solid #CCCCCC;
     padding: 2px 4px 2px 18px;
     font-weight: bold;
-}
-
-.netHeadLabel {
+  }
+  
+  .netHeadLabel {
     white-space: nowrap;
     overflow: hidden;
-}
-
-/************************************************************************************************/
-/* Header for Net panel table */
-
-.netHeaderRow {
+  }
+  
+  /************************************************************************************************/
+  /* Header for Net panel table */
+  
+  .netHeaderRow {
     height: 16px;
-}
-
-.netHeaderCell {
+  }
+  
+  .netHeaderCell {
     cursor: pointer;
     -moz-user-select: none;
     border-bottom: 1px solid #9C9C9C;
@@ -387,147 +385,147 @@ h1.groupHeader {
     font-weight: bold;
     background: #BBBBBB url(chrome://firebug/skin/tableHeader.gif) repeat-x;
     white-space: nowrap;
-}
-
-.netHeaderRow > .netHeaderCell:first-child > .netHeaderCellBox {
+  }
+  
+  .netHeaderRow>.netHeaderCell:first-child>.netHeaderCellBox {
     padding: 2px 14px 2px 18px;
-}
-
-.netHeaderCellBox {
+  }
+  
+  .netHeaderCellBox {
     padding: 2px 14px 2px 10px;
     border-left: 1px solid #D9D9D9;
     border-right: 1px solid #9C9C9C;
-}
-
-.netHeaderCell:hover:active {
+  }
+  
+  .netHeaderCell:hover:active {
     background: #959595 url(chrome://firebug/skin/tableHeaderActive.gif) repeat-x;
-}
-
-.netHeaderSorted {
+  }
+  
+  .netHeaderSorted {
     background: #7D93B2 url(chrome://firebug/skin/tableHeaderSorted.gif) repeat-x;
-}
-
-.netHeaderSorted > .netHeaderCellBox {
+  }
+  
+  .netHeaderSorted>.netHeaderCellBox {
     border-right-color: #6B7C93;
     background: url(chrome://firebug/skin/arrowDown.png) no-repeat right;
-}
-
-.netHeaderSorted.sortedAscending > .netHeaderCellBox {
+  }
+  
+  .netHeaderSorted.sortedAscending>.netHeaderCellBox {
     background-image: url(chrome://firebug/skin/arrowUp.png);
-}
-
-.netHeaderSorted:hover:active {
+  }
+  
+  .netHeaderSorted:hover:active {
     background: #536B90 url(chrome://firebug/skin/tableHeaderSortedActive.gif) repeat-x;
-}
-
-/************************************************************************************************/
-/* Breakpoints */
-
-.panelNode-net .netRowHeader {
+  }
+  
+  /************************************************************************************************/
+  /* Breakpoints */
+  
+  .panelNode-net .netRowHeader {
     display: block;
-}
-
-.netRowHeader {
+  }
+  
+  .netRowHeader {
     cursor: pointer;
     display: none;
     height: 15px;
     margin-right: 0 !important;
-}
-
-/* Display brekpoint disc */
-.netRow .netRowHeader {
+  }
+  
+  /* Display brekpoint disc */
+  .netRow .netRowHeader {
     background-position: 5px 1px;
-}
-
-.netRow[breakpoint="true"] .netRowHeader {
+  }
+  
+  .netRow[breakpoint="true"] .netRowHeader {
     background-image: url(chrome://firebug/skin/breakpoint.png);
-}
-
-.netRow[breakpoint="true"][disabledBreakpoint="true"] .netRowHeader {
+  }
+  
+  .netRow[breakpoint="true"][disabledBreakpoint="true"] .netRowHeader {
     background-image: url(chrome://firebug/skin/breakpointDisabled.png);
-}
-
-.netRow.category-xhr:hover .netRowHeader {
+  }
+  
+  .netRow.category-xhr:hover .netRowHeader {
     background-color: #F6F6F6;
-}
-
-#netBreakpointBar {
+  }
+  
+  #netBreakpointBar {
     max-width: 38px;
-}
-
-#netHrefCol > .netHeaderCellBox {
+  }
+  
+  #netHrefCol>.netHeaderCellBox {
     border-left: 0px;
-}
-
-.netRow .netRowHeader {
+  }
+  
+  .netRow .netRowHeader {
     width: 3px;
-}
-
-.netInfoRow .netRowHeader {
+  }
+  
+  .netInfoRow .netRowHeader {
     display: table-cell;
-}
-
-/************************************************************************************************/
-/* Column visibility */
-
-.netTable[hiddenCols~=netHrefCol] TD[id="netHrefCol"],
-.netTable[hiddenCols~=netHrefCol] TD.netHrefCol,
-.netTable[hiddenCols~=netStatusCol] TD[id="netStatusCol"],
-.netTable[hiddenCols~=netStatusCol] TD.netStatusCol,
-.netTable[hiddenCols~=netDomainCol] TD[id="netDomainCol"],
-.netTable[hiddenCols~=netDomainCol] TD.netDomainCol,
-.netTable[hiddenCols~=netSizeCol] TD[id="netSizeCol"],
-.netTable[hiddenCols~=netSizeCol] TD.netSizeCol,
-.netTable[hiddenCols~=netTimeCol] TD[id="netTimeCol"],
-.netTable[hiddenCols~=netTimeCol] TD.netTimeCol {
+  }
+  
+  /************************************************************************************************/
+  /* Column visibility */
+  
+  .netTable[hiddenCols~=netHrefCol] TD[id="netHrefCol"],
+  .netTable[hiddenCols~=netHrefCol] TD.netHrefCol,
+  .netTable[hiddenCols~=netStatusCol] TD[id="netStatusCol"],
+  .netTable[hiddenCols~=netStatusCol] TD.netStatusCol,
+  .netTable[hiddenCols~=netDomainCol] TD[id="netDomainCol"],
+  .netTable[hiddenCols~=netDomainCol] TD.netDomainCol,
+  .netTable[hiddenCols~=netSizeCol] TD[id="netSizeCol"],
+  .netTable[hiddenCols~=netSizeCol] TD.netSizeCol,
+  .netTable[hiddenCols~=netTimeCol] TD[id="netTimeCol"],
+  .netTable[hiddenCols~=netTimeCol] TD.netTimeCol {
     display: none;
-}
-
-/************************************************************************************************/
-
-.netRow {
+  }
+  
+  /************************************************************************************************/
+  
+  .netRow {
     background: LightYellow;
-}
-
-.netRow.loaded {
+  }
+  
+  .netRow.loaded {
     background: #FFFFFF;
-}
-
-.netRow.loaded:hover {
+  }
+  
+  .netRow.loaded:hover {
     background: #EFEFEF;
-}
-
-.netCol {
+  }
+  
+  .netCol {
     padding: 0;
     vertical-align: top;
     border-bottom: 1px solid #EFEFEF;
     white-space: nowrap;
     height: 17px;
-}
-
-.netLabel {
+  }
+  
+  .netLabel {
     width: 100%;
-}
-
-.netStatusCol {
+  }
+  
+  .netStatusCol {
     padding-left: 10px;
     color: rgb(128, 128, 128);
-}
-
-.responseError > .netStatusCol {
+  }
+  
+  .responseError>.netStatusCol {
     color: red;
-}
-
-.netDomainCol {
+  }
+  
+  .netDomainCol {
     padding-left: 5px;
-}
-
-.netSizeCol {
+  }
+  
+  .netSizeCol {
     text-align: right;
     padding-right: 10px;
-}
-
-.netHrefLabel {
+  }
+  
+  .netHrefLabel {
     -moz-box-sizing: padding-box;
     overflow: hidden;
     z-index: 10;
@@ -536,9 +534,9 @@ h1.groupHeader {
     padding-top: 1px;
     max-width: 15%;
     font-weight: bold;
-}
-
-.netFullHrefLabel {
+  }
+  
+  .netFullHrefLabel {
     display: none;
     -moz-user-select: none;
     padding-right: 10px;
@@ -546,17 +544,17 @@ h1.groupHeader {
     max-width: 100%;
     background: #FFFFFF;
     z-index: 200;
-}
-
-.netHrefCol:hover > .netFullHrefLabel {
+  }
+  
+  .netHrefCol:hover>.netFullHrefLabel {
     display: block;
-}
-
-.netRow.loaded:hover .netCol > .netFullHrefLabel {
+  }
+  
+  .netRow.loaded:hover .netCol>.netFullHrefLabel {
     background-color: #EFEFEF;
-}
-
-.useA11y .a11yShowFullLabel {
+  }
+  
+  .useA11y .a11yShowFullLabel {
     display: block;
     background-image: none !important;
     border: 1px solid #CBE087;
@@ -565,34 +563,34 @@ h1.groupHeader {
     color: #000000;
     font-size: 10px;
     z-index: 2147483647;
-}
-
-.netSizeLabel {
+  }
+  
+  .netSizeLabel {
     padding-left: 6px;
-}
-
-.netStatusLabel,
-.netDomainLabel,
-.netSizeLabel,
-.netBar {
+  }
+  
+  .netStatusLabel,
+  .netDomainLabel,
+  .netSizeLabel,
+  .netBar {
     padding: 1px 0 2px 0 !important;
-}
-
-.responseError {
+  }
+  
+  .responseError {
     color: red;
-}
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-.hasHeaders .netHrefLabel:hover {
+  }
+  
+  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+  
+  .hasHeaders .netHrefLabel:hover {
     cursor: pointer;
     color: blue;
     text-decoration: underline;
-}
-
-/************************************************************************************************/
-
-.netLoadingIcon {
+  }
+  
+  /************************************************************************************************/
+  
+  .netLoadingIcon {
     position: absolute;
     border: 0;
     margin-left: 14px;
@@ -600,77 +598,78 @@ h1.groupHeader {
     height: 16px;
     background: transparent no-repeat 0 0;
     background-image: url(chrome://firebug/skin/loading_16.gif);
-    display:inline-block;
-}
-
-.loaded .netLoadingIcon {
+    display: inline-block;
+  }
+  
+  .loaded .netLoadingIcon {
     display: none;
-}
-
-/************************************************************************************************/
-
-.netBar, .netSummaryBar {
+  }
+  
+  /************************************************************************************************/
+  
+  .netBar,
+  .netSummaryBar {
     position: relative;
     border-right: 50px solid transparent;
-}
-
-.netResolvingBar {
+  }
+  
+  .netResolvingBar {
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
     background: #FFFFFF url(chrome://firebug/skin/netBarResolving.gif) repeat-x;
-    z-index:60;
-}
-
-.netConnectingBar {
+    z-index: 60;
+  }
+  
+  .netConnectingBar {
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
     background: #FFFFFF url(chrome://firebug/skin/netBarConnecting.gif) repeat-x;
-    z-index:50;
-}
-
-.netBlockingBar {
+    z-index: 50;
+  }
+  
+  .netBlockingBar {
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
     background: #FFFFFF url(chrome://firebug/skin/netBarWaiting.gif) repeat-x;
-    z-index:40;
-}
-
-.netSendingBar {
+    z-index: 40;
+  }
+  
+  .netSendingBar {
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
     background: #FFFFFF url(chrome://firebug/skin/netBarSending.gif) repeat-x;
-    z-index:30;
-}
-
-.netWaitingBar {
+    z-index: 30;
+  }
+  
+  .netWaitingBar {
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
     background: #FFFFFF url(chrome://firebug/skin/netBarResponded.gif) repeat-x;
-    z-index:20;
+    z-index: 20;
     min-width: 1px;
-}
-
-.netReceivingBar {
+  }
+  
+  .netReceivingBar {
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
     background: #38D63B url(chrome://firebug/skin/netBarLoading.gif) repeat-x;
-    z-index:10;
-}
-
-.netWindowLoadBar,
-.netContentLoadBar {
+    z-index: 10;
+  }
+  
+  .netWindowLoadBar,
+  .netContentLoadBar {
     position: absolute;
     left: 0;
     top: 0;
@@ -680,14 +679,14 @@ h1.groupHeader {
     z-index: 70;
     opacity: 0.5;
     display: none;
-    margin-bottom:-1px;
-}
-
-.netContentLoadBar {
+    margin-bottom: -1px;
+  }
+  
+  .netContentLoadBar {
     background-color: Blue;
-}
-
-.netTimeLabel {
+  }
+  
+  .netTimeLabel {
     -moz-box-sizing: padding-box;
     position: absolute;
     top: 1px;
@@ -695,183 +694,183 @@ h1.groupHeader {
     padding-left: 6px;
     color: #444444;
     min-width: 16px;
-}
-
-/*
- * Timing info tip is reusing net timeline styles to display the same
- * colors for individual request phases. Notice that the info tip must
- * respect also loaded and fromCache styles that also modify the
- * actual color. These are used both on the same element in case
- * of the tooltip.
- */
-.loaded .netReceivingBar,
-.loaded.netReceivingBar {
+  }
+  
+  /*
+   * Timing info tip is reusing net timeline styles to display the same
+   * colors for individual request phases. Notice that the info tip must
+   * respect also loaded and fromCache styles that also modify the
+   * actual color. These are used both on the same element in case
+   * of the tooltip.
+   */
+  .loaded .netReceivingBar,
+  .loaded.netReceivingBar {
     background: #B6B6B6 url(chrome://firebug/skin/netBarLoaded.gif) repeat-x;
     border-color: #B6B6B6;
-}
-
-.fromCache .netReceivingBar,
-.fromCache.netReceivingBar {
+  }
+  
+  .fromCache .netReceivingBar,
+  .fromCache.netReceivingBar {
     background: #D6D6D6 url(chrome://firebug/skin/netBarCached.gif) repeat-x;
     border-color: #D6D6D6;
-}
-
-.netSummaryRow .netTimeLabel,
-.loaded .netTimeLabel {
+  }
+  
+  .netSummaryRow .netTimeLabel,
+  .loaded .netTimeLabel {
     background: transparent;
-}
-
-/************************************************************************************************/
-/* Time Info tip */
-
-.timeInfoTip {
-    width: 150px; 
+  }
+  
+  /************************************************************************************************/
+  /* Time Info tip */
+  
+  .timeInfoTip {
+    width: 150px;
     height: 40px
-}
-
-.timeInfoTipBar,
-.timeInfoTipEventBar {
+  }
+  
+  .timeInfoTipBar,
+  .timeInfoTipEventBar {
     position: relative;
     display: block;
     margin: 0;
     opacity: 1;
     height: 15px;
     width: 4px;
-}
-
-.timeInfoTipEventBar {
+  }
+  
+  .timeInfoTipEventBar {
     width: 1px !important;
-}
-
-.timeInfoTipCell.startTime {
+  }
+  
+  .timeInfoTipCell.startTime {
     padding-right: 8px;
-}
-
-.timeInfoTipCell.elapsedTime {
+  }
+  
+  .timeInfoTipCell.elapsedTime {
     text-align: right;
     padding-right: 8px;
-}
-
-/************************************************************************************************/
-/* Size Info tip */
-
-.sizeInfoLabelCol {
+  }
+  
+  /************************************************************************************************/
+  /* Size Info tip */
+  
+  .sizeInfoLabelCol {
     font-weight: bold;
     padding-right: 10px;
     font-family: Lucida Grande, Tahoma, sans-serif;
     font-size: 11px;
-}
-
-.sizeInfoSizeCol {
+  }
+  
+  .sizeInfoSizeCol {
     font-weight: bold;
-}
-
-.sizeInfoDetailCol {
+  }
+  
+  .sizeInfoDetailCol {
     color: gray;
     text-align: right;
-}
-
-.sizeInfoDescCol {
+  }
+  
+  .sizeInfoDescCol {
     font-style: italic;
-}
-
-/************************************************************************************************/
-/* Summary */
-
-.netSummaryRow .netReceivingBar {
+  }
+  
+  /************************************************************************************************/
+  /* Summary */
+  
+  .netSummaryRow .netReceivingBar {
     background: #BBBBBB;
     border: none;
-}
-
-.netSummaryLabel {
+  }
+  
+  .netSummaryLabel {
     color: #222222;
-}
-
-.netSummaryRow {
+  }
+  
+  .netSummaryRow {
     background: #BBBBBB !important;
     font-weight: bold;
-}
-
-.netSummaryRow .netBar {
+  }
+  
+  .netSummaryRow .netBar {
     border-right-color: #BBBBBB;
-}
-
-.netSummaryRow > .netCol {
+  }
+  
+  .netSummaryRow>.netCol {
     border-top: 1px solid #999999;
     border-bottom: 2px solid;
     -moz-border-bottom-colors: #EFEFEF #999999;
     padding-top: 1px;
     padding-bottom: 2px;
-}
-
-.netSummaryRow > .netHrefCol:hover {
+  }
+  
+  .netSummaryRow>.netHrefCol:hover {
     background: transparent !important;
-}
-
-.netCountLabel {
+  }
+  
+  .netCountLabel {
     padding-left: 18px;
-}
-
-.netTotalSizeCol {
+  }
+  
+  .netTotalSizeCol {
     text-align: right;
     padding-right: 10px;
-}
-
-.netTotalTimeCol {
+  }
+  
+  .netTotalTimeCol {
     text-align: right;
-}
-
-.netCacheSizeLabel {
+  }
+  
+  .netCacheSizeLabel {
     position: absolute;
     z-index: 1000;
     left: 0;
     top: 0;
-}
-
-/************************************************************************************************/
-
-.netLimitRow {
+  }
+  
+  /************************************************************************************************/
+  
+  .netLimitRow {
     background: rgb(255, 255, 225) !important;
-    font-weight:normal;
+    font-weight: normal;
     color: black;
-    font-weight:normal;
-}
-
-.netLimitLabel {
+    font-weight: normal;
+  }
+  
+  .netLimitLabel {
     padding-left: 18px;
-}
-
-.netLimitRow > .netCol {
+  }
+  
+  .netLimitRow>.netCol {
     border-bottom: 2px solid;
     -moz-border-bottom-colors: #EFEFEF #999999;
     vertical-align: middle !important;
     padding-top: 2px;
     padding-bottom: 2px;
-}
-
-.netLimitButton {
+  }
+  
+  .netLimitButton {
     font-size: 11px;
     padding-top: 1px;
     padding-bottom: 1px;
-}
-
-/************************************************************************************************/
-
-.netInfoCol {
+  }
+  
+  /************************************************************************************************/
+  
+  .netInfoCol {
     border-top: 1px solid #EEEEEE;
     background: url(chrome://firebug/skin/group.gif) repeat-x #FFFFFF;
-}
-
-.netInfoBody {
+  }
+  
+  .netInfoBody {
     margin: 10px 0 4px 10px;
-}
-
-.netInfoTabs {
+  }
+  
+  .netInfoTabs {
     position: relative;
     padding-left: 17px;
-}
-
-.netInfoTab {
+  }
+  
+  .netInfoTab {
     position: relative;
     top: -3px;
     margin-top: 10px;
@@ -882,49 +881,49 @@ h1.groupHeader {
     font-weight: bold;
     color: #565656;
     cursor: pointer;
-}
-
-/*.netInfoTab:hover {
-    cursor: pointer;
-}*/
-
-/* replaced by .netInfoTabSelected for IE6 support
-.netInfoTab[selected="true"] {
+  }
+  
+  /*.netInfoTab:hover {
+      cursor: pointer;
+  }*/
+  
+  /* replaced by .netInfoTabSelected for IE6 support
+  .netInfoTab[selected="true"] {
+      cursor: default !important;
+      border: 1px solid #D7D7D7 !important;
+      border-bottom: none !important;
+      -moz-border-radius: 4px 4px 0 0;
+      background-color: #FFFFFF;
+  }
+  /**/
+  .netInfoTabSelected {
     cursor: default !important;
     border: 1px solid #D7D7D7 !important;
     border-bottom: none !important;
     -moz-border-radius: 4px 4px 0 0;
     background-color: #FFFFFF;
-}
-/**/
-.netInfoTabSelected {
-    cursor: default !important;
-    border: 1px solid #D7D7D7 !important;
-    border-bottom: none !important;
-    -moz-border-radius: 4px 4px 0 0;
-    background-color: #FFFFFF;
-}
-
-.logRow-netInfo.error .netInfoTitle {
+  }
+  
+  .logRow-netInfo.error .netInfoTitle {
     color: red;
-}
-
-.logRow-netInfo.loading .netInfoResponseText {
+  }
+  
+  .logRow-netInfo.loading .netInfoResponseText {
     font-style: italic;
     color: #888888;
-}
-
-.loading .netInfoResponseHeadersTitle {
+  }
+  
+  .loading .netInfoResponseHeadersTitle {
     display: none;
-}
-
-.netInfoResponseSizeLimit {
+  }
+  
+  .netInfoResponseSizeLimit {
     font-family: Lucida Grande, Tahoma, sans-serif;
     padding-top: 10px;
     font-size: 11px;
-}
-
-.netInfoText {
+  }
+  
+  .netInfoText {
     display: none;
     margin: 0;
     border: 1px solid #D7D7D7;
@@ -934,44 +933,45 @@ h1.groupHeader {
     font-family: Monaco, monospace;
     /* white-space: pre; */
     /*overflow-x: auto; HTML is damaged in case of big (2-3MB) responses */
-}
-
-/* replaced by .netInfoTextSelected for IE6 support 
-.netInfoText[selected="true"] {
+  }
+  
+  /* replaced by .netInfoTextSelected for IE6 support 
+  .netInfoText[selected="true"] {
+      display: block;
+  }
+  /**/
+  .netInfoTextSelected {
     display: block;
-}
-/**/
-.netInfoTextSelected {
-    display: block;
-}
-
-.netInfoParamName {
+  }
+  
+  .netInfoParamName {
     padding-right: 10px;
     font-family: Lucida Grande, Tahoma, sans-serif;
     font-weight: bold;
     vertical-align: top;
     text-align: right;
     white-space: nowrap;
-}
-
-.netInfoPostText .netInfoParamName {
-    width: 1px; /* Google Chrome need this otherwise the first column of 
-                   the post variables table will be larger than expected */
-}
-
-.netInfoParamValue {
+  }
+  
+  .netInfoPostText .netInfoParamName {
+    width: 1px;
+    /* Google Chrome need this otherwise the first column of 
+                     the post variables table will be larger than expected */
+  }
+  
+  .netInfoParamValue {
     width: 100%;
-}
-
-.netInfoHeadersText,
-.netInfoPostText,
-.netInfoPutText {
+  }
+  
+  .netInfoHeadersText,
+  .netInfoPostText,
+  .netInfoPutText {
     padding-top: 0;
-}
-
-.netInfoHeadersGroup,
-.netInfoPostParams,
-.netInfoPostSource {
+  }
+  
+  .netInfoHeadersGroup,
+  .netInfoPostParams,
+  .netInfoPostSource {
     margin-bottom: 4px;
     border-bottom: 1px solid #D7D7D7;
     padding-top: 8px;
@@ -979,354 +979,356 @@ h1.groupHeader {
     font-family: Lucida Grande, Tahoma, sans-serif;
     font-weight: bold;
     color: #565656;
-}
-
-.netInfoPostParamsTable,
-.netInfoPostPartsTable,
-.netInfoPostJSONTable,
-.netInfoPostXMLTable,
-.netInfoPostSourceTable {
+  }
+  
+  .netInfoPostParamsTable,
+  .netInfoPostPartsTable,
+  .netInfoPostJSONTable,
+  .netInfoPostXMLTable,
+  .netInfoPostSourceTable {
     margin-bottom: 10px;
     width: 100%;
-}
-
-.netInfoPostContentType {
+  }
+  
+  .netInfoPostContentType {
     color: #bdbdbd;
     padding-left: 50px;
     font-weight: normal;
-}
-
-.netInfoHtmlPreview {
+  }
+  
+  .netInfoHtmlPreview {
     border: 0;
     width: 100%;
-    height:100%;
-}
-
-/************************************************************************************************/
-/* Request & Response Headers */
-
-.netHeadersViewSource {
+    height: 100%;
+  }
+  
+  /************************************************************************************************/
+  /* Request & Response Headers */
+  
+  .netHeadersViewSource {
     color: #bdbdbd;
     margin-left: 200px;
     font-weight: normal;
-}
-
-.netHeadersViewSource:hover {
+  }
+  
+  .netHeadersViewSource:hover {
     color: blue;
     cursor: pointer;
-}
-
-/************************************************************************************************/
-
-.netActivationRow,
-.netPageSeparatorRow {
+  }
+  
+  /************************************************************************************************/
+  
+  .netActivationRow,
+  .netPageSeparatorRow {
     background: rgb(229, 229, 229) !important;
     font-weight: normal;
     color: black;
-}
-
-.netActivationLabel {
+  }
+  
+  .netActivationLabel {
     background: url(chrome://firebug/skin/infoIcon.png) no-repeat 3px 2px;
     padding-left: 22px;
-}
-
-/************************************************************************************************/
-
-.netPageSeparatorRow {
+  }
+  
+  /************************************************************************************************/
+  
+  .netPageSeparatorRow {
     height: 5px !important;
-}
-
-.netPageSeparatorLabel {
+  }
+  
+  .netPageSeparatorLabel {
     padding-left: 22px;
     height: 5px !important;
-}
-
-.netPageRow {
+  }
+  
+  .netPageRow {
     background-color: rgb(255, 255, 255);
-}
-
-.netPageRow:hover {
+  }
+  
+  .netPageRow:hover {
     background: #EFEFEF;
-}
-
-.netPageLabel {
+  }
+  
+  .netPageLabel {
     padding: 1px 0 2px 18px !important;
     font-weight: bold;
-}
-
-/************************************************************************************************/
-
-.netActivationRow > .netCol {
+  }
+  
+  /************************************************************************************************/
+  
+  .netActivationRow>.netCol {
     border-bottom: 2px solid;
     -moz-border-bottom-colors: #EFEFEF #999999;
     padding-top: 2px;
     padding-bottom: 3px;
-}
-/*
-.useA11y .panelNode-net .a11yFocus:focus,
-.useA11y .panelNode-net .focusRow:focus {
-    outline-offset: -2px;
-    background-color: #FFFFD6 !important;
-}
-
-.useA11y .panelNode-net .netHeaderCell:focus,
-.useA11y .panelNode-net :focus .netHeaderCell,
-.useA11y .panelNode-net :focus .netReceivingBar,
-.useA11y .netSummaryRow :focus .netBar,
-.useA11y .netSummaryRow:focus .netBar {
-    background-color: #FFFFD6;
-    background-image: none;
-    border-color: #FFFFD6;
-}
-/**/
-
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/* Windows */
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-
-
-/************************************************************************************************/
-/* Twisties */
-
-/* IE6 has problems with > operator, and multiple classes */
-/*.twisty,
-.logRow-errorMessage > .hasTwisty > .errorTitle,
- /* avoid rule not being parsed IE6 */
-.logRow-spy .spyHead .spyTitle,
-.logGroup .logGroupLabel,
-.hasChildren .memberLabelCell .memberLabel,
-.hasHeaders .netHrefLabel {
+  }
+  
+  /*
+  .useA11y .panelNode-net .a11yFocus:focus,
+  .useA11y .panelNode-net .focusRow:focus {
+      outline-offset: -2px;
+      background-color: #FFFFD6 !important;
+  }
+  
+  .useA11y .panelNode-net .netHeaderCell:focus,
+  .useA11y .panelNode-net :focus .netHeaderCell,
+  .useA11y .panelNode-net :focus .netReceivingBar,
+  .useA11y .netSummaryRow :focus .netBar,
+  .useA11y .netSummaryRow:focus .netBar {
+      background-color: #FFFFD6;
+      background-image: none;
+      border-color: #FFFFD6;
+  }
+  /**/
+  
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /* Windows */
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  
+  /************************************************************************************************/
+  /* Twisties */
+  
+  /* IE6 has problems with > operator, and multiple classes */
+  /*.twisty,
+  .logRow-errorMessage > .hasTwisty > .errorTitle,
+   /* avoid rule not being parsed IE6 */
+  .logRow-spy .spyHead .spyTitle,
+  .logGroup .logGroupLabel,
+  .hasChildren .memberLabelCell .memberLabel,
+  .hasHeaders .netHrefLabel {
     background-image: url(tree_open.gif);
     background-repeat: no-repeat;
     background-position: 2px 2px;
-}
-/*
-.logRow-errorMessage > .hasTwisty.opened > .errorTitle,
-/* avoid rule not being parsed IE6 */
-.opened .spyHead .spyTitle,
-.opened .logGroupLabel, 
-.opened .memberLabelCell .memberLabel/*,
-.nodeBox.highlightOpen > .nodeLabel > .twisty,
-.nodeBox.open > .nodeLabel > .twisty,
-.netRow.opened > .netCol > .netHrefLabel /* avoid rule not being parsed IE6 */ {
+  }
+  
+  /*
+  .logRow-errorMessage > .hasTwisty.opened > .errorTitle,
+  /* avoid rule not being parsed IE6 */
+  .opened .spyHead .spyTitle,
+  .opened .logGroupLabel,
+  .opened .memberLabelCell .memberLabel
+  
+  /*,
+  .nodeBox.highlightOpen > .nodeLabel > .twisty,
+  .nodeBox.open > .nodeLabel > .twisty,
+  .netRow.opened > .netCol > .netHrefLabel /* avoid rule not being parsed IE6 */
+    {
     background-image: url(tree_close.gif);
-}
-
-.twisty {
+  }
+  
+  .twisty {
     background-position: 2px 0;
-}
-
-
-
-
-
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/* Console */
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-
-
-/* See license.txt for terms of usage */
-
-.panelNode-console {
+  }
+  
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /* Console */
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  
+  /* See license.txt for terms of usage */
+  
+  .panelNode-console {
     overflow-x: hidden;
-}
-
-.objectLink {
+  }
+  
+  .objectLink {
     text-decoration: none;
-}
-
-.objectLink:hover {
+  }
+  
+  .objectLink:hover {
     cursor: pointer;
     text-decoration: underline;
-}
-
-.logRow {
+  }
+  
+  .logRow {
     position: relative;
     margin: 0;
     border-bottom: 1px solid #D7D7D7;
     padding: 2px 4px 1px 6px;
     background-color: #FFFFFF;
-    overflow: hidden !important; /* IE need this to avoid disappearing bug with collapsed logs */
-}
-
-.useA11y .logRow:focus {
+    overflow: hidden !important;
+    /* IE need this to avoid disappearing bug with collapsed logs */
+  }
+  
+  .useA11y .logRow:focus {
     border-bottom: 1px solid #000000 !important;
     outline: none !important;
     background-color: #FFFFAD !important;
-}
-
-.useA11y .logRow:focus a.objectLink-sourceLink {
+  }
+  
+  .useA11y .logRow:focus a.objectLink-sourceLink {
     background-color: #FFFFAD;
-}
-
-.useA11y .a11yFocus:focus, .useA11y .objectBox:focus {
+  }
+  
+  .useA11y .a11yFocus:focus,
+  .useA11y .objectBox:focus {
     outline: 2px solid #FF9933;
     background-color: #FFFFAD;
-}
-
-.useA11y .objectBox-null:focus, .useA11y .objectBox-undefined:focus{
+  }
+  
+  .useA11y .objectBox-null:focus,
+  .useA11y .objectBox-undefined:focus {
     background-color: #888888 !important;
-}
-
-.useA11y .logGroup.opened > .logRow {
+  }
+  
+  .useA11y .logGroup.opened>.logRow {
     border-bottom: 1px solid #ffffff;
-}
-
-.logGroup {
+  }
+  
+  .logGroup {
     background: url(group.gif) repeat-x #FFFFFF;
     padding: 0 !important;
     border: none !important;
-}
-
-.logGroupBody {
+  }
+  
+  .logGroupBody {
     display: none;
     margin-left: 16px;
     border-left: 1px solid #D7D7D7;
     border-top: 1px solid #D7D7D7;
     background: #FFFFFF;
-}
-
-.logGroup > .logRow {
+  }
+  
+  .logGroup>.logRow {
     background-color: transparent !important;
     font-weight: bold;
-}
-
-.logGroup.opened > .logRow {
+  }
+  
+  .logGroup.opened>.logRow {
     border-bottom: none;
-}
-
-.logGroup.opened > .logGroupBody {
+  }
+  
+  .logGroup.opened>.logGroupBody {
     display: block;
-}
-
-/*****************************************************************************************/
-
-.logRow-command > .objectBox-text {
+  }
+  
+  /*****************************************************************************************/
+  
+  .logRow-command>.objectBox-text {
     font-family: Monaco, monospace;
     color: #0000FF;
     white-space: pre-wrap;
-}
-
-.logRow-info,
-.logRow-warn,
-.logRow-error,
-.logRow-assert,
-.logRow-warningMessage,
-.logRow-errorMessage {
+  }
+  
+  .logRow-info,
+  .logRow-warn,
+  .logRow-error,
+  .logRow-assert,
+  .logRow-warningMessage,
+  .logRow-errorMessage {
     padding-left: 22px;
     background-repeat: no-repeat;
     background-position: 4px 2px;
-}
-
-.logRow-assert,
-.logRow-warningMessage,
-.logRow-errorMessage {
+  }
+  
+  .logRow-assert,
+  .logRow-warningMessage,
+  .logRow-errorMessage {
     padding-top: 0;
     padding-bottom: 0;
-}
-
-.logRow-info,
-.logRow-info .objectLink-sourceLink {
+  }
+  
+  .logRow-info,
+  .logRow-info .objectLink-sourceLink {
     background-color: #FFFFFF;
-}
-
-.logRow-warn,
-.logRow-warningMessage,
-.logRow-warn .objectLink-sourceLink,
-.logRow-warningMessage .objectLink-sourceLink {
+  }
+  
+  .logRow-warn,
+  .logRow-warningMessage,
+  .logRow-warn .objectLink-sourceLink,
+  .logRow-warningMessage .objectLink-sourceLink {
     background-color: cyan;
-}
-
-.logRow-error,
-.logRow-assert,
-.logRow-errorMessage,
-.logRow-error .objectLink-sourceLink,
-.logRow-errorMessage .objectLink-sourceLink {
+  }
+  
+  .logRow-error,
+  .logRow-assert,
+  .logRow-errorMessage,
+  .logRow-error .objectLink-sourceLink,
+  .logRow-errorMessage .objectLink-sourceLink {
     background-color: LightYellow;
-}
-
-.logRow-error,
-.logRow-assert,
-.logRow-errorMessage {
+  }
+  
+  .logRow-error,
+  .logRow-assert,
+  .logRow-errorMessage {
     color: #FF0000;
-}
-
-.logRow-info {
+  }
+  
+  .logRow-info {
     /*background-image: url(chrome://firebug/skin/infoIcon.png);*/
-}
-
-.logRow-warn,
-.logRow-warningMessage {
+  }
+  
+  .logRow-warn,
+  .logRow-warningMessage {
     /*background-image: url(chrome://firebug/skin/warningIcon.png);*/
-}
-
-.logRow-error,
-.logRow-assert,
-.logRow-errorMessage {
+  }
+  
+  .logRow-error,
+  .logRow-assert,
+  .logRow-errorMessage {
     /*background-image: url(chrome://firebug/skin/errorIcon.png);*/
-}
-
-/*****************************************************************************************/
-
-.objectBox-string,
-.objectBox-text,
-.objectBox-number,
-.objectLink-element,
-.objectLink-textNode,
-.objectLink-function,
-.objectBox-stackTrace,
-.objectLink-profile {
+  }
+  
+  /*****************************************************************************************/
+  
+  .objectBox-string,
+  .objectBox-text,
+  .objectBox-number,
+  .objectLink-element,
+  .objectLink-textNode,
+  .objectLink-function,
+  .objectBox-stackTrace,
+  .objectLink-profile {
     font-family: Monaco, monospace;
-}
-
-.objectBox-string,
-.objectBox-text,
-.objectLink-textNode {
+  }
+  
+  .objectBox-string,
+  .objectBox-text,
+  .objectLink-textNode {
     white-space: pre-wrap;
-}
-
-.objectBox-number,
-.objectLink-styleRule,
-.objectLink-element,
-.objectLink-textNode {
+  }
+  
+  .objectBox-number,
+  .objectLink-styleRule,
+  .objectLink-element,
+  .objectLink-textNode {
     color: #000088;
-}
-
-.objectBox-string {
+  }
+  
+  .objectBox-string {
     color: #FF0000;
-}
-
-.objectLink-function,
-.objectBox-stackTrace,
-.objectLink-profile  {
+  }
+  
+  .objectLink-function,
+  .objectBox-stackTrace,
+  .objectLink-profile {
     color: DarkGreen;
-}
-
-.objectBox-null,
-.objectBox-undefined {
+  }
+  
+  .objectBox-null,
+  .objectBox-undefined {
     padding: 0 2px;
     border: 1px solid #666666;
     background-color: #888888;
     color: #FFFFFF;
-}
-
-.objectBox-exception {
+  }
+  
+  .objectBox-exception {
     padding: 0 2px 0 18px;
     /*background: url(chrome://firebug/skin/errorIcon-sm.png) no-repeat 0 0;*/
     color: red;
-}
-
-.objectLink-sourceLink {
+  }
+  
+  .objectLink-sourceLink {
     position: absolute;
     right: 4px;
     top: 2px;
@@ -1334,44 +1336,44 @@ h1.groupHeader {
     font-family: Lucida Grande, sans-serif;
     font-weight: bold;
     color: #0000FF;
-}
-
-/************************************************************************************************/
-
-.errorTitle {
+  }
+  
+  /************************************************************************************************/
+  
+  .errorTitle {
     margin-top: 0px;
     margin-bottom: 1px;
     padding-top: 2px;
     padding-bottom: 2px;
-}
-
-.errorTrace {
+  }
+  
+  .errorTrace {
     margin-left: 17px;
-}
-
-.errorSourceBox {
+  }
+  
+  .errorSourceBox {
     margin: 2px 0;
-}
-
-.errorSource-none {
+  }
+  
+  .errorSource-none {
     display: none;
-}
-
-.errorSource-syntax > .errorBreak {
+  }
+  
+  .errorSource-syntax>.errorBreak {
     visibility: hidden;
-}
-
-.errorSource {
+  }
+  
+  .errorSource {
     cursor: pointer;
     font-family: Monaco, monospace;
     color: DarkGreen;
-}
-
-.errorSource:hover {
+  }
+  
+  .errorSource:hover {
     text-decoration: underline;
-}
-
-.errorBreak {
+  }
+  
+  .errorBreak {
     cursor: pointer;
     display: none;
     margin: 0 6px 0 0;
@@ -1380,312 +1382,312 @@ h1.groupHeader {
     vertical-align: bottom;
     /*background: url(chrome://firebug/skin/breakpoint.png) no-repeat;*/
     opacity: 0.1;
-}
-
-.hasBreakSwitch .errorBreak {
+  }
+  
+  .hasBreakSwitch .errorBreak {
     display: inline;
-}
-
-.breakForError .errorBreak {
+  }
+  
+  .breakForError .errorBreak {
     opacity: 1;
-}
-
-.assertDescription {
+  }
+  
+  .assertDescription {
     margin: 0;
-}
-
-/************************************************************************************************/
-
-.logRow-profile > .logRow > .objectBox-text {
+  }
+  
+  /************************************************************************************************/
+  
+  .logRow-profile>.logRow>.objectBox-text {
     font-family: Lucida Grande, Tahoma, sans-serif;
     color: #000000;
-}
-
-.logRow-profile > .logRow > .objectBox-text:last-child {
+  }
+  
+  .logRow-profile>.logRow>.objectBox-text:last-child {
     color: #555555;
     font-style: italic;
-}
-
-.logRow-profile.opened > .logRow {
+  }
+  
+  .logRow-profile.opened>.logRow {
     padding-bottom: 4px;
-}
-
-.profilerRunning > .logRow {
+  }
+  
+  .profilerRunning>.logRow {
     /*background: transparent url(chrome://firebug/skin/loading_16.gif) no-repeat 2px 0 !important;*/
     padding-left: 22px !important;
-}
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-.profileSizer {
-    width:100%;
-    overflow-x:auto;
+  }
+  
+  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+  
+  .profileSizer {
+    width: 100%;
+    overflow-x: auto;
     overflow-y: scroll;
-}
-
-.profileTable {
+  }
+  
+  .profileTable {
     border-bottom: 1px solid #D7D7D7;
     padding: 0 0 4px 0;
-}
-
-.profileTable tr[odd="1"] {
+  }
+  
+  .profileTable tr[odd="1"] {
     background-color: #F5F5F5;
-    vertical-align:middle;
-}
-
-.profileTable a {
-    vertical-align:middle;
-}
-
-.profileTable td {
+    vertical-align: middle;
+  }
+  
+  .profileTable a {
+    vertical-align: middle;
+  }
+  
+  .profileTable td {
     padding: 1px 4px 0 4px;
-}
-
-.headerCell {
+  }
+  
+  .headerCell {
     cursor: pointer;
     -moz-user-select: none;
     border-bottom: 1px solid #9C9C9C;
     padding: 0 !important;
     font-weight: bold;
     /*background: #BBBBBB url(chrome://firebug/skin/tableHeader.gif) repeat-x;*/
-}
-
-.headerCellBox {
+  }
+  
+  .headerCellBox {
     padding: 2px 4px;
     border-left: 1px solid #D9D9D9;
     border-right: 1px solid #9C9C9C;
-}
-
-.headerCell:hover:active {
+  }
+  
+  .headerCell:hover:active {
     /*background: #959595 url(chrome://firebug/skin/tableHeaderActive.gif) repeat-x;*/
-}
-
-.headerSorted {
+  }
+  
+  .headerSorted {
     /*background: #7D93B2 url(chrome://firebug/skin/tableHeaderSorted.gif) repeat-x;*/
-}
-
-.headerSorted > .headerCellBox {
+  }
+  
+  .headerSorted>.headerCellBox {
     border-right-color: #6B7C93;
     /*background: url(chrome://firebug/skin/arrowDown.png) no-repeat right;*/
-}
-
-.headerSorted.sortedAscending > .headerCellBox {
+  }
+  
+  .headerSorted.sortedAscending>.headerCellBox {
     /*background-image: url(chrome://firebug/skin/arrowUp.png);*/
-}
-
-.headerSorted:hover:active {
+  }
+  
+  .headerSorted:hover:active {
     /*background: #536B90 url(chrome://firebug/skin/tableHeaderSortedActive.gif) repeat-x;*/
-}
-
-.linkCell {
+  }
+  
+  .linkCell {
     text-align: right;
-}
-
-.linkCell > .objectLink-sourceLink {
+  }
+  
+  .linkCell>.objectLink-sourceLink {
     position: static;
-}
-
-/*****************************************************************************************/
-
-.logRow-stackTrace {
+  }
+  
+  /*****************************************************************************************/
+  
+  .logRow-stackTrace {
     padding-top: 0;
     background: #f8f8f8;
-}
-
-.logRow-stackTrace > .objectBox-stackFrame {
+  }
+  
+  .logRow-stackTrace>.objectBox-stackFrame {
     position: relative;
     padding-top: 2px;
-}
-
-/************************************************************************************************/
-
-.objectLink-object {
+  }
+  
+  /************************************************************************************************/
+  
+  .objectLink-object {
     font-family: Lucida Grande, sans-serif;
     font-weight: bold;
     color: DarkGreen;
     white-space: pre-wrap;
-}
-
-.objectPropValue {
+  }
+  
+  .objectPropValue {
     font-weight: normal;
     font-style: italic;
     color: #555555;
-}
-
-/************************************************************************************************/
-
-.selectorTag,
-.selectorId,
-.selectorClass {
+  }
+  
+  /************************************************************************************************/
+  
+  .selectorTag,
+  .selectorId,
+  .selectorClass {
     font-family: Monaco, monospace;
     font-weight: normal;
-}
-
-.selectorTag {
+  }
+  
+  .selectorTag {
     color: #0000FF;
-}
-
-.selectorId {
+  }
+  
+  .selectorId {
     color: DarkBlue;
-}
-
-.selectorClass {
+  }
+  
+  .selectorClass {
     color: red;
-}
-
-.selectorHidden > .selectorTag {
+  }
+  
+  .selectorHidden>.selectorTag {
     color: #5F82D9;
-}
-
-.selectorHidden > .selectorId {
+  }
+  
+  .selectorHidden>.selectorId {
     color: #888888;
-}
-
-.selectorHidden > .selectorClass {
+  }
+  
+  .selectorHidden>.selectorClass {
     color: #D86060;
-}
-
-.selectorValue {
+  }
+  
+  .selectorValue {
     font-family: Lucida Grande, sans-serif;
     font-style: italic;
     color: #555555;
-}
-
-/*****************************************************************************************/
-
-.panelNode.searching .logRow {
+  }
+  
+  /*****************************************************************************************/
+  
+  .panelNode.searching .logRow {
     display: none;
-}
-
-.logRow.matched {
+  }
+  
+  .logRow.matched {
     display: block !important;
-}
-
-.logRow.matching {
+  }
+  
+  .logRow.matching {
     position: absolute;
     left: -1000px;
     top: -1000px;
     max-width: 0;
     max-height: 0;
     overflow: hidden;
-}
-
-/*****************************************************************************************/
-
-.arrayLeftBracket,
-.arrayRightBracket,
-.arrayComma {
+  }
+  
+  /*****************************************************************************************/
+  
+  .arrayLeftBracket,
+  .arrayRightBracket,
+  .arrayComma {
     font-family: Monaco, monospace;
-}
-
-.arrayLeftBracket,
-.arrayRightBracket {
+  }
+  
+  .arrayLeftBracket,
+  .arrayRightBracket {
     font-weight: bold;
-}
-
-.arrayLeftBracket {
+  }
+  
+  .arrayLeftBracket {
     margin-right: 4px;
-}
-
-.arrayRightBracket {
+  }
+  
+  .arrayRightBracket {
     margin-left: 4px;
-}
-
-/*****************************************************************************************/
-
-.logRow-dir {
+  }
+  
+  /*****************************************************************************************/
+  
+  .logRow-dir {
     padding: 0;
-}
-
-/************************************************************************************************/
-
-/*
-.logRow-errorMessage > .hasTwisty > .errorTitle,
-.logRow-spy .spyHead .spyTitle,
-.logGroup > .logRow 
-*/
-.logRow-errorMessage .hasTwisty .errorTitle,
-.logRow-spy .spyHead .spyTitle,
-.logGroup .logRow {
+  }
+  
+  /************************************************************************************************/
+  
+  /*
+  .logRow-errorMessage > .hasTwisty > .errorTitle,
+  .logRow-spy .spyHead .spyTitle,
+  .logGroup > .logRow 
+  */
+  .logRow-errorMessage .hasTwisty .errorTitle,
+  .logRow-spy .spyHead .spyTitle,
+  .logGroup .logRow {
     cursor: pointer;
     padding-left: 18px;
     background-repeat: no-repeat;
     background-position: 3px 3px;
-}
-
-.logRow-errorMessage > .hasTwisty > .errorTitle {
+  }
+  
+  .logRow-errorMessage>.hasTwisty>.errorTitle {
     background-position: 2px 3px;
-}
-
-.logRow-errorMessage > .hasTwisty > .errorTitle:hover,
-.logRow-spy .spyHead .spyTitle:hover,
-.logGroup > .logRow:hover {
+  }
+  
+  .logRow-errorMessage>.hasTwisty>.errorTitle:hover,
+  .logRow-spy .spyHead .spyTitle:hover,
+  .logGroup>.logRow:hover {
     text-decoration: underline;
-}
-
-/*****************************************************************************************/
-
-.logRow-spy {
+  }
+  
+  /*****************************************************************************************/
+  
+  .logRow-spy {
     padding: 0 !important;
-}
-
-.logRow-spy,
-.logRow-spy .objectLink-sourceLink {
+  }
+  
+  .logRow-spy,
+  .logRow-spy .objectLink-sourceLink {
     background: url(group.gif) repeat-x #FFFFFF;
     padding-right: 4px;
     right: 0;
-}
-
-.logRow-spy.opened {
+  }
+  
+  .logRow-spy.opened {
     padding-bottom: 4px;
     border-bottom: none;
-}
-
-.spyTitle {
+  }
+  
+  .spyTitle {
     color: #000000;
     font-weight: bold;
     -moz-box-sizing: padding-box;
     overflow: hidden;
     z-index: 100;
     padding-left: 18px;
-}
-
-.spyCol {
+  }
+  
+  .spyCol {
     padding: 0;
     white-space: nowrap;
     height: 16px;
-}
-
-.spyTitleCol:hover > .objectLink-sourceLink,
-.spyTitleCol:hover > .spyTime,
-.spyTitleCol:hover > .spyStatus,
-.spyTitleCol:hover > .spyTitle {
+  }
+  
+  .spyTitleCol:hover>.objectLink-sourceLink,
+  .spyTitleCol:hover>.spyTime,
+  .spyTitleCol:hover>.spyStatus,
+  .spyTitleCol:hover>.spyTitle {
     display: none;
-}
-
-.spyFullTitle {
+  }
+  
+  .spyFullTitle {
     display: none;
     -moz-user-select: none;
     max-width: 100%;
     background-color: Transparent;
-}
-
-.spyTitleCol:hover > .spyFullTitle {
+  }
+  
+  .spyTitleCol:hover>.spyFullTitle {
     display: block;
-}
-
-.spyStatus {
+  }
+  
+  .spyStatus {
     padding-left: 10px;
     color: rgb(128, 128, 128);
-}
-
-.spyTime {
-    margin-left:4px;
-    margin-right:4px;
+  }
+  
+  .spyTime {
+    margin-left: 4px;
+    margin-right: 4px;
     color: rgb(128, 128, 128);
-}
-
-.spyIcon {
+  }
+  
+  .spyIcon {
     margin-right: 4px;
     margin-left: 4px;
     width: 16px;
@@ -1693,104 +1695,100 @@ h1.groupHeader {
     vertical-align: middle;
     background: transparent no-repeat 0 0;
     display: none;
-}
-
-.loading .spyHead .spyRow .spyIcon {
+  }
+  
+  .loading .spyHead .spyRow .spyIcon {
     background-image: url(loading_16.gif);
     display: block;
-}
-
-.logRow-spy.loaded:not(.error) .spyHead .spyRow .spyIcon {
+  }
+  
+  .logRow-spy.loaded:not(.error) .spyHead .spyRow .spyIcon {
     width: 0;
     margin: 0;
-}
-
-.logRow-spy.error .spyHead .spyRow .spyIcon {
+  }
+  
+  .logRow-spy.error .spyHead .spyRow .spyIcon {
     background-image: url(errorIcon-sm.png);
     display: block;
     background-position: 2px 2px;
-}
-
-.logRow-spy .spyHead .netInfoBody {
+  }
+  
+  .logRow-spy .spyHead .netInfoBody {
     display: none;
-}
-
-.logRow-spy.opened .spyHead .netInfoBody {
+  }
+  
+  .logRow-spy.opened .spyHead .netInfoBody {
     margin-top: 10px;
     display: block;
-}
-
-.logRow-spy.error .spyTitle,
-.logRow-spy.error .spyStatus,
-.logRow-spy.error .spyTime {
+  }
+  
+  .logRow-spy.error .spyTitle,
+  .logRow-spy.error .spyStatus,
+  .logRow-spy.error .spyTime {
     color: red;
-}
-
-.logRow-spy.loading .spyResponseText {
+  }
+  
+  .logRow-spy.loading .spyResponseText {
     font-style: italic;
     color: #888888;
-}
-
-/************************************************************************************************/
-
-.caption {
+  }
+  
+  /************************************************************************************************/
+  
+  .caption {
     font-family: Lucida Grande, Tahoma, sans-serif;
     font-weight: bold;
-    color:  #444444;
-}
-
-.warning {
+    color: #444444;
+  }
+  
+  .warning {
     padding: 10px;
     font-family: Lucida Grande, Tahoma, sans-serif;
     font-weight: bold;
-    color:  #888888;
-}
-
-
-
-
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/* DOM */
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-
-
-/* See license.txt for terms of usage */
-
-.panelNode-dom {
+    color: #888888;
+  }
+  
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /* DOM */
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  
+  /* See license.txt for terms of usage */
+  
+  .panelNode-dom {
     overflow-x: hidden !important;
-}
-
-.domTable {
+  }
+  
+  .domTable {
     font-size: 1em;
     width: 100%;
     table-layout: fixed;
     background: #fff;
-}
-
-.domTableIE {
+  }
+  
+  .domTableIE {
     width: auto;
-}
-
-.memberLabelCell {
+  }
+  
+  .memberLabelCell {
     padding: 2px 0 2px 0;
     vertical-align: top;
-}
-
-.memberValueCell {
+  }
+  
+  .memberValueCell {
     padding: 1px 0 1px 5px;
     display: block;
     overflow: hidden;
-}
-
-.memberLabel {
+  }
+  
+  .memberLabel {
     display: block;
     cursor: default;
-    -moz-user-select:  none;
+    -moz-user-select: none;
     overflow: hidden;
     /*position: absolute;*/
     padding-left: 18px;
@@ -1798,135 +1796,133 @@ h1.groupHeader {
     /*white-space: nowrap;*/
     background-color: #FFFFFF;
     text-decoration: none;
-}
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-.memberRow.hasChildren .memberLabelCell .memberLabel:hover {
+  }
+  
+  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+  
+  .memberRow.hasChildren .memberLabelCell .memberLabel:hover {
     cursor: pointer;
     color: blue;
     text-decoration: underline;
-}
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-.userLabel {
+  }
+  
+  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+  
+  .userLabel {
     color: #000000;
     font-weight: bold;
-}
-
-.userClassLabel {
+  }
+  
+  .userClassLabel {
     color: #E90000;
     font-weight: bold;
-}
-
-.userFunctionLabel {
+  }
+  
+  .userFunctionLabel {
     color: #025E2A;
     font-weight: bold;
-}
-
-.domLabel {
+  }
+  
+  .domLabel {
     color: #000000;
-}
-
-.domFunctionLabel {
+  }
+  
+  .domFunctionLabel {
     color: #025E2A;
-}
-
-.ordinalLabel {
+  }
+  
+  .ordinalLabel {
     color: SlateBlue;
     font-weight: bold;
-}
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-.scopesRow {
+  }
+  
+  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+  .scopesRow {
     padding: 2px 18px;
     background-color: LightYellow;
     border-bottom: 5px solid #BEBEBE;
     color: #666666;
-}
-.scopesLabel {
-    background-color:  LightYellow;
-}
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-.watchEditCell {
+  }
+  
+  .scopesLabel {
+    background-color: LightYellow;
+  }
+  
+  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+  
+  .watchEditCell {
     padding: 2px 18px;
     background-color: LightYellow;
     border-bottom: 1px solid #BEBEBE;
     color: #666666;
-}
-
-.editor-watchNewRow,
-.editor-memberRow {
+  }
+  
+  .editor-watchNewRow,
+  .editor-memberRow {
     font-family: Monaco, monospace !important;
-}
-
-.editor-memberRow {
+  }
+  
+  .editor-memberRow {
     padding: 1px 0 !important;
-}
-
-.editor-watchRow {
+  }
+  
+  .editor-watchRow {
     padding-bottom: 0 !important;
-}
-
-.watchRow > .memberLabelCell {
+  }
+  
+  .watchRow>.memberLabelCell {
     font-family: Monaco, monospace;
     padding-top: 1px;
     padding-bottom: 1px;
-}
-
-.watchRow > .memberLabelCell > .memberLabel {
+  }
+  
+  .watchRow>.memberLabelCell>.memberLabel {
     background-color: transparent;
-}
-
-.watchRow > .memberValueCell {
+  }
+  
+  .watchRow>.memberValueCell {
     padding-top: 2px;
     padding-bottom: 2px;
-}
-
-.watchRow > .memberLabelCell,
-.watchRow > .memberValueCell {
+  }
+  
+  .watchRow>.memberLabelCell,
+  .watchRow>.memberValueCell {
     background-color: #F5F5F5;
     border-bottom: 1px solid #BEBEBE;
-}
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-.watchToolbox {
+  }
+  
+  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+  
+  .watchToolbox {
     z-index: 2147483647;
     position: absolute;
     right: 0;
     padding: 1px 2px;
-}
-
-
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/*************************************************************************************************/
-/* FROM ORIGINAL FIREBUG */
-
-
-
-
-/************************************************************************************************
- CSS Not organized
-*************************************************************************************************/
-#fbConsole {
+  }
+  
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /*************************************************************************************************/
+  /* FROM ORIGINAL FIREBUG */
+  
+  /************************************************************************************************
+   CSS Not organized
+  *************************************************************************************************/
+  #fbConsole {
     overflow-x: hidden !important;
-}
-
-#fbCSS {
+  }
+  
+  #fbCSS {
     font: 1em Monaco, monospace;
     padding: 0 7px;
-}
-
-#fbstylesheetButtons select, #fbScriptButtons select {
+  }
+  
+  #fbstylesheetButtons select,
+  #fbScriptButtons select {
     font: 11px Lucida Grande, Tahoma, sans-serif;
     margin-top: 1px;
     padding-left: 3px;
@@ -1934,38 +1930,52 @@ h1.groupHeader {
     border: 1px inset #fff;
     width: 220px;
     outline: none;
-}
-
-.Selector { margin-top:10px }
-.CSSItem {margin-left: 4% }
-.CSSText { padding-left:20px; }
-.CSSProperty { color:#005500; }
-.CSSValue { padding-left:5px; color:#000088; }
-
-
-/************************************************************************************************
- Not organized
-*************************************************************************************************/
-
-#fbHTMLStatusBar {
+  }
+  
+  .Selector {
+    margin-top: 10px
+  }
+  
+  .CSSItem {
+    margin-left: 4%
+  }
+  
+  .CSSText {
+    padding-left: 20px;
+  }
+  
+  .CSSProperty {
+    color: #005500;
+  }
+  
+  .CSSValue {
+    padding-left: 5px;
+    color: #000088;
+  }
+  
+  /************************************************************************************************
+   Not organized
+  *************************************************************************************************/
+  
+  #fbHTMLStatusBar {
     display: inline;
-}
-
-.fbToolbarButtons {
+  }
+  
+  .fbToolbarButtons {
     display: none;
-}
-
-.fbStatusSeparator{
+  }
+  
+  .fbStatusSeparator {
     display: block;
     float: left;
     padding-top: 4px;
-}
-
-#fbStatusBarBox {
+  }
+  
+  #fbStatusBarBox {
     display: none;
-}
-
-#fbToolbarContent {
+  }
+  
+  #fbToolbarContent {
     display: block;
     position: absolute;
     _position: absolute;
@@ -1973,144 +1983,142 @@ h1.groupHeader {
     padding-top: 6px;
     height: 23px;
     clip: rect(0, 2048px, 27px, 0);
-}
-
-.fbTabMenuTarget {
+  }
+  
+  .fbTabMenuTarget {
     display: none !important;
     float: left;
     width: 10px;
     height: 10px;
     margin-top: 6px;
-    background: url(tabMenuTarget.png);   
-}
-
-.fbTabMenuTarget:hover {
-    background: url(tabMenuTargetHover.png);   
-}
-
-.fbShadow {
+    background: url(tabMenuTarget.png);
+  }
+  
+  .fbTabMenuTarget:hover {
+    background: url(tabMenuTargetHover.png);
+  }
+  
+  .fbShadow {
     float: left;
     background: url(shadowAlpha.png) no-repeat bottom right !important;
     background: url(shadow2.gif) no-repeat bottom right;
     margin: 10px 0 0 10px !important;
     margin: 10px 0 0 5px;
-}
-
-.fbShadowContent {
+  }
+  
+  .fbShadowContent {
     display: block;
     position: relative;
     background-color: #fff;
     border: 1px solid #a9a9a9;
     top: -6px;
     left: -6px;
-}
-
-.fbMenu {
+  }
+  
+  .fbMenu {
     display: none;
     position: absolute;
     font-size: 11px;
     z-index: 2147483647;
-}
-
-.fbMenuContent {
+  }
+  
+  .fbMenuContent {
     padding: 2px;
-}
-
-.fbMenuSeparator {
+  }
+  
+  .fbMenuSeparator {
     display: block;
     position: relative;
     padding: 1px 18px 0;
     text-decoration: none;
     color: #000;
-    cursor: default;    
+    cursor: default;
     background: #ACA899;
     margin: 4px 0;
-}
-
-.fbMenuOption
-{
+  }
+  
+  .fbMenuOption {
     display: block;
     position: relative;
     padding: 2px 18px;
     text-decoration: none;
     color: #000;
     cursor: default;
-}
-
-.fbMenuOption:hover
-{
+  }
+  
+  .fbMenuOption:hover {
     color: #fff;
     background: #316AC5;
-}
-
-.fbMenuGroup {
+  }
+  
+  .fbMenuGroup {
     background: transparent url(tabMenuPin.png) no-repeat right 0;
-}
-
-.fbMenuGroup:hover {
+  }
+  
+  .fbMenuGroup:hover {
     background: #316AC5 url(tabMenuPin.png) no-repeat right -17px;
-}
-
-.fbMenuGroupSelected {
+  }
+  
+  .fbMenuGroupSelected {
     color: #fff;
     background: #316AC5 url(tabMenuPin.png) no-repeat right -17px;
-}
-
-.fbMenuChecked  {
+  }
+  
+  .fbMenuChecked {
     background: transparent url(tabMenuCheckbox.png) no-repeat 4px 0;
-}
-
-.fbMenuChecked:hover {
+  }
+  
+  .fbMenuChecked:hover {
     background: #316AC5 url(tabMenuCheckbox.png) no-repeat 4px -17px;
-}
-
-.fbMenuRadioSelected {
+  }
+  
+  .fbMenuRadioSelected {
     background: transparent url(tabMenuRadio.png) no-repeat 4px 0;
-}
-
-.fbMenuRadioSelected:hover {
+  }
+  
+  .fbMenuRadioSelected:hover {
     background: #316AC5 url(tabMenuRadio.png) no-repeat 4px -17px;
-}
-
-.fbMenuShortcut {
-    padding-right: 85px; 
-}
-
-.fbMenuShortcutKey {
+  }
+  
+  .fbMenuShortcut {
+    padding-right: 85px;
+  }
+  
+  .fbMenuShortcutKey {
     position: absolute;
     right: 0;
     top: 2px;
     width: 77px;
-}
-
-#fbFirebugMenu {
+  }
+  
+  #fbFirebugMenu {
     top: 22px;
     left: 0;
-}
-
-.fbMenuDisabled {
+  }
+  
+  .fbMenuDisabled {
     color: #ACA899 !important;
-}
-
-#fbFirebugSettingsMenu {
+  }
+  
+  #fbFirebugSettingsMenu {
     left: 245px;
     top: 99px;
-}
-
-#fbConsoleMenu {
+  }
+  
+  #fbConsoleMenu {
     top: 42px;
     left: 48px;
-}
-
-.fbIconButton {
+  }
+  
+  .fbIconButton {
     display: block;
-}
-
-.fbIconButton {
+  }
+  
+  .fbIconButton {
     display: block;
-}
-
-.fbIconButton {
+  }
+  
+  .fbIconButton {
     display: block;
     float: left;
     height: 20px;
@@ -2119,9 +2127,9 @@ h1.groupHeader {
     margin-right: 2px;
     text-decoration: none;
     cursor: default;
-}
-
-.fbIconButton:hover {
+  }
+  
+  .fbIconButton:hover {
     position: relative;
     top: -1px;
     left: -1px;
@@ -2131,9 +2139,9 @@ h1.groupHeader {
     border: 1px solid #fff;
     border-bottom: 1px solid #bbb;
     border-right: 1px solid #bbb;
-}
-
-.fbIconPressed {
+  }
+  
+  .fbIconPressed {
     position: relative;
     margin-right: 0;
     _margin-right: 1px;
@@ -2144,14 +2152,12 @@ h1.groupHeader {
     border: 1px solid #bbb !important;
     border-bottom: 1px solid #cfcfcf !important;
     border-right: 1px solid #ddd !important;
-}
-
-
-
-/************************************************************************************************
- Error Popup
-*************************************************************************************************/
-#fbErrorPopup {
+  }
+  
+  /************************************************************************************************
+   Error Popup
+  *************************************************************************************************/
+  #fbErrorPopup {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -2159,9 +2165,9 @@ h1.groupHeader {
     width: 75px;
     background: url(sprite.png) #f1f2ee 0 0;
     z-index: 999;
-}
-
-#fbErrorPopupContent {
+  }
+  
+  #fbErrorPopupContent {
     position: absolute;
     right: 0;
     top: 1px;
@@ -2169,57 +2175,48 @@ h1.groupHeader {
     width: 75px;
     _width: 74px;
     border-left: 1px solid #aca899;
-}
-
-#fbErrorIndicator {
+  }
+  
+  #fbErrorIndicator {
     position: absolute;
     top: 2px;
     right: 5px;
-}
-
-
-
-
-
-
-
-
-
-
-.fbBtnInspectActive {
+  }
+  
+  .fbBtnInspectActive {
     background: #aaa;
     color: #fff !important;
-}
-
-/************************************************************************************************
- General
-*************************************************************************************************/
-.fbBody {
+  }
+  
+  /************************************************************************************************
+   General
+  *************************************************************************************************/
+  .fbBody {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    
+  
     font-family: Lucida Grande, Tahoma, sans-serif;
     font-size: 11px;
     background: #fff;
-}
-
-.clear {
+  }
+  
+  .clear {
     clear: both;
-}
-
-/************************************************************************************************
- Mini Chrome
-*************************************************************************************************/
-#fbMiniChrome {
+  }
+  
+  /************************************************************************************************
+   Mini Chrome
+  *************************************************************************************************/
+  #fbMiniChrome {
     display: none;
     right: 0;
     height: 27px;
     background: url(sprite.png) #f1f2ee 0 0;
     margin-left: 1px;
-}
-
-#fbMiniContent {
+  }
+  
+  #fbMiniContent {
     display: block;
     position: relative;
     left: -1px;
@@ -2227,61 +2224,60 @@ h1.groupHeader {
     top: 1px;
     height: 25px;
     border-left: 1px solid #aca899;
-}
-
-#fbToolbarSearch {
+  }
+  
+  #fbToolbarSearch {
     float: right;
     border: 1px solid #ccc;
     margin: 0 5px 0 0;
     background: #fff url(search.png) no-repeat 4px 2px !important;
     background: #fff url(search.gif) no-repeat 4px 2px;
-    padding-left: 20px;    
+    padding-left: 20px;
     font-size: 11px;
-}
-
-#fbToolbarErrors {
+  }
+  
+  #fbToolbarErrors {
     float: right;
     margin: 1px 4px 0 0;
     font-size: 11px;
-}
-
-#fbLeftToolbarErrors {
+  }
+  
+  #fbLeftToolbarErrors {
     float: left;
     margin: 7px 0px 0 5px;
     font-size: 11px;
-}
-
-.fbErrors {
+  }
+  
+  .fbErrors {
     padding-left: 20px;
     height: 14px;
     background: url(errorIcon.png) no-repeat !important;
     background: url(errorIcon.gif) no-repeat;
     color: #f00;
-    font-weight: bold;    
-}
-
-#fbMiniErrors {
+    font-weight: bold;
+  }
+  
+  #fbMiniErrors {
     display: inline;
     display: none;
     float: right;
     margin: 5px 2px 0 5px;
-}
-
-#fbMiniIcon {
+  }
+  
+  #fbMiniIcon {
     float: right;
     margin: 3px 4px 0;
     height: 20px;
     width: 20px;
-    float: right;    
+    float: right;
     background: url(sprite.png) 0 -135px;
     cursor: pointer;
-}
-
-
-/************************************************************************************************
- Master Layout
-*************************************************************************************************/
-#fbChrome {
+  }
+  
+  /************************************************************************************************
+   Master Layout
+  *************************************************************************************************/
+  #fbChrome {
     font-family: Lucida Grande, Tahoma, sans-serif;
     font-size: 11px;
     position: absolute;
@@ -2293,106 +2289,107 @@ h1.groupHeader {
     border-collapse: collapse;
     background: #fff;
     overflow: hidden;
-}
-
-#fbTop {
+  }
+  
+  #fbTop {
     height: 50px;
-}
-
-#fbToolbar {
+  }
+  
+  #fbToolbar {
     background: url(sprite.png) #d4d0c8 0 0;
     height: 28px;
     font-size: 11px;
-}
-
-#fbPanelBarBox {
+  }
+  
+  #fbPanelBarBox {
     background: url(sprite.png) #c5c1ba 0 -28px;
     height: 22px;
-}
-
-#fbContent {
+  }
+  
+  #fbContent {
     height: 100%;
     vertical-align: top;
-}
-
-#fbBottom {
+  }
+  
+  #fbBottom {
     height: 18px;
     background: #fff;
-}
-
-/************************************************************************************************
- Sub-Layout 
-*************************************************************************************************/
-
-/* fbToolbar 
-*************************************************************************************************/
-#fbToolbarIcon {
+  }
+  
+  /************************************************************************************************
+   Sub-Layout 
+  *************************************************************************************************/
+  
+  /* fbToolbar 
+  *************************************************************************************************/
+  #fbToolbarIcon {
     float: left;
     padding: 0 5px 0;
-}
-
-#fbToolbarIcon a {
+  }
+  
+  #fbToolbarIcon a {
     background: url(sprite.png) 0 -135px;
-}
-
-#fbToolbarButtons {
+  }
+  
+  #fbToolbarButtons {
     padding: 0 2px 0 5px;
-}
-
-#fbToolbarButtons {
+  }
+  
+  #fbToolbarButtons {
     padding: 0 2px 0 5px;
-}
-/*
-#fbStatusBarBox a {
-    text-decoration: none;
-    display: block;
-    float: left;
-    color: #000;
-    padding: 4px 5px;
-    margin: 0 0 0 1px;
-    cursor: default;
-}
-
-#fbStatusBarBox a:hover {
-    color: #333;
-    padding: 3px 4px;
-    border: 1px solid #fff;
-    border-bottom: 1px solid #bbb;
-    border-right: 1px solid #bbb;
-}
-/**/
-
-.fbButton {
+  }
+  
+  /*
+  #fbStatusBarBox a {
+      text-decoration: none;
+      display: block;
+      float: left;
+      color: #000;
+      padding: 4px 5px;
+      margin: 0 0 0 1px;
+      cursor: default;
+  }
+  
+  #fbStatusBarBox a:hover {
+      color: #333;
+      padding: 3px 4px;
+      border: 1px solid #fff;
+      border-bottom: 1px solid #bbb;
+      border-right: 1px solid #bbb;
+  }
+  /**/
+  
+  .fbButton {
     text-decoration: none;
     display: block;
     float: left;
     color: #000;
     padding: 4px 6px 4px 7px;
     cursor: default;
-}
-
-.fbButton:hover {
+  }
+  
+  .fbButton:hover {
     color: #333;
     padding: 3px 5px 3px 6px;
     border: 1px solid #fff;
     border-bottom: 1px solid #bbb;
     border-right: 1px solid #bbb;
-}
-
-.fbBtnPressed {
+  }
+  
+  .fbBtnPressed {
     background: #ECEBE3;
     padding: 3px 4px 2px 6px !important;
     margin: 1px 0 0 1px !important;
     border: 1px solid #ACA899 !important;
     border-color: #ACA899 #ECEBE3 #ECEBE3 #ACA899 !important;
-}
-
-#fbStatusBarBox {
+  }
+  
+  #fbStatusBarBox {
     top: 4px;
-    cursor: default;    
-}
-
-.fbToolbarSeparator {
+    cursor: default;
+  }
+  
+  .fbToolbarSeparator {
     overflow: hidden;
     border: 1px solid;
     border-color: transparent #fff transparent #777;
@@ -2400,28 +2397,27 @@ h1.groupHeader {
     height: 7px;
     margin: 6px 3px;
     float: left;
-}
-
-.fbBtnSelected {
+  }
+  
+  .fbBtnSelected {
     font-weight: bold;
-}
-
-.fbStatusBar {
+  }
+  
+  .fbStatusBar {
     color: #aca899;
-}
-
-.fbStatusBar a {
+  }
+  
+  .fbStatusBar a {
     text-decoration: none;
     color: black;
-}
-
-.fbStatusBar a:hover {
+  }
+  
+  .fbStatusBar a:hover {
     color: blue;
-    cursor: pointer;    
-}
-
-
-#fbWindowButtons {
+    cursor: pointer;
+  }
+  
+  #fbWindowButtons {
     position: absolute;
     white-space: nowrap;
     right: 0;
@@ -2431,64 +2427,68 @@ h1.groupHeader {
     padding: 8px 0 4px 5px;
     z-index: 6;
     background: url(sprite.png) #D4D0C8 0 0;
-}
-
-/* fbPanelBarBox
-*************************************************************************************************/
-
-#fbPanelBar1 {
-    width: 1024px; /* fixed width to avoid tabs breaking line */
+  }
+  
+  /* fbPanelBarBox
+  *************************************************************************************************/
+  
+  #fbPanelBar1 {
+    width: 1024px;
+    /* fixed width to avoid tabs breaking line */
     z-index: 8;
     left: 0;
     white-space: nowrap;
     background: url(sprite.png) #c5c1ba 0 -28px;
     position: absolute;
     left: 4px;
-}
-
-#fbPanelBar2Box {
+  }
+  
+  #fbPanelBar2Box {
     background: url(sprite.png) #c5c1ba 0 -28px;
     position: absolute;
     height: 22px;
-    width: 300px; /* fixed width to avoid tabs breaking line */
+    width: 300px;
+    /* fixed width to avoid tabs breaking line */
     z-index: 9;
     right: 0;
-}
-
-#fbPanelBar2 {
+  }
+  
+  #fbPanelBar2 {
     position: absolute;
-    width: 290px; /* fixed width to avoid tabs breaking line */
+    width: 290px;
+    /* fixed width to avoid tabs breaking line */
     height: 23px;
     padding-left: 4px;
-}
-
-/* body 
-*************************************************************************************************/
-.fbPanel {
+  }
+  
+  /* body 
+  *************************************************************************************************/
+  .fbPanel {
     display: none;
-}
-
-#fbPanelBox1, #fbPanelBox2 {
+  }
+  
+  #fbPanelBox1,
+  #fbPanelBox2 {
     max-height: inherit;
     height: 100%;
     font-size: 1em;
-}
-
-#fbPanelBox2 {
+  }
+  
+  #fbPanelBox2 {
     background: #fff;
-}
-
-#fbPanelBox2 {
+  }
+  
+  #fbPanelBox2 {
     width: 300px;
     background: #fff;
-}
-
-#fbPanel2 {
+  }
+  
+  #fbPanel2 {
     margin-left: 6px;
     background: #fff;
-}
-
-#fbLargeCommandLine {
+  }
+  
+  #fbLargeCommandLine {
     display: none;
     position: absolute;
     z-index: 9;
@@ -2506,9 +2506,9 @@ h1.groupHeader {
     border-top: 1px solid #B9B7AF;
     _right: -1px;
     _border-left: 1px solid #fff;
-}
-
-#fbLargeCommandButtons {
+  }
+  
+  #fbLargeCommandButtons {
     display: none;
     background: #D4D0C8;
     bottom: 0;
@@ -2519,36 +2519,36 @@ h1.groupHeader {
     position: fixed;
     border-top: 1px solid #ACA899;
     z-index: 9;
-}
-
-#fbSmallCommandLineIcon {
+  }
+  
+  #fbSmallCommandLineIcon {
     background: url(down.png) no-repeat;
     position: absolute;
     right: 2px;
     bottom: 3px;
-    
+  
     z-index: 99;
-}
-
-#fbSmallCommandLineIcon:hover {
+  }
+  
+  #fbSmallCommandLineIcon:hover {
     background: url(downHover.png) no-repeat;
-}
-
-.hide {
+  }
+  
+  .hide {
     overflow: hidden !important;
     position: fixed !important;
     display: none !important;
     visibility: hidden !important;
-}
-
-/* fbBottom 
-*************************************************************************************************/
-
-#fbCommand {
+  }
+  
+  /* fbBottom 
+  *************************************************************************************************/
+  
+  #fbCommand {
     height: 18px;
-}
-
-#fbCommandBox {
+  }
+  
+  #fbCommandBox {
     position: fixed;
     _position: absolute;
     width: 100%;
@@ -2559,9 +2559,9 @@ h1.groupHeader {
     background: #fff;
     border: 0;
     border-top: 1px solid #ccc;
-}
-
-#fbCommandIcon {
+  }
+  
+  #fbCommandIcon {
     position: absolute;
     color: #00f;
     top: 2px;
@@ -2569,9 +2569,9 @@ h1.groupHeader {
     display: inline;
     font: 11px Monaco, monospace;
     z-index: 10;
-}
-
-#fbCommandLine {
+  }
+  
+  #fbCommandLine {
     position: absolute;
     width: 100%;
     top: 0;
@@ -2582,73 +2582,71 @@ h1.groupHeader {
     font: 11px Monaco, monospace;
     z-index: 9;
     outline: none;
-}
-
-#fbLargeCommandLineIcon {
+  }
+  
+  #fbLargeCommandLineIcon {
     background: url(up.png) no-repeat;
     position: absolute;
     right: 1px;
     bottom: 1px;
     z-index: 10;
-}
-
-#fbLargeCommandLineIcon:hover {
+  }
+  
+  #fbLargeCommandLineIcon:hover {
     background: url(upHover.png) no-repeat;
-}
-
-div.fbFitHeight {
+  }
+  
+  div.fbFitHeight {
     overflow: auto;
     position: relative;
-}
-
-
-/************************************************************************************************
- Layout Controls
-*************************************************************************************************/
-
-/* fbToolbar buttons 
-*************************************************************************************************/
-.fbSmallButton {
+  }
+  
+  /************************************************************************************************
+   Layout Controls
+  *************************************************************************************************/
+  
+  /* fbToolbar buttons 
+  *************************************************************************************************/
+  .fbSmallButton {
     overflow: hidden;
     width: 16px;
     height: 16px;
     display: block;
     text-decoration: none;
     cursor: default;
-}
-
-#fbWindowButtons .fbSmallButton {
+  }
+  
+  #fbWindowButtons .fbSmallButton {
     float: right;
-}
-
-#fbWindow_btClose {
+  }
+  
+  #fbWindow_btClose {
     background: url(min.png);
-}
-
-#fbWindow_btClose:hover {
+  }
+  
+  #fbWindow_btClose:hover {
     background: url(minHover.png);
-}
-
-#fbWindow_btDetach {
+  }
+  
+  #fbWindow_btDetach {
     background: url(detach.png);
-}
-
-#fbWindow_btDetach:hover {
+  }
+  
+  #fbWindow_btDetach:hover {
     background: url(detachHover.png);
-}
-
-#fbWindow_btDeactivate {
+  }
+  
+  #fbWindow_btDeactivate {
     background: url(off.png);
-}
-
-#fbWindow_btDeactivate:hover {
+  }
+  
+  #fbWindow_btDeactivate:hover {
     background: url(offHover.png);
-}
-
-
-/* fbPanelBarBox tabs 
-*************************************************************************************************/
-.fbTab {
+  }
+  
+  /* fbPanelBarBox tabs 
+  *************************************************************************************************/
+  .fbTab {
     text-decoration: none;
     display: none;
     float: left;
@@ -2660,50 +2658,51 @@ div.fbFitHeight {
     font-weight: bold;
     height: 22px;
     color: #565656;
-}
-
-.fbPanelBar span {
+  }
+  
+  .fbPanelBar span {
     /*display: block; TODO: safe to remove this? */
     float: left;
-}
-
-.fbPanelBar .fbTabL,.fbPanelBar .fbTabR {
+  }
+  
+  .fbPanelBar .fbTabL,
+  .fbPanelBar .fbTabR {
     height: 22px;
     width: 8px;
-}
-
-.fbPanelBar .fbTabText {
+  }
+  
+  .fbPanelBar .fbTabText {
     padding: 4px 1px 0;
-}
-
-a.fbTab:hover {
+  }
+  
+  a.fbTab:hover {
     background: url(sprite.png) 0 -73px;
-}
-
-a.fbTab:hover .fbTabL {
+  }
+  
+  a.fbTab:hover .fbTabL {
     background: url(sprite.png) -16px -96px;
-}
-
-a.fbTab:hover .fbTabR {
+  }
+  
+  a.fbTab:hover .fbTabR {
     background: url(sprite.png) -24px -96px;
-}
-
-.fbSelectedTab {
+  }
+  
+  .fbSelectedTab {
     background: url(sprite.png) #d4d0c8 0 -50px !important;
     color: #000;
-}
-
-.fbSelectedTab .fbTabL {
+  }
+  
+  .fbSelectedTab .fbTabL {
     background: url(sprite.png) 0 -96px !important;
-}
-
-.fbSelectedTab .fbTabR {
+  }
+  
+  .fbSelectedTab .fbTabR {
     background: url(sprite.png) -8px -96px !important;
-}
-
-/* splitters 
-*************************************************************************************************/
-#fbHSplitter {
+  }
+  
+  /* splitters 
+  *************************************************************************************************/
+  #fbHSplitter {
     position: fixed;
     _position: absolute;
     left: 0;
@@ -2714,14 +2713,14 @@ a.fbTab:hover .fbTabR {
     cursor: n-resize !important;
     background: url(pixel_transparent.gif);
     z-index: 9;
-}
-
-#fbHSplitter.fbOnMovingHSplitter {
+  }
+  
+  #fbHSplitter.fbOnMovingHSplitter {
     height: 100%;
     z-index: 100;
-}
-
-.fbVSplitter {
+  }
+  
+  .fbVSplitter {
     background: #d4d0c8;
     color: #000;
     border: 1px solid #777;
@@ -2736,10 +2735,10 @@ a.fbTab:hover .fbTabR {
     position: absolute;
     height: 100%;
     top: 28px;
-}
-
-/************************************************************************************************/
-div.lineNo {
+  }
+  
+  /************************************************************************************************/
+  div.lineNo {
     font: 1em Monaco, monospace;
     position: relative;
     float: left;
@@ -2751,21 +2750,21 @@ div.lineNo {
     color: #888;
     border-right: 1px solid #ccc;
     text-align: right;
-}
-
-.sourceBox {
+  }
+  
+  .sourceBox {
     position: absolute;
-}
-
-.sourceCode {
+  }
+  
+  .sourceCode {
     font: 1em Monaco, monospace;
     overflow: hidden;
     white-space: pre;
     display: inline;
-}
-
-/************************************************************************************************/
-.nodeControl {
+  }
+  
+  /************************************************************************************************/
+  .nodeControl {
     margin-top: 3px;
     margin-left: -14px;
     float: left;
@@ -2777,138 +2776,143 @@ div.lineNo {
     _float: none;
     _display: inline;
     _position: absolute;
-}
-
-div.nodeMaximized {
+  }
+  
+  div.nodeMaximized {
     background: url(tree_close.gif);
-}
-
-div.objectBox-element {
+  }
+  
+  div.objectBox-element {
     padding: 1px 3px;
-}
-.objectBox-selector{
+  }
+  
+  .objectBox-selector {
     cursor: default;
-}
-
-.selectedElement{
+  }
+  
+  .selectedElement {
     background: highlight;
     /* background: url(roundCorner.svg); Opera */
     color: #fff !important;
-}
-.selectedElement span{
+  }
+  
+  .selectedElement span {
     color: #fff !important;
-}
-
-/* IE6 need this hack */
-* html .selectedElement {
+  }
+  
+  /* IE6 need this hack */
+  * html .selectedElement {
     position: relative;
-}
-
-/* Webkit CSS Hack - bug in "highlight" named color */ 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    .selectedElement{
+  }
+  
+  /* Webkit CSS Hack - bug in "highlight" named color */
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    .selectedElement {
       background: #316AC5;
       color: #fff !important;
     }
-}
-
-/************************************************************************************************/
-/************************************************************************************************/
-.logRow * {
+  }
+  
+  /************************************************************************************************/
+  /************************************************************************************************/
+  .logRow * {
     font-size: 1em;
-}
-
-/* TODO: remove this? */
-/* TODO: xxxpedro - IE need this in windowless mode (cnn.com) check if the issue is related to 
-position. if so, override it at chrome.js initialization when creating the div */
-.logRow {
+  }
+  
+  /* TODO: remove this? */
+  /* TODO: xxxpedro - IE need this in windowless mode (cnn.com) check if the issue is related to 
+  position. if so, override it at chrome.js initialization when creating the div */
+  .logRow {
     position: relative;
     border-bottom: 1px solid #D7D7D7;
     padding: 2px 4px 1px 6px;
     zbackground-color: #FFFFFF;
-}
-/**/
-
-.logRow-command {
+  }
+  
+  /**/
+  
+  .logRow-command {
     font-family: Monaco, monospace;
     color: blue;
-}
-
-.objectBox-string,
-.objectBox-text,
-.objectBox-number,
-.objectBox-function,
-.objectLink-element,
-.objectLink-textNode,
-.objectLink-function,
-.objectBox-stackTrace,
-.objectLink-profile {
+  }
+  
+  .objectBox-string,
+  .objectBox-text,
+  .objectBox-number,
+  .objectBox-function,
+  .objectLink-element,
+  .objectLink-textNode,
+  .objectLink-function,
+  .objectBox-stackTrace,
+  .objectLink-profile {
     font-family: Monaco, monospace;
-}
-
-.objectBox-null {
+  }
+  
+  .objectBox-null {
     padding: 0 2px;
     border: 1px solid #666666;
     background-color: #888888;
     color: #FFFFFF;
-}
-
-.objectBox-string {
+  }
+  
+  .objectBox-string {
     color: red;
-    
+  
     /* TODO: xxxpedro make long strings break line */
-    /*white-space: pre; */ 
-}
-
-.objectBox-number {
+    /*white-space: pre; */
+  }
+  
+  .objectBox-number {
     color: #000088;
-}
-
-.objectBox-function {
+  }
+  
+  .objectBox-function {
     color: DarkGreen;
-}
-
-.objectBox-object {
+  }
+  
+  .objectBox-object {
     color: DarkGreen;
     font-weight: bold;
     font-family: Lucida Grande, sans-serif;
-}
-
-.objectBox-array {
+  }
+  
+  .objectBox-array {
     color: #000;
-}
-
-/************************************************************************************************/
-.logRow-info,.logRow-error,.logRow-warn {
+  }
+  
+  /************************************************************************************************/
+  .logRow-info,
+  .logRow-error,
+  .logRow-warn {
     background: #fff no-repeat 2px 2px;
     padding-left: 20px;
     padding-bottom: 3px;
-}
-
-.logRow-info {
+  }
+  
+  .logRow-info {
     background-image: url(infoIcon.png) !important;
     background-image: url(infoIcon.gif);
-}
-
-.logRow-warn {
+  }
+  
+  .logRow-warn {
     background-color: cyan;
     background-image: url(warningIcon.png) !important;
     background-image: url(warningIcon.gif);
-}
-
-.logRow-error {
+  }
+  
+  .logRow-error {
     background-color: LightYellow;
     background-image: url(errorIcon.png) !important;
     background-image: url(errorIcon.gif);
     color: #f00;
-}
-
-.errorMessage {
+  }
+  
+  .errorMessage {
     vertical-align: top;
     color: #f00;
-}
-
-.objectBox-sourceLink {
+  }
+  
+  .objectBox-sourceLink {
     position: absolute;
     right: 4px;
     top: 2px;
@@ -2916,123 +2920,127 @@ position. if so, override it at chrome.js initialization when creating the div *
     font-family: Lucida Grande, sans-serif;
     font-weight: bold;
     color: #0000FF;
-}
-
-/************************************************************************************************/
-/*
-//TODO: remove this when console2 is finished
-*/
-/*
-.logRow-group {
-    background: #EEEEEE;
-    border-bottom: none;
-}
-
-.logGroup {
-    background: #EEEEEE;
-}
-
-.logGroupBox {
-    margin-left: 24px;
-    border-top: 1px solid #D7D7D7;
-    border-left: 1px solid #D7D7D7;
-}/**/
-
-/************************************************************************************************/
-.selectorTag,.selectorId,.selectorClass {
+  }
+  
+  /************************************************************************************************/
+  /*
+  //TODO: remove this when console2 is finished
+  */
+  /*
+  .logRow-group {
+      background: #EEEEEE;
+      border-bottom: none;
+  }
+  
+  .logGroup {
+      background: #EEEEEE;
+  }
+  
+  .logGroupBox {
+      margin-left: 24px;
+      border-top: 1px solid #D7D7D7;
+      border-left: 1px solid #D7D7D7;
+  }/**/
+  
+  /************************************************************************************************/
+  .selectorTag,
+  .selectorId,
+  .selectorClass {
     font-family: Monaco, monospace;
     font-weight: normal;
-}
-
-.selectorTag {
+  }
+  
+  .selectorTag {
     color: #0000FF;
-}
-
-.selectorId {
+  }
+  
+  .selectorId {
     color: DarkBlue;
-}
-
-.selectorClass {
+  }
+  
+  .selectorClass {
     color: red;
-}
-
-/************************************************************************************************/
-.objectBox-element {
+  }
+  
+  /************************************************************************************************/
+  .objectBox-element {
     font-family: Monaco, monospace;
     color: #000088;
-}
-
-.nodeChildren {
+  }
+  
+  .nodeChildren {
     padding-left: 26px;
-}
-
-.nodeTag {
+  }
+  
+  .nodeTag {
     color: blue;
     cursor: pointer;
-}
-
-.nodeValue {
+  }
+  
+  .nodeValue {
     color: #FF0000;
     font-weight: normal;
-}
-
-.nodeText,.nodeComment {
+  }
+  
+  .nodeText,
+  .nodeComment {
     margin: 0 2px;
     vertical-align: top;
-}
-
-.nodeText {
+  }
+  
+  .nodeText {
     color: #333333;
     font-family: Monaco, monospace;
-}
-
-.nodeComment {
+  }
+  
+  .nodeComment {
     color: DarkGreen;
-}
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-.nodeHidden, .nodeHidden * {
+  }
+  
+  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+  
+  .nodeHidden,
+  .nodeHidden * {
     color: #888888;
-}
-
-.nodeHidden .nodeTag {
+  }
+  
+  .nodeHidden .nodeTag {
     color: #5F82D9;
-}
-
-.nodeHidden .nodeValue {
+  }
+  
+  .nodeHidden .nodeValue {
     color: #D86060;
-}
-
-.selectedElement .nodeHidden, .selectedElement .nodeHidden * {
+  }
+  
+  .selectedElement .nodeHidden,
+  .selectedElement .nodeHidden * {
     color: SkyBlue !important;
-}
-
-
-/************************************************************************************************/
-.log-object {
+  }
+  
+  /************************************************************************************************/
+  .log-object {
     /*
-    _position: relative;
-    _height: 100%;
-    /**/
-}
-
-.property {
+      _position: relative;
+      _height: 100%;
+      /**/
+  }
+  
+  .property {
     position: relative;
     clear: both;
     height: 15px;
-}
-
-.propertyNameCell {
+  }
+  
+  .propertyNameCell {
     vertical-align: top;
     float: left;
     width: 28%;
     position: absolute;
     left: 0;
     z-index: 0;
-}
-
-.propertyValueCell {
+  }
+  
+  .propertyValueCell {
     float: right;
     width: 68%;
     background: #fff;
@@ -3042,22 +3050,22 @@ position. if so, override it at chrome.js initialization when creating the div *
     right: 0;
     z-index: 1;
     /*
-    _position: relative;
-    /**/
-}
-
-.propertyName {
+      _position: relative;
+      /**/
+  }
+  
+  .propertyName {
     font-weight: bold;
-}
-
-.FirebugPopup {
+  }
+  
+  .FirebugPopup {
     height: 100% !important;
-}
-
-.FirebugPopup #fbWindowButtons {
+  }
+  
+  .FirebugPopup #fbWindowButtons {
     display: none !important;
-}
-
-.FirebugPopup #fbHSplitter {
+  }
+  
+  .FirebugPopup #fbHSplitter {
     display: none !important;
-}
+  }

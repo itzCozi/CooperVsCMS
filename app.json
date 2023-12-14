@@ -1,7 +1,7 @@
 {
-    "name": "Cooper's Unblocker",
-    "description": "A fork of Hypertabs customized to combat CMS filtering.",
-    "repository": "https://github.com/amethystnetwork-dev/Hypertabs",
-    "logo": "https://github.com/itzCozi/Hypertabs/blob/main/static/icon.png?raw=true",
-    "keywords": ["proxy"]
+  "name": "Cooper's Unblocker",
+  "description": "A fork of Hypertabs customized to combat CMS filtering.",
+  "repository": "https://github.com/amethystnetwork-dev/Hypertabs",
+  "logo": "https://github.com/itzCozi/Hypertabs/blob/main/static/icon.png?raw=true",
+  "keywords": ["proxy"]
 }
