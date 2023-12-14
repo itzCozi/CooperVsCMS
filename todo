@@ -1,3 +1,4 @@
 TODO
 
 * Fix weather popup on internal/newtab/main.html (ask ChatGPT)
+* Minify all scripts longer than 150 lines
