@@ -46,28 +46,27 @@ class Weather {
     let data = await Info.getResponse(
       `/alertw&lat=${latlon.replace(",", "&lon=")}`
     );
-    // if (data == Error) {
-    //     return;
-    // } else {
-    //     return data.alerts[0].eventDescription;
-    // }
-    return null;
+    if (data == Error) {
+      return;
+    } else {
+      return data.alerts[0].eventDescription;
+    }
   }
 }
 async function StartWeather() {
   let ipdat = await Info.getIpLoc(),
     weather = await Weather.getCurrents(ipdat.latlon);
-  //  alert = await Weather.getAlert(ipdat.location);
+    alert = await Weather.getAlert(ipdat.location);
   document.getElementById(
     "winfo"
   ).innerHTML = `<a id="wst"style="text-align: center;">${ipdat.city}</a><br><a id="wde">${weather.temp}&degF | ${weather.weather}</a>`;
-  // console.log(weather.alert.length);
-  // if (!alert == null) {
-  //     document.getElementById('alerts').setAttribute('onclick', `location.href = '/fetch/aHR0cHM6Ly9mb3JlY2FzdC53ZWF0aGVyLmdvdg==/MapClick.php?&lat=${ipdat.latlon.replace(',', '&lon=')}'`);
-  //     document.getElementById('alerts').innerHTML = `${alert}`;
-  // } else {
-  //     return;
-  // };
+  console.log(weather.alert.length);
+  if (!alert == null) {
+    document.getElementById('alerts').setAttribute('onclick', `location.href = '/fetch/aHR0cHM6Ly9mb3JlY2FzdC53ZWF0aGVyLmdvdg==/MapClick.php?&lat=${ipdat.latlon.replace(',', '&lon=')}'`);
+    document.getElementById('alerts').innerHTML = `${alert}`;
+  } else {
+    return;
+  };
 }
 window.onload = () => {
   StartWeather();
