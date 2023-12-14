@@ -206,10 +206,6 @@ fieldset {
   .center {
     width: 300px;
   }
-
-  #weather {
-    visibility: hidden;
-  }
 }
 
 #bmenu {
@@ -241,17 +237,6 @@ fieldset {
   overflow: hidden;
   max-width: 169px;
   white-space: nowrap;
-}
-
-.info {
-  margin: 0;
-  position: absolute;
-  top: 2.5em;
-  right: 2em;
-  /* text-align: right; */
-  width: auto;
-  text-align: center;
-  color: bisque;
 }
 
 #alerts {
