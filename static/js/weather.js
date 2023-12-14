@@ -34,8 +34,8 @@ class Weather {
   // gets weather and returns the current.
   static async getCurrents(latlon) {
     let data = await Info.getResponse(
-        `/currentw?lat=${latlon.replace(",", "&lon=")}`
-      ),
+      `/currentw?lat=${latlon.replace(",", "&lon=")}`
+    ),
       temp = data.observation.imperial.temp,
       weather = data.observation.phrase_22char,
       icn = data.observation.icon_code;
@@ -65,8 +65,8 @@ async function StartWeather() {
     document.getElementById('alerts').setAttribute('onclick', `location.href = '/fetch/aHR0cHM6Ly9mb3JlY2FzdC53ZWF0aGVyLmdvdg==/MapClick.php?&lat=${ipdat.latlon.replace(',', '&lon=')}'`);
     document.getElementById('alerts').innerHTML = `${alert}`;
   } else {
-    return;
-  };
+    console.log('No alert found.');
+  }
 }
 window.onload = () => {
   StartWeather();
