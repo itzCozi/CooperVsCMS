@@ -1,16 +1,16 @@
 // TODO: Add a variable to limit the amount of times a line can wrap
 // around the screen before gradualy fading to black
-// TODO: Reduce the dotted lines and color blobs by testing in replit
+// TODO: Remove or minimize the dark spot in the top left
 
 var points = [];
-var maxPoints = 110; // Adjust the maximum number of points
-var speed = 1; // Adjust speed as needed
-var damping = 0.95; // Adjust damping for smoother flow
+var maxPoints = 105; // Adjust the maximum number of points
+var speed = 0.8; // Adjust speed as needed
+var damping = 1.16; // Adjust damping for smoother flow
 var phaseSpeed = 0.05; // Adjust phase speed as needed
-var fade = 1.98; // Adjust fade rate as needed
+var fade = 2; // Adjust fade rate as needed
 var repulsionRadius = 30; // Adjust the repulsion radius
 var attractionRadius = 120; // Adjust the attraction radius
-var attractionStrength = 0.04; // Adjust the attraction strength
+var attractionStrength = 0.06; // Adjust the attraction strength
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
