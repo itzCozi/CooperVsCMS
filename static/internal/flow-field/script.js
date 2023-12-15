@@ -4,7 +4,7 @@
 
 var points = [];
 var maxPoints = 105; // Adjust the maximum number of points
-var speed = 0.7; // Adjust speed as needed
+var speed = 0.65; // Adjust speed as needed
 var damping = 1.16; // Adjust damping for smoother flow
 var phaseSpeed = 0.05; // Adjust phase speed as needed
 var fade = 2; // Adjust fade rate as needed
