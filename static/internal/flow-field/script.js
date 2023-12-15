@@ -1,5 +1,6 @@
 // TODO: Add a variable to limit the amount of times a line can wrap
 // around the screen before gradualy fading to black
+// TODO: Reduce the dotted lines and color blobs by testing in replit
 
 var points = [];
 var maxPoints = 110; // Adjust the maximum number of points
