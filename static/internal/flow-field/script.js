@@ -1,10 +1,10 @@
 var points = [];
 
 function setup() {
-  createCanvas(windowWidth, windowHeight); // Set canvas size to window dimensions
+  createCanvas(windowWidth, windowHeight);
   pixelDensity(2);
   angleMode(DEGREES);
-  noiseDetail(1);
+  noiseDetail(2);
 
   var density = 100;
 
@@ -15,30 +15,43 @@ function setup() {
     }
   }
 
-  background(10, 20, 30); // Initial background color
+  background(10, 20, 30);
 }
 
 function draw() {
-  if (frameCount < 400) {
-    noStroke();
+  noStroke();
 
-    var mult = 0.01;
+  var mult = 0.02;
 
-    for (var j = 0; j < 1; j++) {
-      for (var i = 0; i < points.length; i++) {
-        var r = map(points[i].x, 0, width, 50, 255);
-        var g = map(points[i].y, 0, height, 255, 50);
-        var b = map(points[i].x, 0, width, 255, 50);
+  for (var i = 0; i < points.length; i++) {
+    var r = map(points[i].x + noise(frameCount * 0.01), 0, width, 50, 255);
+    var g = map(points[i].y + noise(frameCount * 0.01), 0, height, 50, 255);
+    var b = map(points[i].x + points[i].y + noise(frameCount * 0.01), 0, width + height, 50, 255);
 
-        fill(r, g, b, 10);
+    fill(r, g, b, 5);
 
-        var angle = map(noise(points[i].x * mult, points[i].y * mult), 0, 1, 0, 720);
+    var angle = map(noise(points[i].x * mult, points[i].y * mult, frameCount * 0.01), 0, 1, 0, 720);
 
-        points[i].add(createVector(cos(angle), sin(angle)));
-        ellipse(points[i].x, points[i].y, 1);
-      }
-    }
-  } else {
-    noLoop();
+    points[i].add(createVector(cos(angle), sin(angle)));
+
+    points[i].x = (points[i].x + width) % width;
+    points[i].y = (points[i].y + height) % height;
+
+    ellipse(points[i].x, points[i].y, 2);
   }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  points = [];
+  var density = 100;
+
+  for (var x = 0; x <= width; x += width / density) {
+    for (var y = 0; y <= height; y += width / density) {
+      var p = createVector(x + random(-10, 10), y + random(-10, 10));
+      points.push(p);
+    }
+  }
+
+  background(10, 20, 30);
 }
