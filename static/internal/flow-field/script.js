@@ -12,8 +12,8 @@ var fade = 2; // Adjust fade rate as needed
 var maxWrapCount = 2; // Adjust the maximum wrap count
 var currentWrapCount = 0; // Tracks the current wrap count
 var repulsionRadius = 30; // Adjust the repulsion radius
-var attractionRadius = 120; // Adjust the attraction radius
-var attractionStrength = 0.06; // Adjust the attraction strength
+var attractionRadius = 90; // Adjust the attraction radius
+var attractionStrength = 0.05; // Adjust the attraction strength
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
