@@ -1,6 +1,7 @@
 // TODO: Add a variable to limit the amount of times a line can wrap
 // around the screen before gradualy fading to black
-// TODO: Remove or minimize the dark spot in the top left
+// TODO: Fix the darker area towards the top left where the brightness fades
+// TODO: Minimize dotted lines
 
 var points = [];
 var maxPoints = 105; // Adjust the maximum number of points
@@ -96,7 +97,7 @@ function windowResized() {
 
   // Reset points on window resize
   points = [];
-  var density = 100;
+  var density = 130;
 
   for (var i = 0; i < maxPoints; i++) {
     var p = createVector(random(width), random(height));
