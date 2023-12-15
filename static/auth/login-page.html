@@ -1,23 +1,18 @@
 <!doctype html>
 <html>
 
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Authentication</title>
-    <link rel="stylesheet" href="login-theme.css" />
-    <!-- Include Firebase Auth module script -->
-    <script type="module" src="https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js"></script>
-    <script src="popup.js"></script>
-    <!-- Login auth script -->
-    <script type="module" defer>
-      import {
-        initializeApp
-      } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
-      import {
-        getAuth,
-        signInWithEmailAndPassword
-      } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Authentication</title>
+  <link rel="stylesheet" href="login-theme.css" />
+  <!-- Include Firebase Auth module script -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js"></script>
+  <script src="popup.js"></script>
+  <!-- Login auth script -->
+  <script type="module" defer>
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
 
       // Initialize Firebase with your config
       const firebaseConfig = {
@@ -47,7 +42,7 @@
         signInWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
             const user = userCredential.user;
-            const validCredentialsPopup = document.getElementById("valid-credentials-popup", );
+            const validCredentialsPopup = document.getElementById("valid-credentials-popup");
             const popupContent = validCredentialsPopup.querySelector(".popup-content p");
             popupContent.textContent = `Welcome "${user.email}", close this popup to be redirected.`;
             displayWorkingPopup();
@@ -64,15 +59,19 @@
             }
           });
       });
-    </script>
-    <!-- Hide popup key event -->
-    <script>
-      window.onkeydown = function( event ) {
-        if ( event.keyCode == 27 ) {
-          hideWorkingPopup();
+
+      // Add event listeners for keydown separately
+      document.getElementById("invalid-credentials-popup").addEventListener("keydown", (event) => {
+        if (event.keyCode === 27) {
           hideErrorPopup();
         }
-      };
+      });
+
+      document.getElementById("valid-credentials-popup").addEventListener("keydown", (event) => {
+        if (event.keyCode === 27) {
+          hideWorkingPopup();
+        }
+      });
     </script>
   </head>
 
