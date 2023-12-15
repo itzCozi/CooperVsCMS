@@ -1,4 +1,4 @@
 TODO
 
-* Fix weather popup on internal/newtab/main.html (ask ChatGPT)
-* Minify all scripts longer than 150 lines
+* Implement static/internal/flow-field it looks cool
+(if CPU usage gets high when deployed remove it)
