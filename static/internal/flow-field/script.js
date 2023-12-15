@@ -1,4 +1,5 @@
 var points = [];
+var speed = 0.3; // Adjust speed as needed
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -32,7 +33,10 @@ function draw() {
 
     var angle = map(noise(points[i].x * mult, points[i].y * mult, frameCount * 0.01), 0, 1, 0, 720);
 
-    points[i].add(createVector(cos(angle), sin(angle)));
+    // Adjust speed
+    var velocity = createVector(cos(angle), sin(angle));
+    velocity.mult(speed);
+    points[i].add(velocity);
 
     points[i].x = (points[i].x + width) % width;
     points[i].y = (points[i].y + height) % height;
