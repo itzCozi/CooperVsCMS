@@ -1,3 +1,6 @@
+// TODO: Add a variable to limit the amount of times a line can wrap
+// around the screen before gradualy fading to black
+
 var points = [];
 var maxPoints = 110; // Adjust the maximum number of points
 var speed = 1; // Adjust speed as needed
