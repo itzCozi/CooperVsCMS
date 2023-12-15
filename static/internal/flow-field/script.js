@@ -1,5 +1,4 @@
 var points = [];
-var newPoints = [];
 var numSets = 5; // Adjust the number of sets of lines
 var density = 100; // Adjust the density for each set
 
@@ -9,9 +8,7 @@ function setup() {
   angleMode(DEGREES);
   noiseDetail(1);
 
-  for (var set = 0; set < numSets; set++) {
-    generatePoints();
-  }
+  generatePoints();
 
   background(0, 0, 0);
 }
@@ -44,21 +41,23 @@ function draw() {
 function mouseClicked() {
   // Refresh the screen and generate new points on mouse click
   background(0, 0, 0);
-  for (var set = 0; set < numSets; set++) {
-    generatePoints();
-  }
+  generatePoints();
   loop(); // Resume looping for continuous animation
 }
 
 function generatePoints() {
-  var setPoints = [];
+  points = [];
 
-  for (var x = 0; x <= width; x += width / density) {
-    for (var y = 0; y <= height; y += width / density) {
-      var p = createVector(x + random(-10, 10), y + random(-10, 10));
-      setPoints.push(p);
+  for (var set = 0; set < numSets; set++) {
+    var setPoints = [];
+
+    for (var x = 0; x <= width; x += width / density) {
+      for (var y = 0; y <= height; y += width / density) {
+        var p = createVector(x + random(-10, 10), y + random(-10, 10));
+        setPoints.push(p);
+      }
     }
-  }
 
-  points.push(setPoints);
+    points.push(setPoints);
+  }
 }
