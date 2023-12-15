@@ -1,5 +1,5 @@
 var points = [];
-var speed = 0.3; // Adjust speed as needed
+var speed = 0.27; // Adjust speed as needed
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -7,7 +7,7 @@ function setup() {
   angleMode(DEGREES);
   noiseDetail(2);
 
-  var density = 100;
+  var density = 180;
 
   for (var x = 0; x <= width; x += width / density) {
     for (var y = 0; y <= height; y += width / density) {
@@ -16,7 +16,7 @@ function setup() {
     }
   }
 
-  background(10, 20, 30);
+  background(0, 0, 0);
 }
 
 function draw() {
@@ -57,5 +57,5 @@ function windowResized() {
     }
   }
 
-  background(10, 20, 30);
+  background(0, 0, 0);
 }
