@@ -1,4 +1,3 @@
 TODO
 
-* Implement static/internal/flow-field it looks cool
-(if CPU usage gets high when deployed remove it)
+* Do all todos in static/internal/flow-field/script.js
