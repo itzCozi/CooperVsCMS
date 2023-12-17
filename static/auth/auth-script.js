@@ -1,4 +1,4 @@
-// Check user auth if user is logged in or not
+// Check user auth if the user is logged in or not
 import {
   initializeApp
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
@@ -20,7 +20,7 @@ const firebaseConfig = {
   storageBucket: "coopervscms.appspot.com",
   messagingSenderId: "406730745781",
   appId: "1:406730745781:web:7b537e28c024d898361bfc",
-  measurementId: "G-GTTF3XVXW0",
+  measurementId: "G-GTTF3XVXW0"
 };
 
 // Initialize Firebase
