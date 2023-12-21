@@ -1,3 +1,3 @@
 TODO
 
-* Add auth-script.js to uv/service
+* Add ChromeOS user agent checker so only chromebooks can access
