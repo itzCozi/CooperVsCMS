@@ -13,8 +13,8 @@ else {
     // Set the handlerVisited cookie
     document.cookie = 'handlerVisited=true; path=/';
 
-    window.location = 'index.html';
+    window.location = '/index.html';
   } else {
-    window.location = 'user-agent/index.html';
+    window.location = '/user-agent/index.html';
   }
 }
