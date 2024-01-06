@@ -1,32 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: black;
-    }
-
-    canvas {
-      display: block;
-    }
+    body { margin: 0; overflow: hidden; display: flex; justify-content: center; align-items: center; height: 100vh; background: black; }
+    canvas { display: block; }
   </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flow Field</title>
 </head>
-
 <body>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-  <script src="./script.js"></script>
+  <script>
+    var points = [];
+    var numSets = 5, density = 80;
 
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+      pixelDensity(2); angleMode(DEGREES); noiseDetail(1);
+      init();
+    }
+
+    function draw() {
+      if (frameCount < 400) {
+        for (var set = 0; set < numSets; set++) {
+          for (var i = 0; i < points[set].length; i++) {
+            var clr = map(points[set][i].x, 0, width, 50, 255);
+            stroke(clr, map(points[set][i].y, 0, height, 255, 50), map(points[set][i].x, 0, width, 255, 50), 10);
+            var angle = map(noise(points[set][i].x * 0.01, points[set][i].y * 0.01), 0, 1, 0, 720);
+            
+            var nextX = points[set][i].x + cos(angle);
+            var nextY = points[set][i].y + sin(angle);
+            
+            line(points[set][i].x, points[set][i].y, nextX, nextY);
+            
+            points[set][i].set(nextX, nextY);
+          }
+        }
+      } else { 
+        noLoop(); 
+      }
+    }
+
+    function mouseClicked() { background(0); init(); loop(); }
+
+    function init() {
+      points = [];
+      for (var set = 0; set < numSets; set++) {
+        var setPoints = [];
+        for (var x = 0; x <= width; x += width / density) {
+          for (var y = 0; y <= height; y += width / density) {
+            setPoints.push(createVector(x + random(-10, 10), y + random(-10, 10)));
+          }
+        }
+        points.push(setPoints);
+      }
+    }
+  </script>
 </body>
-
 </html>
