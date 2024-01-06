@@ -12,7 +12,7 @@ import {
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
 
-var authFunction = function authFunction(){
+export function authFunction(){
   // Initialize Firebase with your config
   const firebaseConfig = {
     apiKey: "AIzaSyDCdqFYJy9aXN36hTNNdA-1Ks1oPZj3gE0",
@@ -46,5 +46,3 @@ var authFunction = function authFunction(){
       console.error('Error setting persistence:', error);
     });
   };
-
-module.exports.authFunction = authFunction;
