@@ -1,3 +1,4 @@
 TODO
 
-* Add ChromeOS user agent checker so only chromebooks can access
+* New tab is kinda slow now on ChromeOS due to flow field in the background
+maybe optimize it a little bit on chromebook to find a sweet spot
