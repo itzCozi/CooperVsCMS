@@ -6,9 +6,9 @@ if (document.cookie.split(';').some((item) => item.trim().startsWith('handlerVis
   console.log(userAgent)
 
   if (userAgent.includes('CrOS')) {
-    window.location = 'index.html';
+    console.log('You are using chromeOS')//window.location = 'index.html';
   } else {
-    window.location = 'user-agent/index.html';
+    console.log('You are not using ChromeOS')//window.location = 'user-agent/index.html';
   }
   
   // Set the handlerVisited cookie
