@@ -10,7 +10,7 @@ if (document.cookie.split(";").some((item) => item.trim().startsWith("handlerVis
   if (userAgent.includes("CrOS")) {
     // Set the handlerVisited cookie
     document.cookie = "handlerVisited=true; path=/";
-    authFunction();
+    authFunction(); // This one script handles all user auth including: user-agent and login
   } else {
     window.location = "/user-agent/index.html";
   }
