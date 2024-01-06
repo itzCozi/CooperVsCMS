@@ -2,20 +2,11 @@
 <html lang='en' class='dark-theme'>
 
 <!-- Check user auth if user is logged in or not -->
-<script type="module">
-  const userAgent = navigator.userAgent;
-  console.log(userAgent)
-
-  if (userAgent.includes('CrOS')) {
-    window.location = 'index.html';
-  } else {
-    window.location = 'user-agent/index.html';
-  }
-</script>
+<script type="module" src="user-agent/handler.js"></script>
 <script type="module" src="auth/auth-script.js"></script>
 
 <head>
-  <meta charset='utf-8'>
+  <meta charset='utf-8'>http://127.0.0.1:3000/static/user-agent/index.html
   <title>CUB</title>
 
   <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>

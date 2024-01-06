@@ -1,7 +1,16 @@
-const userAgent = navigator.userAgent;
-
-if (userAgent.includes('CrOS')) {
-  window.location = '/static/index.html';
+if (document.cookie.split(';').some((item) => item.trim().startsWith('handlerVisited='))) {
+  console.log('handler.js already executed for this visit.');
 } else {
-  window.location = '/static/user-agent/index.html';
+  console.log('Executing handler.js logic...');
+  const userAgent = navigator.userAgent;
+  console.log(userAgent)
+
+  if (userAgent.includes('CrOS')) {
+    window.location = 'index.html';
+  } else {
+    window.location = 'user-agent/index.html';
+  }
+  
+  // Set the handlerVisited cookie
+  document.cookie = 'handlerVisited=true; path=/';
 }
