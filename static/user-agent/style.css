@@ -78,8 +78,9 @@ body {
   margin-left: 10px;
 }
 
-#quit-button {
+#button {
   margin-top: 25px;
+  margin-right: 25px;
   position: relative;
   padding: 10px 20px;
   background-color: #545454;

@@ -8,8 +8,13 @@
   <script>
     window.onload = function(){
       const userAgent = navigator.userAgent;
-    
       document.getElementById('user-agent').innerHTML = userAgent;
+
+      if (userAgent.includes('CrOS')) {
+        // Set the handlerVisited cookie
+        document.cookie = 'handlerVisited=true; path=/';
+        window.location = 'index.html';
+      }
     };
   </script>
 </head>
@@ -25,7 +30,8 @@
         <div class="USER-ID-LABEL" id="user-agent-label">Your User Agent:</div>
         <div class="USER-ID" id="user-agent">USER-ID</div>
       </div>
-      <input type="submit" value="Leave" id="quit-button" onclick="window.location = 'https://search.brave.com/'" />
+      <input type="submit" value="Refresh" id="button" onclick="window.location.reload()" />
+      <input type="submit" value="Leave" id="button" onclick="window.open('https://www.google.com', '_blank').focus();window.close()" />
     </div>
   </div>
 </body>
