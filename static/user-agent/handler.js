@@ -6,11 +6,10 @@ if (document.cookie.split(';').some((item) => item.trim().startsWith('handlerVis
   console.log(userAgent)
 
   if (userAgent.includes('CrOS')) {
-    console.log('You are using chromeOS')//window.location = 'index.html';
+    // Set the handlerVisited cookie
+    document.cookie = 'handlerVisited=true; path=/';
+    window.location = 'index.html';
   } else {
-    console.log('You are not using ChromeOS')//window.location = 'user-agent/index.html';
+    window.location = 'user-agent/index.html';
   }
-  
-  // Set the handlerVisited cookie
-  document.cookie = 'handlerVisited=true; path=/';
 }
