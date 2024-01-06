@@ -1,61 +1,81 @@
 <!doctype html>
 <html lang="en">
 
-<!-- IDEA: Set background of this page to flow-field page -->
-<!-- Check user auth if user is logged in or not -->
-<script type="module" src="/auth/auth-script.js"></script>
-<script type="module" src="user-agent/handler.js"></script>
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>New Tab</title>
-  <link rel="stylesheet" href="/css/css.css" />
+  <link rel="stylesheet" href="/css/css.css">
+  <style>
+    /* Style for overlaying content */
+    #background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1; /* Ensures background stays behind other content */
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 
 <body id="body">
+
+  <!-- Background content for flow field -->
+  <div id="background">
+    <iframe src="../flow-field/index.html" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
+  </div>
+
+  <!-- Scripts -->
   <script src="/js/xor.js"></script>
   <script src="/js/bookmarks.js"></script>
   <script src="/uv/uv.bundle.js"></script>
   <script src="/uv/uv.config.js"></script>
-  <script>
-    // const ip = "<?php echo $_SERVER['HTTP_X_FORWARDED_FOR'] ?>";
-  </script>
+
+  <!-- Bookmarks and Info Sections -->
   <div class="bookmarks"></div>
   <div class="info">
+    <!-- Existing content for weather, etc. -->
     <div id="weather">
-      <!--   Weather Widget in TOP RIGHT   -->
+      <!-- Weather Widget in TOP RIGHT -->
       <!-- <h2 id="winfo">Loading...</h2>
-            <h2 id="alerts"></h2> -->
+      <h2 id="alerts"></h2> -->
     </div>
   </div>
+
+  <!-- Main Content Centered -->
   <div class="center">
     <h1 id="headtxt">Cooper's Unblocker</h1>
-    <forum id="input" onkeydown="if(event.key == 'Enter'){location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`}" onsubmit="location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`"> <input id="inputb" placeholder="Search..." /> <input id="inputimg" onclick="location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`" type="image" value="Login" src="/search.svg" height="24" width="24" /> <input type="submit" style="display: none" /> </forum>
-    <div class="btns">
-      <!-- idea: maybe include __uv$config.prefix with xor.encode -->
 
+    <!-- Search Form -->
+    <form id="input" onkeydown="if(event.key == 'Enter'){location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`}" onsubmit="location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`">
+      <input id="inputb" placeholder="Search...">
+      <input id="inputimg" onclick="location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`" type="image" value="Login" src="/search.svg" height="24" width="24">
+      <input type="submit" style="display: none">
+    </form>
+
+    <!-- Buttons -->
+    <div class="btns">
+      <!-- Existing buttons and links -->
       <div onclick="location.href=__uv$config.prefix+xor.encode('https://youtube.com')" class="crm">
         <img class="icn" src="/yt.png" />
         <a class="btn">Youtube</a>
       </div>
-
       <div onclick="location.href=__uv$config.prefix+xor.encode('https://himovies.sx/home')" class="crm">
         <img class="icn" src="/movie.png" />
         <a class="btn">Free Movies</a>
       </div>
-
       <div onclick=window.location="/internal/flow-field/index.html" class="crm">
         <img class="icn" src="/lambda.png" />
         <a class="btn">Flow Field</a>
       </div>
-
       <div onclick="location.href=__uv$config.prefix+xor.encode('https://discord.gg/56qC6PEN6v')" class="crm">
         <img class="icn" src="/dcd.png" />
         <a class="btn">Join My Discord</a>
       </div>
     </div>
   </div>
+
 </body>
 
 </html>
