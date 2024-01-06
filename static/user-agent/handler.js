@@ -2,8 +2,8 @@ function isChromeOS() {
   const userAgent = navigator.userAgent;
 
   if (userAgent.includes('CrOS')) {
-    window.location = '/index.html';
+    window.location = '/static/index.html';
   } else {
-    window.location = 'index.html';
+    window.location = '/static/user-agent/index.html';
   }
 }
