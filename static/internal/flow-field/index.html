@@ -13,11 +13,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   <script>
     var points = [];
-    var numSets = 5, density = 80;
+    var numSets = 4, density = 80;
 
     function setup() {
       createCanvas(windowWidth, windowHeight);
-      pixelDensity(2); angleMode(DEGREES); noiseDetail(1);
+      pixelDensity(2); angleMode(DEGREES); noiseDetail(1.25);
       init();
     }
 
