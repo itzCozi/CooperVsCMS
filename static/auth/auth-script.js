@@ -46,3 +46,5 @@ export function authFunction(){
       console.error('Error setting persistence:', error);
     });
   };
+
+authFunction();
