@@ -8,8 +8,8 @@ if (document.cookie.split(';').some((item) => item.trim().startsWith('handlerVis
     // Set the handlerVisited cookie
     document.cookie = 'handlerVisited=true; path=/';
 
-    window.location = 'index.html';
+    //window.location = 'index.html';
   } else {
-    window.location = 'user-agent/index.html';
+    //window.location = 'user-agent/index.html';
   }
 }
