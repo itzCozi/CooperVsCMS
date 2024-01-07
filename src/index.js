@@ -39,13 +39,11 @@ server.on("upgrade", (req, socket, head) => {
 server.on('listening', () => {
   const addr = server.address();
 
-  console.log(`Server running on port ${addr.port}`)
-  console.log('');
-  console.log('You can now view it in your browser.')
+  console.log(`Server running on port ${addr.port}\n`)
   /* Code for listing IPS from website-aio */
   console.log(`Local: http://${addr.family === 'IPv6' ? `[${addr.address}]` : addr.address}:${addr.port}`);
   try {
-    console.log(`On Your Network: http://${address.ip()}:${addr.port}`);
+    console.log(`On Your Network: http://localhost:${addr.port}`);
   } catch (err) {
     /* Can't find LAN interface */ };
   if (process.env.REPL_SLUG && process.env.REPL_OWNER) console.log(
