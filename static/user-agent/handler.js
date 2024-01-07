@@ -15,5 +15,8 @@ if (document.cookie.split(";").some((item) => item.trim().startsWith("handlerVis
     }
   } else {
     //window.location = "/user-agent/index.html";
+    if (window.location.href != "../auth/login-page.html") {
+      authFunction(); // This one script handles all user auth including: user-agent and login
+    }
   }
 }
