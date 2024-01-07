@@ -38,9 +38,8 @@ export function authFunction(){
           console.log('User is signed in: ', user.uid);
         } else {
           console.log('User not authorized, redirecting...');
-          if (window.location.href != "../../auth/login-page.html") {
-            window.location.href = "../../auth/login-page.html";
-          }
+          console.log(window.location.href)
+          window.location.href = "../../auth/login-page.html";
         }
       });
     })
