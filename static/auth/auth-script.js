@@ -38,7 +38,7 @@ export function authFunction(){
           console.log('User is signed in: ', user.uid);
         } else {
           console.log('User not authorized, redirecting...');
-          console.log(window.location.href)
+          console.log(window.location)
           window.location.href = "../../auth/login-page.html";
         }
       });
