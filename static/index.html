@@ -144,12 +144,15 @@
           onclick='toggleId("optionsdrop");document.querySelector("body").requestFullscreen()'>Fullscreen window</a>
         <a class="pointer"
           onclick='toggleId("optionsdrop");skipAd()'>Skip YT AD</a>
-        <a class="pointer"
-          onclick='toggleId("optionsdrop");changeBackground()'>Change Background</a>
+        <!--
+          Manages the background of newTab/main.html 
+          (repurpose the themedrop and customtheme for background hexcode)
+        -->
+        <a class="pointer" onclick='toggleId("optionsdrop");changeBackground()'>Change Background</a>
         <!-- <a class="pointer" onclick='toggleId("optionsdrop", "uadrop");'>Set user agent</a> Disabled until I finish adding support-->
         <a class="pointer" onclick='toggleId("optionsdrop", "searchDrop")'>Set search engine</a>
         <a class="pointer" onclick='inspect(); toggleId("optionsdrop");'>Open devtools</a>
-        <a class="pointer" onclick='toggleId("themedrop", "optionsdrop");'>Themes</a>
+        <!-- <a class="pointer" onclick='toggleId("themedrop", "optionsdrop");'>Themes</a> Disabled until themes have been reworked -->
         <!-- <a class="pointer" onclick='toggleId("extensiondrop", "optionsdrop");'>Extensions</a> not yet :(-->
       </div>
       <div id="uadrop" class=dropdown-content>
