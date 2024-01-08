@@ -1,61 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <style>
-    body { margin: 0; overflow: hidden; display: flex; justify-content: center; align-items: center; height: 100vh; background: black; }
-    canvas { display: block; }
-  </style>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flow Field</title>
-</head>
-<body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-  <script>
-    var points = [];
-    var numSets = 4, density = 80;
+  <head>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: black;
+      }
 
-    function setup() {
-      createCanvas(windowWidth, windowHeight);
-      pixelDensity(2); angleMode(DEGREES); noiseDetail(1.25);
-      init();
-    }
+      canvas {
+        display: block;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flow Field</title>
+  </head>
 
-    function draw() {
-      if (frameCount < 400) {
-        for (var set = 0; set < numSets; set++) {
-          for (var i = 0; i < points[set].length; i++) {
-            var clr = map(points[set][i].x, 0, width, 50, 255);
-            stroke(clr, map(points[set][i].y, 0, height, 255, 50), map(points[set][i].x, 0, width, 255, 50), 10);
-            var angle = map(noise(points[set][i].x * 0.01, points[set][i].y * 0.01), 0, 1, 0, 720);
-            
-            var nextX = points[set][i].x + cos(angle);
-            var nextY = points[set][i].y + sin(angle);
-            
-            line(points[set][i].x, points[set][i].y, nextX, nextY);
-            
-            points[set][i].set(nextX, nextY);
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script>
+      function checkBackgroundCookie() {
+        const cookies = document.cookie.split(";");
+        for (let i = 0; i < cookies.length; i++) {
+          const cookie = cookies[i].trim();
+          if (cookie.startsWith("background=")) {
+            return true;
           }
         }
-      } else { 
-        noLoop(); 
+        return false;
       }
-    }
 
-    function mouseClicked() { background(0); init(); loop(); }
+      // If the 'background' cookie exists, exit without executing any further code
+      if (checkBackgroundCookie()) {
+        console.log("Background cookie exists. Exiting...");
+      } else {
+        // If the cookie doesn't exist, execute the flow field animation
+        var points = [];
+        var numSets = 4,
+          density = 80;
 
-    function init() {
-      points = [];
-      for (var set = 0; set < numSets; set++) {
-        var setPoints = [];
-        for (var x = 0; x <= width; x += width / density) {
-          for (var y = 0; y <= height; y += width / density) {
-            setPoints.push(createVector(x + random(-10, 10), y + random(-10, 10)));
+        function setup() {
+          createCanvas(windowWidth, windowHeight);
+          background(0); // Explicitly set the background to black
+          pixelDensity(2);
+          angleMode(DEGREES);
+          noiseDetail(1.25);
+          init();
+        }
+
+        function draw() {
+          if (frameCount < 400) {
+            for (var set = 0; set < numSets; set++) {
+              for (var i = 0; i < points[set].length; i++) {
+                var clr = map(points[set][i].x, 0, width, 50, 255);
+                stroke(
+                  clr,
+                  map(points[set][i].y, 0, height, 255, 50),
+                  map(points[set][i].x, 0, width, 255, 50),
+                  10,
+                );
+                var angle = map(
+                  noise(points[set][i].x * 0.01, points[set][i].y * 0.01),
+                  0,
+                  1,
+                  0,
+                  720,
+                );
+
+                var nextX = points[set][i].x + cos(angle);
+                var nextY = points[set][i].y + sin(angle);
+
+                line(points[set][i].x, points[set][i].y, nextX, nextY);
+
+                points[set][i].set(nextX, nextY);
+              }
+            }
+          } else {
+            noLoop();
           }
         }
-        points.push(setPoints);
+
+        function mouseClicked() {
+          background(0);
+          init();
+          loop();
+        }
+
+        function init() {
+          points = [];
+          for (var set = 0; set < numSets; set++) {
+            var setPoints = [];
+            for (var x = 0; x <= width; x += width / density) {
+              for (var y = 0; y <= height; y += width / density) {
+                setPoints.push(
+                  createVector(x + random(-10, 10), y + random(-10, 10)),
+                );
+              }
+            }
+            points.push(setPoints);
+          }
+        }
       }
-    }
-  </script>
-</body>
+    </script>
+  </body>
 </html>

@@ -26,7 +26,31 @@
   <script src="/uv/uv.bundle.js"></script>
   <script src="/uv/uv.config.js"></script>
   <script src="/bare-client.js"></script>
-  <script type="module" src="internal/newTab/changeBackground.js"></script>
+  <script>
+    function changeBackground() {
+      const cookies = document.cookie.split(';');
+      let backgroundCookieExists = false;
+
+      // Check if the "background" cookie exists
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.startsWith("background=")) {
+          backgroundCookieExists = true;
+          break;
+        }
+      }
+
+      if (backgroundCookieExists) {
+        document.cookie = "background=; max-age=0"; // Remove the cookie
+      } else {
+        let color = "#5f6368";
+        document.cookie = `background=${color}; max-age=60*60*24*365`;
+      }
+
+      // Log all cookies for debugging
+      console.log("All cookies:", document.cookie);
+    }
+  </script>
   <script>
     if ('serviceWorker' in navigator) {
 		navigator.serviceWorker.register('/uv/sw.js', {
@@ -140,7 +164,7 @@
       </div>
       <!-- todo, javascript based dropdown menu  -->
       <div id='optionsdrop' class='dropdown-content'>
-         <a class="pointer" onclick='toggleId("optionsdrop");'>back</a>
+         <a class="pointer" onclick='toggleId("optionsdrop");'>Back</a>
         <a class="pointer"
           onclick='toggleId("optionsdrop");document.querySelector("body").requestFullscreen()'>Fullscreen window</a>
         <a class="pointer"
@@ -149,7 +173,7 @@
           Manages the background of newTab/main.html 
           (repurpose the themedrop and customtheme for background hexcode)
         -->
-        <a class="pointer" onclick='toggleId("optionsdrop");changeBackground()'>Change Background</a>
+        <a class="pointer" onclick='toggleId("optionsdrop");changeBackground();location.reload()'>Disable lines</a>
         <!-- <a class="pointer" onclick='toggleId("optionsdrop", "uadrop");'>Set user agent</a> Disabled until I finish adding support-->
         <a class="pointer" onclick='toggleId("optionsdrop", "searchDrop")'>Set search engine</a>
         <a class="pointer" onclick='inspect(); toggleId("optionsdrop");'>Open devtools</a>
