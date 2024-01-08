@@ -1,4 +1,3 @@
 TODO
 
-* New tab is kinda slow now on ChromeOS due to flow field in the background
-maybe optimize it a little bit on chromebook to find a sweet spot
+* add a option to the js drop down menu in index.html to change background to a static color

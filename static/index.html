@@ -144,6 +144,8 @@
           onclick='toggleId("optionsdrop");document.querySelector("body").requestFullscreen()'>Fullscreen window</a>
         <a class="pointer"
           onclick='toggleId("optionsdrop");skipAd()'>Skip YT AD</a>
+        <a class="pointer"
+          onclick='toggleId("optionsdrop");changeBackground()'>Change Background</a>
         <!-- <a class="pointer" onclick='toggleId("optionsdrop", "uadrop");'>Set user agent</a> Disabled until I finish adding support-->
         <a class="pointer" onclick='toggleId("optionsdrop", "searchDrop")'>Set search engine</a>
         <a class="pointer" onclick='inspect(); toggleId("optionsdrop");'>Open devtools</a>
@@ -198,6 +200,7 @@
     <script src='js/chrome-tabs.js'></script>
     <script src='internal/manager.js'></script>
     <script src='js/js.js'></script>
+    <script src='internal/newTab/changeBackground.js'></script>
     <!-- <script src='js/extensions.js'></script> -->
     <!-- <script src='js/x/sponsorblock.js'></script>  -->
     <!-- <script src='js/x/DarkMode.js'></script> -->
