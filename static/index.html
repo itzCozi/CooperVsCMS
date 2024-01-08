@@ -148,7 +148,7 @@
           Manages the background of newTab/main.html 
           (repurpose the themedrop and customtheme for background hexcode)
         -->
-        <a class="pointer" onclick='toggleId("optionsdrop");changeBackground()'>Change Background</a>
+        <a class="pointer" onclick='changeBackground()'>Change Background</a>
         <!-- <a class="pointer" onclick='toggleId("optionsdrop", "uadrop");'>Set user agent</a> Disabled until I finish adding support-->
         <a class="pointer" onclick='toggleId("optionsdrop", "searchDrop")'>Set search engine</a>
         <a class="pointer" onclick='inspect(); toggleId("optionsdrop");'>Open devtools</a>
@@ -203,7 +203,7 @@
     <script src='js/chrome-tabs.js'></script>
     <script src='internal/manager.js'></script>
     <script src='js/js.js'></script>
-    <script type="module" src='internal/newTab/changeBackground.js'></script>
+    <script type="module" src="internal/newTab/changeBackground.js"></script>
     <!-- <script src='js/extensions.js'></script> -->
     <!-- <script src='js/x/sponsorblock.js'></script>  -->
     <!-- <script src='js/x/DarkMode.js'></script> -->
