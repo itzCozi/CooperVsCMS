@@ -34,20 +34,6 @@
       transform: translateY(-50%);
     }
   </style>
-</head>
-
-<body id="body">
-
-  <!-- Background content for flow field -->
-  <div id="background">
-    <iframe src="../flow-field/index.html" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
-  </div>
-
-  <!-- Scripts -->
-  <script src="/js/xor.js"></script>
-  <script src="/js/bookmarks.js"></script>
-  <script src="/uv/uv.bundle.js"></script>
-  <script src="/uv/uv.config.js"></script>
   <script>
     function changeBackground() {
       const cookies = document.cookie.split(';');
@@ -73,6 +59,20 @@
       console.log("All cookies:", document.cookie);
     }
   </script>
+</head>
+
+<body id="body">
+
+  <!-- Background content for flow field -->
+  <div id="background">
+    <iframe src="../flow-field/index.html" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/js/xor.js"></script>
+  <script src="/js/bookmarks.js"></script>
+  <script src="/uv/uv.bundle.js"></script>
+  <script src="/uv/uv.config.js"></script>
 
   <!-- Bookmarks and Info Sections -->
   <div class="bookmarks"></div>
@@ -107,7 +107,7 @@
         <img class="icn" src="/movie.png" />
         <a class="btn">Free Movies</a>
       </div>
-      <div onclick="changeBackground();location.reload()" class="crm">
+      <div onclick="changeBackground()" class="crm">
         <img class="icn" src="/lambda.png" />
         <a class="btn">Flow Field</a>
       </div>
