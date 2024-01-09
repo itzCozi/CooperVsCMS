@@ -34,31 +34,6 @@
       transform: translateY(-50%);
     }
   </style>
-  <script>
-    function changeBackground() {
-      const cookies = document.cookie.split(';');
-      let backgroundCookieExists = false;
-
-      // Check if the "background" cookie exists
-      for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i].trim();
-        if (cookie.startsWith("background=")) {
-          backgroundCookieExists = true;
-          break;
-        }
-      }
-
-      if (backgroundCookieExists) {
-        document.cookie = "background=; max-age=0"; // Remove the cookie
-      } else {
-        let color = "#5f6368";
-        document.cookie = `background=${color}; max-age=60*60*24*365`;
-      }
-
-      // Log all cookies for debugging
-      console.log("All cookies:", document.cookie);
-    }
-  </script>
 </head>
 
 <body id="body">
@@ -106,10 +81,6 @@
       <div onclick="location.href=__uv$config.prefix+xor.encode('https://himovies.sx/home')" class="crm">
         <img class="icn" src="/movie.png" />
         <a class="btn">Free Movies</a>
-      </div>
-      <div onclick="changeBackground()" class="crm">
-        <img class="icn" src="/lambda.png" />
-        <a class="btn">Flow Field</a>
       </div>
       <div onclick="location.href=__uv$config.prefix+xor.encode('https://discord.gg/56qC6PEN6v')" class="crm">
         <img class="icn" src="/dcd.png" />
