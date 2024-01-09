@@ -48,6 +48,31 @@
   <script src="/js/bookmarks.js"></script>
   <script src="/uv/uv.bundle.js"></script>
   <script src="/uv/uv.config.js"></script>
+  <script>
+    function changeBackground() {
+      const cookies = document.cookie.split(';');
+      let backgroundCookieExists = false;
+
+      // Check if the "background" cookie exists
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.startsWith("background=")) {
+          backgroundCookieExists = true;
+          break;
+        }
+      }
+
+      if (backgroundCookieExists) {
+        document.cookie = "background=; max-age=0"; // Remove the cookie
+      } else {
+        let color = "#5f6368";
+        document.cookie = `background=${color}; max-age=60*60*24*365`;
+      }
+
+      // Log all cookies for debugging
+      console.log("All cookies:", document.cookie);
+    }
+  </script>
 
   <!-- Bookmarks and Info Sections -->
   <div class="bookmarks"></div>
@@ -82,7 +107,7 @@
         <img class="icn" src="/movie.png" />
         <a class="btn">Free Movies</a>
       </div>
-      <div onclick=window.location="/internal/flow-field/index.html" class="crm">
+      <div onclick=window.location="changeBackground()" class="crm">
         <img class="icn" src="/lambda.png" />
         <a class="btn">Flow Field</a>
       </div>
