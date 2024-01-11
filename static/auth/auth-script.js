@@ -5,6 +5,7 @@ import {
   getAuth,
   setPersistence,
   browserSessionPersistence,
+  onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
 
 export function authFunction() {
@@ -47,41 +48,4 @@ export function authFunction() {
     });
 }
 
-// Assuming you have some login form in your HTML, let's grab the elements
-const loginForm = document.getElementById("login-form");
-const loginButton = document.getElementById("login-form-submit");
-
-loginButton.addEventListener("click", async (e) => {
-  e.preventDefault();
-  const email = loginForm.email.value;
-  const password = loginForm.password.value;
-
-  try {
-    const response = await fetch('/auth', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
-    });
-
-    const data = await response.json();
-    
-    if (data.success) {
-      // Handle successful login, e.g., show a popup or redirect
-      const validCredentialsPopup = document.getElementById("valid-credentials-popup");
-      const popupContent = validCredentialsPopup.querySelector(".popup-content p");
-      popupContent.textContent = `Welcome "${data.user.email}", close this popup to be redirected.`;
-      displayWorkingPopup();
-    } else {
-      // Handle error, e.g., display an error popup
-      displayErrorPopup();
-    }
-  } catch (error) {
-    console.error("Error:", error);
-    // Handle other errors if needed
-  }
-});
-
-// Initialize Firebase on the client-side
 authFunction();
