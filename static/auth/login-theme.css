@@ -228,7 +228,7 @@ body {
   color: #b3b3b3;
   cursor: pointer;
   text-align: center;
-  transition: background-color 0.3s;
+  transition-duration: 0.4s;
   display: flex; /* Use flexbox to center content */
   align-items: center; /* Center vertically */
   justify-content: center; /* Center horizontally */
