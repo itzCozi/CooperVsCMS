@@ -8,7 +8,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Authentication</title>
-    <link rel="stylesheet" href="login-theme.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Include Firebase Auth module script -->
     <script type="module" src="https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js"></script>
     <script src="popup.js"></script>
@@ -46,6 +47,7 @@
 
       const loginForm = document.getElementById("login-form");
       const loginButton = document.getElementById("login-form-submit");
+      const overlayFrame = document.getElementById("overlay-frame")
 
       loginButton.addEventListener("click", (e) => {
         e.preventDefault();
@@ -53,11 +55,20 @@
         const password = loginForm.password.value;
         console.log(email);
         console.log(password);
-        if (!isValidEmail(email)) {
+        overlayFrame.style.animation = "breatheEffect 3s infinite alternate";
+        if (email == "") {
+          const validCredentialsPopup = document.getElementById("invalid-input-popup", );
+          const popupContent = validCredentialsPopup.querySelector(".popup-content p");
+          popupContent.textContent = `Please provide an email address and password.`;
+          displayInvaildPopup();
+          return;
+        }
+        else if (!isValidEmail(email)) {
           const validCredentialsPopup = document.getElementById("invalid-input-popup", );
           const popupContent = validCredentialsPopup.querySelector(".popup-content p");
           popupContent.textContent = `Sorry, the email address: "${email}", is not valid.`;
           displayInvaildPopup();
+          return;
         }
 
         signInWithEmailAndPassword(auth, email, password)
@@ -86,10 +97,14 @@
   <body>
     <div class="desktop">
       <div class="overlap-group-wrapper">
-        <div class="overlap-group">
+        <div class="overlap-group" id="overlay-frame">
           <div class="login-autofit">
             <div class="text-wrapper">Login</div>
           </div>
+
+          <div class="tooltip-icon" title="Reach out to me for a free account">
+            <i class="fas fa-question-circle"></i>
+          </div>          
 
           <form id="login-form">
             <input type="text" name="email" id="email-field" class="email-box" placeholder="coopervscms@mail.com" />
@@ -111,21 +126,21 @@
     <!-- Popup containers -->
     <div id="invalid-credentials-popup" class="popup">
       <div class="popup-content">
-        <span class="close" onclick="hideErrorPopup()">&times;</span>
+        <span class="close" onclick="hideErrorPopup()"><i class="fas fa-times"></i></span>
         <p>Invalid email address or password given. Please try again.</p>
       </div>
     </div>
   
     <div id="valid-credentials-popup" class="popup">
       <div class="popup-content">
-        <span class="close" onclick="hideWorkingPopup()">&times;</span>
+        <span class="close" onclick="hideWorkingPopup()"><i class="fas fa-times"></i></span>
         <p>placeholder (you shouldn't see this lol)</p>
       </div>
     </div>
   
     <div id="invalid-input-popup" class="popup">
       <div class="popup-content">
-        <span class="close" onclick="hideInvalidPopup()">&times;</span>
+        <span class="close" onclick="hideInvalidPopup()"><i class="fas fa-times"></i></span>
         <p>placeholder (you shouldn't see this either lmao)</p>
       </div>
     </div>
