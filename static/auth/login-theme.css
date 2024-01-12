@@ -47,6 +47,8 @@ body {
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
+  align-items: center; /* Vertical centering */
+  justify-content: center; /* Horizontal centering */
 }
 
 .email-box {
@@ -179,6 +181,7 @@ body {
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 #login-form-submit:hover {
@@ -215,14 +218,27 @@ body {
 }
 
 .close {
-  padding: 5px 10px; /* Adjust padding as needed */
-  border: 1px solid #ccc; /* Add a border */
-  border-radius: 5px; /* Rounded corners */
-  background-color: #f2f2f2; /* Background color */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding-bottom: 3.8px;
+  border-radius: 5px;
+  background-color: #545454;
+  color: #b3b3b3;
   cursor: pointer;
-  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  text-align: center;
+  transition: background-color 0.3s;
+  display: flex; /* Use flexbox to center content */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  width: 1.25vw; /* Set a fixed width */
+  height: 1.25vw; /* Set a fixed height */
+  font-size: 28px; /* Adjust font size */
+  z-index: 1001; /* Ensure it's on top of the popup content */
 }
 
 .close:hover {
-  background-color: #e0e0e0; /* Darken the background on hover */
+  background-color: #da6e6e; /* Darken the background on hover */
+  color: #c2c2c2;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.330), 0 17px 50px 0 rgba(0, 0, 0, 0.25);
 }
