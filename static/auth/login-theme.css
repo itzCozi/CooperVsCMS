@@ -221,7 +221,8 @@ body {
   position: absolute;
   top: 10px;
   right: 10px;
-  padding-bottom: 3.8px;
+  padding-bottom: 0.29vw;
+  padding-left: 0.1vw; padding-right: 0.1vw; 
   border-radius: 5px;
   background-color: #545454;
   color: #b3b3b3;
@@ -233,7 +234,7 @@ body {
   justify-content: center; /* Center horizontally */
   width: 1.25vw; /* Set a fixed width */
   height: 1.25vw; /* Set a fixed height */
-  font-size: 28px; /* Adjust font size */
+  font-size: 1.25vw; /* Adjust font size */
   z-index: 1001; /* Ensure it's on top of the popup content */
 }
 
