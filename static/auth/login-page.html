@@ -12,6 +12,13 @@
     <!-- Include Firebase Auth module script -->
     <script type="module" src="https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js"></script>
     <script src="popup.js"></script>
+    <script>
+      function isValidEmail(email) {
+        // Regular expression pattern to validate email format
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        return emailPattern.test(email);
+      }
+    </script>
     <!-- Login auth script -->
     <script type="module" defer>
       import {
@@ -46,6 +53,12 @@
         const password = loginForm.password.value;
         console.log(email);
         console.log(password);
+        if (!isValidEmail(email)) {
+          const validCredentialsPopup = document.getElementById("invalid-input-popup", );
+          const popupContent = validCredentialsPopup.querySelector(".popup-content p");
+          popupContent.textContent = `Sorry, the email address: "${email}", is not valid.`;
+          displayInvaildPopup();
+        }
 
         signInWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
@@ -63,7 +76,7 @@
             ) {
               displayErrorPopup();
             } else {
-              console.error(errorCode, errorMessage);
+              console.log(errorCode, errorMessage);
             }
           });
       });
@@ -121,6 +134,20 @@
         </script>
         <span class="close" onclick="hideWorkingPopup()" style="font-size: 28px">&times;</span>
         <p>placeholder (you shouldn't see this lol)</p>
+      </div>
+    </div>
+
+    <div id="invalid-input-popup" class="popup">
+      <div class="popup-content">
+        <script>
+          window.onkeydown = function( event ) {
+            if ( event.keyCode == 27 ) {
+              hideWorkingPopup();
+            }
+          };
+        </script>
+        <span class="close" onclick="hideInvalidPopup()" style="font-size: 28px">&times;</span>
+        <p>placeholder (you shouldn't see this either lmao)</p>
       </div>
     </div>
   </body>
