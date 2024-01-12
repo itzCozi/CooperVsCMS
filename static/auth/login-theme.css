@@ -215,8 +215,14 @@ body {
 }
 
 .close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  padding: 5px 10px; /* Adjust padding as needed */
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #f2f2f2; /* Background color */
   cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.close:hover {
+  background-color: #e0e0e0; /* Darken the background on hover */
 }
