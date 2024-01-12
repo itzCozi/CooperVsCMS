@@ -4,6 +4,7 @@ function displayErrorPopup() {
 }
 
 function hideErrorPopup() {
+  // Hides invalid credentials popup
   document.getElementById("invalid-credentials-popup").style.display = "none";
   document.getElementById("email-field").value = "";
   document.getElementById("password-field").value = "";
