@@ -52,7 +52,7 @@ body {
   display: flexbox;
   justify-content: flex-start; /* Align items to the start */
   align-items: center; /* Align items vertically */
-  background-color: #1f1f1f;
+  background-color: #202020;
   padding: 10px; /* Added padding for spacing */
   border-radius: 8px; /* Added rounded corners */
   box-shadow: 0px 4px 4px #00000040;
