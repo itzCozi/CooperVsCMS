@@ -1,9 +1,6 @@
 TODO
 
-* Ask ChatGPT to center submit and overlay group in 
-the middle of the screen no matter the resolution
+* Make the login-page.html color schmeme look like user-agent
 
 * Implement server side authentication checks for prod
 https://chat.openai.com/c/87e95e09-1961-420e-9313-097217a367cd
-
-* Also look at span for X on popup in auth-page.html
