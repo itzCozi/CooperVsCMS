@@ -1,0 +1,225 @@
+.desktop {
+  background-color: #171717;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.desktop .div {
+  background-color: #171717;
+  width: 1440px;
+  height: 1024px;
+  position: relative;
+}
+
+.desktop .button {
+  all: unset;
+  box-sizing: border-box;
+  position: absolute;
+  width: 452px;
+  height: 60px;
+  top: 862px;
+  left: 495px;
+}
+
+.desktop .overlap-group {
+  position: relative;
+  width: 450px;
+  height: 60px;
+  background-color: #4d4d4d;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #00000040;
+}
+
+.desktop .confirm-text {
+  position: absolute;
+  height: 35px;
+  top: 13px;
+  left: 183px;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #b3b3b3;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .overlap {
+  position: absolute;
+  width: 850px;
+  height: 675px;
+  top: 127px;
+  left: 295px;
+  background-color: #363636;
+  border-radius: 40px;
+  box-shadow: 0px 4px 4px #00000040;
+}
+
+.desktop .overlap-2 {
+  position: absolute;
+  width: 710px;
+  height: 450px;
+  top: 150px;
+  left: 70px;
+}
+
+.desktop .input-field {
+  position: absolute;
+  width: 710px;
+  height: 415px;
+  top: 35px;
+  left: 0;
+}
+
+.desktop .name-fields {
+  position: absolute;
+  width: 718px;
+  height: 78px;
+  top: 0;
+  left: -4px;
+}
+
+.desktop .confirm-box {
+  position: absolute;
+  width: 710px;
+  height: 70px;
+  top: 345px;
+  left: 0;
+  background-color: #4d4d4d;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #00000040;
+}
+
+.desktop .pass-box {
+  position: absolute;
+  width: 710px;
+  height: 70px;
+  top: 230px;
+  left: 0;
+  background-color: #4d4d4d;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #00000040;
+}
+
+.desktop .email-box {
+  position: absolute;
+  width: 710px;
+  height: 70px;
+  top: 115px;
+  left: 0;
+  background-color: #4d4d4d;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #00000040;
+}
+
+.desktop .prompts {
+  position: absolute;
+  width: 514px;
+  height: 380px;
+  top: 0;
+  left: 8px;
+}
+
+.desktop .first-name {
+  position: absolute;
+  width: 119px;
+  height: 35px;
+  top: 0;
+  left: 1px;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #b3b3b3;
+  font-size: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.desktop .email {
+  position: absolute;
+  width: 119px;
+  height: 35px;
+  top: 115px;
+  left: 0;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #b3b3b3;
+  font-size: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.desktop .password {
+  position: absolute;
+  width: 119px;
+  height: 35px;
+  top: 230px;
+  left: 0;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #b3b3b3;
+  font-size: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .confirm-pass {
+  position: absolute;
+  width: 220px;
+  height: 35px;
+  top: 345px;
+  left: 1px;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #b3b3b3;
+  font-size: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .last-name {
+  position: absolute;
+  width: 119px;
+  height: 35px;
+  top: 0;
+  left: 385px;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #b3b3b3;
+  font-size: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.desktop .header {
+  position: absolute;
+  width: 300px;
+  height: 60px;
+  top: 37px;
+  left: 280px;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #b3b3b3;
+  font-size: 74px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
