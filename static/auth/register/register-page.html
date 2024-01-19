@@ -1,27 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="globals.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registration</title>
     <link rel="stylesheet" href="register-theme.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script src="popup.js"></script>
+    <script>
+      function isValidEmail(email) {
+        // Regular expression pattern to validate email format
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        return emailPattern.test(email);
+      }
+    </script>
   </head>
+
   <body>
     <div class="desktop">
       <div class="div">
-        <div class="overlap"><div class="confirm-text">Submit</div></div>
         <div class="overlap-group">
-          <div class="first-box"></div>
-          <div class="last-box"></div>
-          <div class="confirm-box"></div>
-          <div class="pass-box"></div>
-          <div class="email-box"></div>
-          <div class="header">Register</div>
-          <input class="first-name" placeholder="First name" type="text" />
-          <input class="email" placeholder="Email" type="email" />
+          <input class="first-box" type="text" placeholder="Chad" />
+          <input class="last-box" type="text" placeholder="Broski" />
+          <input
+            class="confirm-box"
+            type="password"
+            placeholder="SuckMyToes420 (again)"
+          />
+          <input class="pass-box" type="password" placeholder="SuckMyToes420" />
+          <input
+            class="email-box"
+            type="email"
+            placeholder="BenDover@proton.me"
+          />
+          <div class="text-wrapper">Register</div>
+          <div class="first-name">First name</div>
+          <div class="email">Email</div>
           <div class="password">Password</div>
           <div class="confirm-pass">Confirm password</div>
-          <input class="last-name" placeholder="Last name" type="text" />
+          <div class="last-name">Last name</div>
+          <form id="login-form">
+            <input type="submit" value="Submit" id="login-form-submit" />
+          </form>
         </div>
+      </div>
+    </div>
+    <div id="invalid-credentials-popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="hideInvalidPopup()"
+          ><i class="fas fa-times"></i
+        ></span>
+        <p>Invalid email address given. Please try again.</p>
+      </div>
+    </div>
+
+    <div id="valid-credentials-popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="hideWorkingPopup()"
+          ><i class="fas fa-times"></i
+        ></span>
+        <p>placeholder (you shouldn't see this lol)</p>
+      </div>
+    </div>
+
+    <div id="invalid-input-popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="hideErrorPopup()"
+          ><i class="fas fa-times"></i
+        ></span>
+        <p>Error... IDFK what happened.</p>
       </div>
     </div>
   </body>
