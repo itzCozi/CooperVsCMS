@@ -1,5 +1,8 @@
 <!doctype html>
 <html>
+
+  <script type="module" src="/auth/user-agent/handler.js"></script>
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,31 +13,156 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <script src="popup.js"></script>
-    <script>
+    <!-- Register user script -->
+    <script type="module" defer>
+      import {
+        initializeApp
+      } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword 
+      } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
+
       function isValidEmail(email) {
         // Regular expression pattern to validate email format
         const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         return emailPattern.test(email);
       }
+
+      // Initialize Firebase with your config
+      const firebaseConfig = {
+        apiKey: "AIzaSyDCdqFYJy9aXN36hTNNdA-1Ks1oPZj3gE0",
+        authDomain: "coopervscms.firebaseapp.com",
+        projectId: "coopervscms",
+        storageBucket: "coopervscms.appspot.com",
+        messagingSenderId: "406730745781",
+        appId: "1:406730745781:web:7b537e28c024d898361bfc",
+        measurementId: "G-GTTF3XVXW0",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      const emailInputBox = document.getElementById("email-input");
+      const passConfirmBox = document.getElementById("confirm-password-input");
+      const passInputBox = document.getElementById("password-input");
+      const firstNameInputBox = document.getElementById("first-name-input");
+      const lastNameInputBox = document.getElementById("last-name-input");
+      const loginButton = document.getElementById("login-form-submit");
+      const overlayFrame = document.getElementById("overlay-frame");
+
+      loginButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        const email = emailInputBox.value;
+        const password = passConfirmBox.value;
+        overlayFrame.style.animation = "secondaryGlow 3s infinite alternate";
+        if (password == "") {
+          const invalidInputPopup = document.getElementById("invalid-input-popup", );
+          const popupContent = invalidInputPopup.querySelector(".popup-content p");
+          popupContent.textContent = `Please fill out the form completely.`;
+          document.getElementById("invalid-input-popup").style.display = "block";
+          return;
+        }
+        if (password.length < 6) {
+          const invalidCredentialsPopup = document.getElementById("invalid-credentials-popup", );
+          const popupContent = invalidCredentialsPopup.querySelector(".popup-content p");
+          popupContent.textContent = `Sorry, the password: "${password}", is not valid.`;
+          document.getElementById("invalid-credentials-popup").style.display = "block";
+          return;
+        }
+        console.log(email);
+        console.log(password);
+
+        overlayFrame.style.animation = "secondaryGlow 3s infinite alternate";
+        if (email == "") {
+          const invalidInputPopup = document.getElementById("invalid-input-popup", );
+          const popupContent = invalidInputPopup.querySelector(".popup-content p");
+          popupContent.textContent = `Please fill out the form completely.`;
+          document.getElementById("invalid-input-popup").style.display = "block";
+          return;
+        }
+        else if (!isValidEmail(email)) {
+          const invalidCredentialsPopup = document.getElementById("invalid-credentials-popup", );
+          const popupContent = invalidCredentialsPopup.querySelector(".popup-content p");
+          popupContent.textContent = `Sorry, the email address: "${email}", is not valid.`;
+          document.getElementById("invalid-credentials-popup").style.display = "block";
+          return;
+        }
+
+        // add checks before the user can create an accout all boxes must be filled out
+        if (passInputBox.value == null) {
+          const invalidInputPopup = document.getElementById("invalid-input-popup", );
+          const popupContent = invalidInputPopup.querySelector(".popup-content p");
+          popupContent.textContent = `Please fill out the form completely.`;
+          document.getElementById("invalid-input-popup").style.display = "block";
+          return;
+        }
+        else if (firstNameInputBox.value == null) {
+          const invalidInputPopup = document.getElementById("invalid-input-popup", );
+          const popupContent = invalidInputPopup.querySelector(".popup-content p");
+          popupContent.textContent = `Please fill out the form completely.`;
+          document.getElementById("invalid-input-popup").style.display = "block";
+          return;
+        }
+        else if (lastNameInputBox.value == null) {
+          const invalidInputPopup = document.getElementById("invalid-input-popup", );
+          const popupContent = invalidInputPopup.querySelector(".popup-content p");
+          popupContent.textContent = `Please fill out the form completely.`;
+          document.getElementById("invalid-input-popup").style.display = "block";
+          return;
+        }
+        
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            const user = userCredential.user;
+            const validCredentialsPopup = document.getElementById("valid-credentials-popup", );
+            const popupContent = validCredentialsPopup.querySelector(".popup-content p");
+          
+            popupContent.textContent = `Welcome "${user.email}", close this popup to be redirected.`;
+            document.getElementById("valid-credentials-popup").style.display = "block";
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            if (
+              errorCode === "auth/invalid-login-credentials" || errorCode === "auth/invalid-password"
+            ) {
+              displayErrorPopup();
+            } else {
+              console.log(errorCode, errorMessage);
+            }
+          });
+      });
     </script>
   </head>
 
   <body>
     <div class="desktop">
       <div class="div">
-        <div class="overlap-group">
-          <input class="first-box" type="text" placeholder="Chad" />
-          <input class="last-box" type="text" placeholder="Broski" />
+        <div class="overlap-group" id="overlay-frame">
+          <div class="tooltip-icon" title="Click on the icon to view the user agreement">
+            <i class="fas fa-question-circle" onclick="window.open('https://rentry.co/cub-user-agreement', '_blank')"></i>
+          </div>
+          <input class="first-box" type="text" placeholder="Chad" id="first-name-input" />
+          <input class="last-box" type="text" placeholder="Broski" id="last-name-input" />
           <input
             class="confirm-box"
             type="password"
             placeholder="SuckMyToes420 (again)"
+            id="confirm-password-input"
           />
-          <input class="pass-box" type="password" placeholder="SuckMyToes420" />
+          <input 
+            class="pass-box"
+            type="password"
+            placeholder="SuckMyToes420"
+            id="password-input"
+          />
           <input
             class="email-box"
             type="email"
             placeholder="BenDover@proton.me"
+            id="email-input"
           />
           <div class="text-wrapper">Register</div>
           <div class="first-name">First name</div>
@@ -48,12 +176,13 @@
         </div>
       </div>
     </div>
+
     <div id="invalid-credentials-popup" class="popup">
       <div class="popup-content">
         <span class="close" onclick="hideInvalidPopup()"
           ><i class="fas fa-times"></i
         ></span>
-        <p>Invalid email address given. Please try again.</p>
+        <p>placeholder (you shouldn't see this lol)</p>
       </div>
     </div>
 
@@ -71,8 +200,9 @@
         <span class="close" onclick="hideErrorPopup()"
           ><i class="fas fa-times"></i
         ></span>
-        <p>Error... IDFK what happened.</p>
+        <p>placeholder (you shouldn't see this lol)</p>
       </div>
     </div>
+
   </body>
 </html>
