@@ -34,7 +34,7 @@ export function authFunction() {
           console.log("User is signed in: ", user.uid);
         } else {
           // Check if the current page is not the login page
-          if (!window.location.href.includes("/auth/login-page.html")) {
+          if (!(window.location.href.includes("/auth/login-page.html") || window.location.href.includes("/auth/register/register-page.html"))) {
             console.log("User not authorized, redirecting...");
             window.location.href = "/auth/login-page.html";
           } else {
@@ -47,3 +47,5 @@ export function authFunction() {
       console.error("Error setting persistence:", error);
     });
 }
+
+authFunction();
