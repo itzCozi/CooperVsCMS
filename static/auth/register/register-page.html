@@ -91,7 +91,14 @@
         }
 
         // add checks before the user can create an accout all boxes must be filled out
-        if (passInputBox.value == null) {
+        if (passInputBox.value != passConfirmBox.value) {
+          const invalidInputPopup = document.getElementById("invalid-input-popup", );
+          const popupContent = invalidInputPopup.querySelector(".popup-content p");
+          popupContent.textContent = `Your password and confirm password must match.`;
+          document.getElementById("invalid-input-popup").style.display = "block";
+          return;
+        }
+        else if (passInputBox.value == null) {
           const invalidInputPopup = document.getElementById("invalid-input-popup", );
           const popupContent = invalidInputPopup.querySelector(".popup-content p");
           popupContent.textContent = `Please fill out the form completely.`;
