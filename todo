@@ -1,5 +1,7 @@
 TODO
 
+* Add a one time anonymise login or add show password button
+
 * Maybe add a live confirm password and password checksum by
 having the confirm password box glow red when not equal and 
 green when equal
