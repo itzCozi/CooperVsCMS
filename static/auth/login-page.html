@@ -102,9 +102,18 @@
             <div class="text-wrapper">Login</div>
           </div>
 
-          <div class="tooltip-icon" title="Click on the icon to register">
+          <div class="tooltip-icon" id="Click on the icon to register">
             <i class="fas fa-question-circle" onclick="window.location.href = '/auth/register/register-page.html'"></i>
-          </div>          
+          </div>
+          
+          <!-- NEED TO FINISH THIS
+            Maybe the user doesnt want to register or something so if they click 
+            this it will log there information provided and grant access
+            https://firebase.google.com/docs/auth/web/anonymous-auth
+          -->
+          <div class="anonymous-icon" id="Anonymous login">
+            <img src="/anon.png" alt="anonymous login" height="28" width="28" onclick="console.log('NOT IMPLEMENTED YET!')">
+          </div>
 
           <form id="login-form">
             <input type="text" name="email" id="email-field" class="email-box" placeholder="coopervscms@mail.com" />
