@@ -128,6 +128,11 @@
           
             popupContent.textContent = `Welcome "${user.email}", close this popup to be redirected.`;
             document.getElementById("valid-credentials-popup").style.display = "block";
+            // !!!!!!!!! NEEDS TESTING !!!!!!!!!
+            const closeButton = document.querySelector(".popup-content .close");
+              closeButton.onclick = () => {
+                window.location.href = "/index.html";
+              };
           })
           .catch((error) => {
             const errorCode = error.code;
