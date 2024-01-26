@@ -56,6 +56,7 @@
         e.preventDefault();
         const email = emailInputBox.value;
         const password = passConfirmBox.value;
+
         overlayFrame.style.animation = "secondaryGlow 3s infinite alternate";
         if (password == "") {
           const invalidInputPopup = document.getElementById("invalid-input-popup", );
@@ -68,6 +69,14 @@
           const invalidCredentialsPopup = document.getElementById("invalid-credentials-popup", );
           const popupContent = invalidCredentialsPopup.querySelector(".popup-content p");
           popupContent.textContent = `Sorry, the password: "${password}", is not valid.`;
+          document.getElementById("invalid-credentials-popup").style.display = "block";
+          return;
+        }
+        // IF PASSWORD AND CONFIRM PASSWORD DONT MATCH
+        if (password != passInputBox.value) {
+          const invalidCredentialsPopup = document.getElementById("invalid-credentials-popup", );
+          const popupContent = invalidCredentialsPopup.querySelector(".popup-content p");
+          popupContent.textContent = `Your passwords do not match, please retype your password.`;
           document.getElementById("invalid-credentials-popup").style.display = "block";
           return;
         }
