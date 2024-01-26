@@ -59,7 +59,7 @@
         if (email == "") {
           const validCredentialsPopup = document.getElementById("invalid-input-popup", );
           const popupContent = validCredentialsPopup.querySelector(".popup-content p");
-          popupContent.textContent = `Please provide an email address and password.`;
+          popupContent.textContent = `Please provide a email address and password.`;
           displayInvaildPopup();
           return;
         }
@@ -112,7 +112,7 @@
             https://firebase.google.com/docs/auth/web/anonymous-auth
           -->
           <div class="anonymous-icon" id="Anonymous login">
-            <img src="/anon.png" alt="anonymous login" height="28" width="28" onclick="console.log('NOT IMPLEMENTED YET!')">
+            <img src="/anon.png" alt="anonymous login" height="28" width="28" onclick="window.location.href = '/auth/anon/anon-login.html'">
           </div>
 
           <form id="login-form">

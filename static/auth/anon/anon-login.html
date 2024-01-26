@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="anon-theme.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anonymous Authentication</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <!-- Login auth script -->
+    <script type="module" defer>
+      // Function to set a cookie
+      function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+          var date = new Date();
+          date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+          expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+      }
+
+      function canCreateAccount() {
+        var lastCreationTime = getCookie("anonymous_account_created");
+        if (lastCreationTime) {
+          // Check if 48 hours have passed since the last creation
+          var currentTime = new Date().getTime();
+          var timeDifference = currentTime - parseInt(lastCreationTime);
+          var twoDays = 2 * 24 * 60 * 60 * 1000; // 48 hours in milliseconds
+          if (timeDifference < twoDays) {
+            return false; // User needs to wait
+          }
+        }
+        return true; // User can create an account
+      }
+
+      // Function to get the value of a cookie
+      function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(";");
+        for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == " ") c = c.substring(1, c.length);
+          if (c.indexOf(nameEQ) == 0)
+            return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+      }
+
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+      import {
+        getAuth,
+        signInAnonymously,
+      } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
+
+      // Initialize Firebase with your config
+      const firebaseConfig = {
+        apiKey: "AIzaSyDCdqFYJy9aXN36hTNNdA-1Ks1oPZj3gE0",
+        authDomain: "coopervscms.firebaseapp.com",
+        projectId: "coopervscms",
+        storageBucket: "coopervscms.appspot.com",
+        messagingSenderId: "406730745781",
+        appId: "1:406730745781:web:7b537e28c024d898361bfc",
+        measurementId: "G-GTTF3XVXW0",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      const nameBox = document.getElementById("name-box");
+      const displayNameBox = document.getElementById("display-box");
+      const loginButton = document.getElementById("login-form-submit");
+      const overlayFrame = document.getElementById("overlay-frame");
+
+      loginButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        const usersName = nameBox.value;
+        const displayName = displayNameBox.value;
+        overlayFrame.style.animation = "secondaryGlow 3s infinite alternate";
+        console.log(displayName);
+        console.log(usersName);
+        overlayFrame.style.animation = "secondaryGlow 3s infinite alternate";
+        if (displayName == "" || usersName == "") {
+          const validCredentialsPopup = document.getElementById("popup",);
+          const popupContent = validCredentialsPopup.querySelector(".popup-content p");
+          popupContent.textContent = `Please provide a display name and your name.`;
+          document.getElementById("popup").style.display = "block";
+          return;
+        }
+
+        // Check if the user is allowed to create an account
+        else if (!canCreateAccount()) {
+          const validCredentialsPopup = document.getElementById("popup",);
+          const popupContent = validCredentialsPopup.querySelector(".popup-content p");
+          popupContent.textContent = `You can only create one anonymous account every two days.`;
+          document.getElementById("popup").style.display = "block";
+          return;
+        }
+
+        signInAnonymously(auth)
+          .then((userCredential) => {
+            const validCredentialsPopup = document.getElementById("popup");
+            const popupContent = validCredentialsPopup.querySelector(".popup-content p");
+            popupContent.textContent = `Welcome "${displayName}", close this popup to be redirected.`;
+            document.getElementById("popup").style.display = "block";
+
+            // Set the cookie to mark the time of account creation
+            setCookie("anonymous_account_created", new Date().getTime(), 2); // Cookie expires in 2 days
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            if (errorCode) {
+              const validCredentialsPopup = document.getElementById("popup",);
+              const popupContent = validCredentialsPopup.querySelector(".popup-content p");
+              popupContent.textContent = `${errorCode, errorMessage}`;
+              document.getElementById("popup").style.display = "block";
+            } else {
+              console.log(errorCode, errorMessage);
+            }
+          });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="desktop">
+      <div class="div">
+        <div class="overlap" id="overlay-frame">
+          <div class="tooltip-icon" id="Click on the icon to view the user agreement">
+            <i class="fas fa-question-circle" onclick="window.open('https://rentry.co/cub-user-agreement', '_blank')"></i>
+          </div>
+          <div class="display-name">Display name</div>
+          <div class="full-name">Your name</div>
+          <input
+            class="name-box"
+            type="text"
+            id="name-box"
+            placeholder="Anita Max Wayne"
+          />
+          <input
+            class="display-box"
+            type="text"
+            id="display-box"
+            placeholder="Anita Dickin Mei"
+          />
+          <div class="header">Anonymous Login</div>
+          <form id="login-form">
+            <input type="submit" value="Submit" id="login-form-submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="document.getElementById('popup').style.display = 'none'"
+          ><i class="fas fa-times"></i
+        ></span>
+        <p>placeholder (you shouldn't see this lol)</p>
+      </div>
+    </div>
+
+  </body>
+</html>
