@@ -12,11 +12,11 @@
   <!-- Login auth script -->
   <script type="module" defer>
     // Function to set a cookie
-    function setCookie(name, value, days) {
+    function setCookie(name, value, hours) {
       var expires = "";
-      if (days) {
+      if (hours) {
         var date = new Date();
-        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        date.setTime(date.getTime() + hours * 60 * 60 * 1000);
         expires = "; expires=" + date.toUTCString();
       }
       document.cookie = name + "=" + (value || "") + expires + "; path=/";
@@ -25,11 +25,11 @@
     function canCreateAccount() {
       var lastCreationTime = getCookie("anonymous_account_created");
       if (lastCreationTime) {
-        // Check if 48 hours have passed since the last creation
+        // Check if 12 hours have passed since the last creation
         var currentTime = new Date().getTime();
         var timeDifference = currentTime - parseInt(lastCreationTime);
-        var twoDays = 2 * 24 * 60 * 60 * 1000; // 48 hours in milliseconds
-        if (timeDifference < twoDays) {
+        var twelveHours = 12 * 60 * 60 * 1000; // 12 hours in milliseconds
+        if (timeDifference < twelveHours) {
           return false; // User needs to wait
         }
       }
@@ -91,7 +91,7 @@
       else if (!canCreateAccount()) {
         const validCredentialsPopup = document.getElementById("popup");
         const popupContent = validCredentialsPopup.querySelector(".popup-content p");
-        popupContent.textContent = `You can only create one anonymous account every two days.`;
+        popupContent.textContent = `You can only create one anonymous account every 12 hours.`;
         document.getElementById("popup").style.display = "block";
         return;
       }
@@ -115,7 +115,7 @@
               };
               document.getElementById("popup").style.display = "block";
               // Set the cookie to mark the time of account creation
-              setCookie("anonymous_account_created", new Date().getTime(), 2); // Cookie expires in 2 days
+              setCookie("anonymous_account_created", new Date().getTime(), 12); // Cookie expires in 12 hours
             })
             .catch((error) => {
               console.error("Error adding document: ", error);
@@ -142,7 +142,7 @@
     <div class="div">
       <div class="overlap" id="overlay-frame">
         <div class="tooltip-icon" id="Click on the icon to view the user agreement">
-          <i class="fas fa-question-circle" onclick="window.open('https://rentry.co/cub-user-agreement', '_blank')"></i>
+          <i class="fas fa-question-circle" onclick="window.open('https://rentry.co/user-agreement', '_blank')"></i>
         </div>
         <div class="display-name">Display name</div>
         <div class="full-name">Your name</div>
