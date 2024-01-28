@@ -25,15 +25,15 @@
     function canCreateAccount() {
       var lastCreationTime = getCookie("anonymous_account_created");
       if (lastCreationTime) {
-        // Check if 12 hours have passed since the last creation
+        // Check if 12 hours have passed since the last account creation
         var currentTime = new Date().getTime();
         var timeDifference = currentTime - parseInt(lastCreationTime);
-        var twelveHours = 12 * 60 * 60 * 1000; // 12 hours in milliseconds
+        var twelveHours = 12 * 60 * 60 * 1000; // 12 hours
         if (timeDifference < twelveHours) {
-          return false; // User needs to wait
+          return false;
         }
       }
-      return true; // User can create an account
+      return true;
     }
 
     // Function to get the value of a cookie
@@ -52,7 +52,7 @@
     import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
     import { getFirestore, collection, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
 
-    // Initialize Firebase with your config
+    // Initialize Firebase
     const firebaseConfig = {
       apiKey: "AIzaSyDCdqFYJy9aXN36hTNNdA-1Ks1oPZj3gE0",
       authDomain: "coopervscms.firebaseapp.com",
