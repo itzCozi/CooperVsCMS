@@ -14,17 +14,6 @@ body {
   position: relative;
 }
 
-.overlap {
-  width: 450px;
-  height: 60px;
-  top: 862px;
-  left: 495px;
-  background-color: #4d4d4d;
-  border-radius: 10px;
-  position: absolute;
-  box-shadow: 0px 4px 4px #00000040;
-}
-
 .confirm-text {
   position: absolute;
   height: 35px;

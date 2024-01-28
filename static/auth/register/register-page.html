@@ -39,6 +39,7 @@
     
       document.addEventListener("DOMContentLoaded", () => {
         const loginButton = document.getElementById("login-form-submit");
+        const overlayFrame = document.getElementById("overlay-frame");
     
         loginButton.addEventListener("click", (e) => {
           e.preventDefault();
@@ -47,10 +48,11 @@
           const firstName = document.getElementById("first-name-input").value;
           const lastName = document.getElementById("last-name-input").value;
           const usersName = `${firstName.trim()} ${lastName.trim()}`;
+          overlayFrame.style.animation = "secondaryGlow 3s infinite alternate";
     
           // Check if first name and last name are blank
           if (firstName.trim() === "" || lastName.trim() === "") {
-            displayErrorPopup("Please provide both first name and last name.");
+            displayErrorPopup("Please provide both your first name and last name.");
             return;
           }
     
