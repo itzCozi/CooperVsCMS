@@ -16,7 +16,7 @@ body {
 
 .overlap {
   width: 850px;
-  height: 525px;
+  height: 500px;
   background-color: #363636;
   border-radius: 40px;
   position: absolute;
@@ -71,7 +71,7 @@ body {
   position: absolute;
   width: 170px;
   height: 35px;
-  top: 327px; /* Adjusted top value */
+  top: 315px; /* Adjusted top value */
   left: 74.5px;
   text-shadow: 0px 4px 4px #00000040;
   font-family: "Roboto-Regular", Helvetica;
@@ -129,7 +129,7 @@ body {
   position: absolute;
   width: 710px;
   height: 70px;
-  top: 363px; /* Adjusted top value */
+  top: 351px; /* Adjusted top value */
   left: 50%;
   transform: translateX(-50%);
   background-color: #4d4d4d;
@@ -152,7 +152,7 @@ body {
   position: absolute;
   width: 600px;
   height: 60px;
-  top: 48px;
+  top: 46.5px;
   left: 50%; /* Set left position to 50% */
   transform: translateX(-50%); /* Translate it back by half of its width */
   text-shadow: 0px 4px 4px #00000040;

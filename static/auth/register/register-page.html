@@ -1,8 +1,5 @@
 <!doctype html>
 <html>
-
-  <script type="module" src="/auth/user-agent/handler.js"></script>
-
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,16 +10,18 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <script src="popup.js"></script>
+    <script src="/auth/user-agent/handler.js"></script>
     <!-- Register user script -->
     <script type="module" defer>
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
       import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
-  
+      import { getFirestore, collection, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
+    
       function isValidEmail(email) {
         const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         return emailPattern.test(email);
       }
-  
+    
       const firebaseConfig = {
         apiKey: "AIzaSyDCdqFYJy9aXN36hTNNdA-1Ks1oPZj3gE0",
         authDomain: "coopervscms.firebaseapp.com",
@@ -32,55 +31,81 @@
         appId: "1:406730745781:web:7b537e28c024d898361bfc",
         measurementId: "G-GTTF3XVXW0",
       };
-  
+    
+      // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
-  
-      document.addEventListener('DOMContentLoaded', () => {
+      const db = getFirestore(app); // Initialize Firestore
+    
+      document.addEventListener("DOMContentLoaded", () => {
         const loginButton = document.getElementById("login-form-submit");
-  
+    
         loginButton.addEventListener("click", (e) => {
           e.preventDefault();
           const email = document.getElementById("email-input").value;
           const password = document.getElementById("confirm-password-input").value;
-  
-          if (password === "" || password.length < 6 || password !== document.getElementById("password-input").value) {
-            displayErrorPopup("Your password is invalid or does not match.");
+          const firstName = document.getElementById("first-name-input").value;
+          const lastName = document.getElementById("last-name-input").value;
+          const usersName = `${firstName.trim()} ${lastName.trim()}`;
+    
+          // Check if first name and last name are blank
+          if (firstName.trim() === "" || lastName.trim() === "") {
+            displayErrorPopup("Please provide both first name and last name.");
             return;
           }
-  
+    
+          if (
+            password === "" ||
+            password.length < 6 ||
+            password !== document.getElementById("password-input").value
+          ) {
+            displayErrorPopup("Your passwords are invalid or do not match.");
+            return;
+          }
+    
           if (email === "" || !isValidEmail(email)) {
             displayErrorPopup("Please provide a valid email address.");
             return;
           }
-  
+    
           createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-              const user = userCredential.user;
-              const validCredentialsPopup = document.getElementById("valid-credentials-popup");
-              const popupContent = validCredentialsPopup.querySelector(".popup-content p");
-              popupContent.textContent = `Welcome "${user.email}", close this popup to be redirected.`;
-              validCredentialsPopup.style.display = "block";
-  
-              const closeButton = validCredentialsPopup.querySelector(".close");
-              closeButton.onclick = () => {
-                window.location.href = "/index.html";
-              };
-            })
-            .catch((error) => {
-              console.error("Error creating user:", error.code, error.message);
-              displayErrorPopup("An error occurred while creating your account. Please try again later.");
-            });
+              setDoc(doc(db, "registered-users", usersName + '-' + userCredential.user.uid), {
+                first_name: firstName.trim(),
+                last_name: lastName.trim(),
+                email_address: email,
+                password: password,
+                users_id: userCredential.user.uid
+              })
+              .then(() => {
+                const user = userCredential.user;
+                const validCredentialsPopup = document.getElementById("valid-credentials-popup");
+                const popupContent = validCredentialsPopup.querySelector(".popup-content p");
+                popupContent.textContent = `Welcome "${user.email}", close this popup to be redirected.`;
+                validCredentialsPopup.style.display = "block";
+    
+                const closeButton = validCredentialsPopup.querySelector(".close");
+                closeButton.onclick = () => {
+                  window.location.href = "/index.html";
+                };
+              })
+              .catch((error) => {
+                console.error("Error creating user:", error.code, error.message);
+                displayErrorPopup(
+                  "An error occurred while creating your account. Please try again later.",
+                );
+              });
+          });
         });
       });
-  
+    
       function displayErrorPopup(message) {
-        const invalidInputPopup = document.getElementById("invalid-input-popup");
+        const invalidInputPopup = document.getElementById("invalid-input-popup",);
         const popupContent = invalidInputPopup.querySelector(".popup-content p");
         popupContent.textContent = message;
         invalidInputPopup.style.display = "block";
       }
-    </script>
+    </script>    
   </head>
 
   <body>
@@ -90,26 +115,12 @@
           <div class="tooltip-icon" id="Click on the icon to view the user agreement">
             <i class="fas fa-question-circle" onclick="window.open('https://rentry.co/user-agreement', '_blank')"></i>
           </div>
-          <input class="first-box" type="text" placeholder="Chad" id="first-name-input" />
-          <input class="last-box" type="text" placeholder="Broski" id="last-name-input" />
-          <input
-            class="confirm-box"
-            type="password"
-            placeholder="SuckMyToes420 (again)"
-            id="confirm-password-input"
-          />
-          <input 
-            class="pass-box"
-            type="password"
-            placeholder="SuckMyToes420"
-            id="password-input"
-          />
-          <input
-            class="email-box"
-            type="email"
-            placeholder="BenDover@proton.me"
-            id="email-input"
-          />
+
+          <input class="first-box" type="text" placeholder="Chad" id="first-name-input"/>
+          <input class="last-box" type="text" placeholder="Broski" id="last-name-input"/>
+          <input class="email-box" type="email" placeholder="BenDover@proton.me" id="email-input"/>
+          <input class="pass-box" type="password" placeholder="SuckMyToes420" id="password-input"/>
+          <input class="confirm-box" type="password" placeholder="SuckMyToes420 (again)" id="confirm-password-input"/>
           <div class="text-wrapper">Register</div>
           <div class="first-name">First name</div>
           <div class="email">Email</div>
@@ -149,6 +160,5 @@
         <p>placeholder (you shouldn't see this lol)</p>
       </div>
     </div>
-
   </body>
 </html>
