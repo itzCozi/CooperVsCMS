@@ -18,7 +18,7 @@ if (document.cookie.split(";").some((item) => item.trim().startsWith("handlerVis
       authFunction(); // This script handles all user auth, including user-agent and login
     }
   } else {
-    //window.location.href = "/auth/user-agent/index.html";
+    window.location.href = "/auth/user-agent/index.html";
     console.log("SENT TO BANISHMENT PAGE")
   }
 }
