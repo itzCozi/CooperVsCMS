@@ -288,10 +288,19 @@ body {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.330), 0 17px 50px 0 rgba(0, 0, 0, 0.25);
 }
 
+@keyframes glow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
 .anonymous-icon {
   position: absolute;
   top: 25px;
-  right: 790px;
+  left: 30px; /* Adjusted left position */
   cursor: pointer;
   transition: 0.4s;
   z-index: 1001; /* Ensure it's above other content */
@@ -332,15 +341,10 @@ body {
 .tooltip-icon {
   position: absolute;
   top: 25px;
-  right: 30px;
+  right: 30px; /* Adjusted right position */
   cursor: pointer;
   transition: 0.4s;
   z-index: 1001; /* Ensure it's above other content */
-}
-
-.tooltip-icon i {
-  font-size: 24px;
-  color: #b3b3b3;
 }
 
 .tooltip-icon[id]:hover::before {
@@ -372,5 +376,52 @@ body {
 }
 
 .tooltip-icon:hover[id]:hover::before {
+  opacity: 1;
+}
+
+.home-icon {
+  position: absolute;
+  top: 25px; /* Adjust as needed */
+  left: 25px; /* Adjust as needed */
+  cursor: pointer;
+  z-index: 1001; /* Ensure it's above other content */
+}
+
+.home-icon img {
+  width: 38px; /* Adjust width as needed */
+  height: 38px; /* Adjust height as needed */
+  transition: transform 0.3s ease-out; /* Smooth transition */
+}
+
+/* Expand effect on hover */
+.home-icon:hover img {
+  transform: scale(1.1); /* Expand the size */
+}
+
+/* Tooltip for the home icon */
+.home-icon::before {
+  position: absolute;
+  background-color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.330), 0 17px 50px 0 rgba(0, 0, 0, 0.25);
+  top: 0; /* Position aligned with the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.4s;
+  font-family: "Roboto", "Segoe UI", Tahoma, sans-serif;
+  font-weight: 400;
+  color: #b3b3b3;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  background-color: #4d4d4d;
+  border-radius: 5px;
+}
+
+.home-icon:hover::before {
   opacity: 1;
 }

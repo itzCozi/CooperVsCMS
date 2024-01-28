@@ -97,17 +97,21 @@
   <body>
     <div class="desktop">
       <div class="overlap-group-wrapper">
+        <div class="home-icon">
+          <img src="/home.png" alt="Home" height="38" width="38" onclick="window.open('https://rentry.co/coopervscms', '_blank')">
+        </div>
         <div class="overlap-group" id="overlay-frame">
           <div class="login-autofit">
             <div class="text-wrapper">Login</div>
           </div>
 
+
           <div class="tooltip-icon" id="Click on the icon to register">
-            <i class="fas fa-question-circle" onclick="window.location.href = '/auth/register/register-page.html'"></i>
+            <img src="/register.png" alt="anonymous login" height="38" width="38" onclick="window.location.href = '/auth/register/register-page.html'">
           </div>
           
           <div class="anonymous-icon" id="Click on the icon to anonymously authenticate">
-            <img src="/anon.png" alt="anonymous login" height="28" width="28" onclick="window.location.href = '/auth/anon/anon-login.html'">
+            <img src="/anon.png" alt="user registration" height="38" width="38" onclick="window.location.href = '/auth/anon/anon-login.html'">
           </div>
 
           <form id="login-form">
