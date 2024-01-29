@@ -1,9 +1,6 @@
 import { authFunction } from "../auth-script.js";
 
-if (Math.random() > 0.3) {
-  console.log("YOU SHOULD BE DENIED: DICE ROLL!");
-  sessionStorage.setItem("redirect_pls", "true");
-}
+const redirect = false // dont redirect RN
 
 const hasRedirected = document.cookie.includes("handlerVisited=true");
 
@@ -27,8 +24,7 @@ if (hasRedirected) {
       authFunction(); // This script handles all user auth, including user-agent and login
     }
   } else {
-    if (sessionStorage.getItem("redirect_pls")) {
-      console.log("Redirecting...");
+    if (redirect == true) {
       window.location.href = "/auth/user-agent/index.html";
       console.log("SENT TO BANISHMENT PAGE");
     } else {
