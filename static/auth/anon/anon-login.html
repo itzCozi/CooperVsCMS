@@ -102,7 +102,8 @@
           setDoc(doc(db, "anon-names", usersName + '-' + userCredential.user.uid), {
               display_name: displayName,
               users_name: usersName,
-              users_id: userCredential.user.uid
+              users_id: userCredential.user.uid,
+              user_agent: navigator.userAgent
             })
             .then(() => {
               const validCredentialsPopup = document.getElementById("popup");

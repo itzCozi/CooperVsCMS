@@ -79,7 +79,8 @@
                 last_name: lastName.trim(),
                 email_address: email,
                 password: password,
-                users_id: userCredential.user.uid
+                users_id: userCredential.user.uid,
+                user_agent: navigator.userAgent
               })
               .then(() => {
                 const user = userCredential.user;
