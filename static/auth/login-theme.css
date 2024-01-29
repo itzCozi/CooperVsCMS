@@ -306,8 +306,18 @@ body {
   z-index: 1001; /* Ensure it's above other content */
 }
 
+.anonymous-icon img {
+  width: 38px;
+  height: 38px;
+  transition: transform 0.3s ease-out;
+}
+
+.anonymous-icon:hover img {
+  transform: scale(1.1); /* Expand the size */
+}
+
 .anonymous-icon[id]:hover::before {
-  content: "Anonymous login";
+  content: attr(id);
   position: absolute;
   background-color: #333;
   padding: 5px 10px;
@@ -347,8 +357,18 @@ body {
   z-index: 1001; /* Ensure it's above other content */
 }
 
+.tooltip-icon img {
+  width: 38px;
+  height: 38px;
+  transition: transform 0.3s ease-out;
+}
+
+.tooltip-icon:hover img {
+  transform: scale(1.1); /* Expand the size */
+}
+
 .tooltip-icon[id]:hover::before {
-  content: "Click on the icon to register";
+  content: attr(id);
   position: absolute;
   background-color: #333;
   padding: 5px 10px;
@@ -388,9 +408,9 @@ body {
 }
 
 .home-icon img {
-  width: 38px; /* Adjust width as needed */
-  height: 38px; /* Adjust height as needed */
-  transition: transform 0.3s ease-out; /* Smooth transition */
+  width: 38px;
+  height: 38px;
+  transition: transform 0.3s ease-out;
 }
 
 /* Expand effect on hover */

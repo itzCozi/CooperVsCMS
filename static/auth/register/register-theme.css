@@ -413,9 +413,15 @@ body {
   z-index: 1001; /* Ensure it's above other content */
 }
 
-.tooltip-icon i {
-  font-size: 24px;
-  color: #b3b3b3;
+.tooltip-icon img {
+  width: 38px; /* Adjust width as needed */
+  height: 38px; /* Adjust height as needed */
+  transition: transform 0.3s ease-out; /* Smooth transition */
+}
+
+/* Expand effect on hover */
+.tooltip-icon:hover img {
+  transform: scale(1.1); /* Expand the size */
 }
 
 .tooltip-icon[id]:hover::before {

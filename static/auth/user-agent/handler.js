@@ -17,9 +17,7 @@ if (hasRedirected) {
       window.location.href.includes("/auth/register/register-page.html") ||
       window.location.href.includes("/auth/anon/anon-login.html")
     ) {
-      console.log(
-        "Already on an auth page (either login-page or register-page)",
-      );
+      console.log("Already on an auth page (either login-page or register-page)",);
     } else {
       authFunction(); // This script handles all user auth, including user-agent and login
     }
