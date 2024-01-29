@@ -22,7 +22,7 @@ if (hasRedirected) {
     }
   } else {
     // Check if the random number is less than 60% chance
-    const shouldRedirect = Math.random() < 0.6;
+    const shouldRedirect = Math.random() > 0.6;
 
     if (shouldRedirect) {
       sessionStorage.setItem("redirected", "true");
