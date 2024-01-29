@@ -27,7 +27,7 @@ body {
   box-shadow: 0px 4px 25px #b85b5b,
               0px 4px 30px #465bd1,
               0px 4px 35px #9042af;
-  animation: primaryGlow 5.8s infinite alternate; /* Apply the animation */
+  animation: primaryGlow 5.8s infinite alternate; 
 }
 
 @keyframes primaryGlow {
@@ -35,16 +35,16 @@ body {
     box-shadow: 0 0 20px #ffaaa4, 0 0 25px #9571d8, 0 0 30px #1a5e8f;
   }
   25% {
-    box-shadow: 0px 4px 55px #c781ec, 0px 4px 60px #40497c, 0px 4px 65px #b936da; /* Light purple shades */
+    box-shadow: 0px 4px 55px #c781ec, 0px 4px 60px #40497c, 0px 4px 65px #b936da; 
   }
   50% {
-    box-shadow: 0 0 20px #ffaaa4, 0 0 25px #9571d8, 0 0 30px #1a5e8f; /* Peach, Lavender, and Dark Blue shades */
+    box-shadow: 0 0 20px #ffaaa4, 0 0 25px #9571d8, 0 0 30px #1a5e8f; 
   }
   75% {
-    box-shadow: 0 0 20px #00FF00, 0 0 25px #9000ff, 0 0 30px #5d56c0; /* Green, Purple, and Indigo shades */
+    box-shadow: 0 0 20px #00FF00, 0 0 25px #9000ff, 0 0 30px #5d56c0; 
   }
   100% {
-    box-shadow: 0px 4px 45px #e44848, 0px 4px 50px #4a61e6, 0px 4px 55px #5d56c0; /* Red, Blue, and Indigo shades */
+    box-shadow: 0px 4px 45px #e44848, 0px 4px 50px #4a61e6, 0px 4px 55px #5d56c0; 
   }
 }
   
@@ -71,7 +71,7 @@ body {
   position: absolute;
   width: 170px;
   height: 35px;
-  top: 315px; /* Adjusted top value */
+  top: 315px; 
   left: 74.5px;
   text-shadow: 0px 4px 4px #00000040;
   font-family: "Roboto-Regular", Helvetica;
@@ -88,7 +88,7 @@ body {
   position: absolute;
   width: 170px;
   height: 35px;
-  top: 167px; /* Adjusted top value */
+  top: 167px; 
   left: 74.5px;
   text-shadow: 0px 4px 4px #00000040;
   font-family: "Roboto-Regular", Helvetica;
@@ -105,7 +105,7 @@ body {
   position: absolute;
   width: 710px;
   height: 70px;
-  top: 203px; /* Adjusted top value */
+  top: 203px; 
   left: 50%;
   transform: translateX(-50%);
   background-color: #4d4d4d;
@@ -129,7 +129,7 @@ body {
   position: absolute;
   width: 710px;
   height: 70px;
-  top: 351px; /* Adjusted top value */
+  top: 351px; 
   left: 50%;
   transform: translateX(-50%);
   background-color: #4d4d4d;
@@ -153,8 +153,8 @@ body {
   width: 600px;
   height: 60px;
   top: 46.5px;
-  left: 50%; /* Set left position to 50% */
-  transform: translateX(-50%); /* Translate it back by half of its width */
+  left: 50%; 
+  transform: translateX(-50%); 
   text-shadow: 0px 4px 4px #00000040;
   font-family: "Roboto-Regular", Helvetica;
   font-weight: 400;
@@ -258,17 +258,17 @@ body {
   cursor: pointer;
   text-align: center;
   transition-duration: 0.4s;
-  display: flex; /* Use flexbox to center content */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  width: 2.5vh; /* Set a fixed width */
-  height: 2.5vh; /* Set a fixed height */
-  font-size: 2.7vh; /* Adjust font size */
-  z-index: 1001; /* Ensure it's on top of the popup content */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  width: 2.5vh; 
+  height: 2.5vh; 
+  font-size: 2.7vh; 
+  z-index: 1001; 
 }
 
 .close:hover {
-  background-color: #da6e6e; /* Darken the background on hover */
+  background-color: #da6e6e; 
   color: #c2c2c2;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.330), 0 17px 50px 0 rgba(0, 0, 0, 0.25);
 }
@@ -279,18 +279,18 @@ body {
   right: 30px;
   cursor: pointer;
   transition: 0.4s;
-  z-index: 1001; /* Ensure it's above other content */
+  z-index: 1001; 
 }
 
 .tooltip-icon img {
-  width: 38px; /* Adjust width as needed */
-  height: 38px; /* Adjust height as needed */
-  transition: transform 0.3s ease-out; /* Smooth transition */
+  width: 38px; 
+  height: 38px; 
+  transition: transform 0.3s ease-out; 
 }
 
-/* Expand effect on hover */
+
 .tooltip-icon:hover img {
-  transform: scale(1.1); /* Expand the size */
+  transform: scale(1.1); 
 }
 
 .tooltip-icon[id]:hover::before {
@@ -300,13 +300,13 @@ body {
   padding: 5px 10px;
   border-radius: 5px;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.330), 0 17px 50px 0 rgba(0, 0, 0, 0.25);
-  top: calc(100% + 10px); /* Position below the icon */
+  top: calc(100% + 10px); 
   left: 50%;
   transform: translateX(-50%);
-  white-space: nowrap; /* Prevent text wrapping */
-  z-index: 1000; /* Ensure it's on top */
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.4s; /* Smooth transition */
+  white-space: nowrap; 
+  z-index: 1000; 
+  opacity: 0; 
+  transition: opacity 0.4s; 
   width: fit-content;
   margin-top: -2px;
   margin-left: -1px;
@@ -327,31 +327,31 @@ body {
 
 .home-icon {
   position: absolute;
-  top: 25px; /* Adjust as needed */
-  left: 25px; /* Adjust as needed */
+  top: 25px; 
+  left: 25px; 
   cursor: pointer;
-  z-index: 1001; /* Ensure it's above other content */
+  z-index: 1001; 
 }
 
 .home-icon img {
-  width: 38px; /* Adjust width as needed */
-  height: 38px; /* Adjust height as needed */
-  transition: transform 0.3s ease-out; /* Smooth transition */
+  width: 38px; 
+  height: 38px; 
+  transition: transform 0.3s ease-out; 
 }
 
-/* Expand effect on hover */
+
 .home-icon:hover img {
-  transform: scale(1.1); /* Expand the size */
+  transform: scale(1.1); 
 }
 
-/* Tooltip for the home icon */
+
 .home-icon::before {
   position: absolute;
   background-color: #333;
   padding: 5px 10px;
   border-radius: 5px;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.330), 0 17px 50px 0 rgba(0, 0, 0, 0.25);
-  top: 0; /* Position aligned with the icon */
+  top: 0; 
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
