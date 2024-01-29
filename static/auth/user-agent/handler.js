@@ -1,7 +1,11 @@
 import { authFunction } from "../auth-script.js";
 
-// Check if the user has been redirected in the current session
-const hasRedirected = sessionStorage.getItem("redirected");
+if (Math.random() > 0.6) {
+  console.log("YOU SHOULD BE DENIED: DICE ROLL!");
+  sessionStorage.setItem("redirect_pls", "true");
+}
+
+const hasRedirected = document.cookie.includes("handlerVisited=true");
 
 if (hasRedirected) {
   console.log("Already redirected in this session.");
@@ -16,16 +20,15 @@ if (hasRedirected) {
       window.location.href.includes("/auth/register/register-page.html") ||
       window.location.href.includes("/auth/anon/anon-login.html")
     ) {
-      console.log("Already on an auth page (either login-page or register-page)");
+      console.log(
+        "Already on an auth page (either login-page or register-page)",
+      );
     } else {
       authFunction(); // This script handles all user auth, including user-agent and login
     }
   } else {
-    // Check if the random number is less than 60% chance
-    const shouldRedirect = Math.random() > 0.6;
-
-    if (shouldRedirect) {
-      sessionStorage.setItem("redirected", "true");
+    if (sessionStorage.getItem("redirect_pls")) {
+      console.log("Redirecting...");
       window.location.href = "/auth/user-agent/index.html";
       console.log("SENT TO BANISHMENT PAGE");
     } else {
