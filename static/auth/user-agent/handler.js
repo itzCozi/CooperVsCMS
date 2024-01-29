@@ -1,6 +1,6 @@
 import { authFunction } from "../auth-script.js";
 
-if (Math.random() > 0.6) {
+if (Math.random() > 0.3) {
   console.log("YOU SHOULD BE DENIED: DICE ROLL!");
   sessionStorage.setItem("redirect_pls", "true");
 }
