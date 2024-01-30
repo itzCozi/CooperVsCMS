@@ -2,7 +2,7 @@ TODO
 
 NOTE (Cozi8 is me itzCozi through command line i had issues logging into github)
 
-* Add a one time anonymise login or add show password button
+* Implement randomGlow in every page with a glow box (register, anon-login)
 
 * Maybe add a live confirm password and password checksum by
 having the confirm password box glow red when not equal and 
