@@ -14,10 +14,62 @@
     <script type="module" src="https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js"></script>
     <script src="popup.js"></script>
     <script>
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
       function isValidEmail(email) {
         // Regular expression pattern to validate email format
         const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         return emailPattern.test(email);
+      }
+
+      function addPrimaryAnimation() {
+        const keyframes = document.createElement('style');
+        keyframes.innerHTML = `
+          @keyframes randomGlow {
+            0% {
+              box-shadow: 0px 0px 20px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+            }
+            25% {
+              box-shadow: 0px 4px 55px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+            }
+            50% {
+              box-shadow: 0px 0px 25px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+            }
+            75% {
+              box-shadow: 0px 0px 20px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+            }
+            100% {
+              box-shadow: 0px 4px 45px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+            }
+          }
+        `;
+        document.head.appendChild(keyframes);
+      }
+
+      function addSecondaryAnimation() {
+        const keyframes2 = document.createElement('style');
+        keyframes2.innerHTML = `
+          @keyframes randomGlow2 {
+            0% {
+              box-shadow: 0px 0px 20px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+            }
+            25% {
+              box-shadow: 0px 4px 55px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+            }
+            50% {
+              box-shadow: 0px 0px 25px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+            }
+            75% {
+              box-shadow: 0px 0px 20px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+            }
+            100% {
+              box-shadow: 0px 4px 45px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+            }
+          }
+        `;
+        document.head.appendChild(keyframes2);
       }
     </script>
     <!-- Login auth script -->
@@ -55,7 +107,8 @@
         const password = loginForm.password.value;
         console.log(email);
         console.log(password);
-        overlayFrame.style.animation = "secondaryGlow 3s infinite alternate";
+        addSecondaryAnimation();
+        overlayFrame.style.animation = "randomGlow2 6s infinite alternate;"
         if (email == "") {
           const validCredentialsPopup = document.getElementById("invalid-input-popup", );
           const popupContent = validCredentialsPopup.querySelector(".popup-content p");
@@ -92,6 +145,13 @@
           });
       });
     </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        addPrimaryAnimation();
+        const overlayFrame = document.getElementById("overlay-frame");
+        overlayFrame.style.animation = "randomGlow 3s infinite alternate;";
+      });
+  </script>
   </head>
 
   <body>

@@ -22,47 +22,6 @@ body {
   border-radius: 40px;
   top: 20%;
   bottom: 25%;
-  box-shadow: 0px 4px 25px #b85b5b,
-              0px 4px 30px #465bd1,
-              0px 4px 35px #9042af;
-  animation: primaryGlow 5.8s infinite alternate;
-}
-
-@keyframes primaryGlow {
-  0% {
-    box-shadow: 0 0 20px #ffaaa4, 0 0 25px #9571d8, 0 0 30px #1a5e8f;
-  }
-  25% {
-    box-shadow: 0px 4px 55px #c781ec, 0px 4px 60px #40497c, 0px 4px 65px #b936da;
-  }
-  50% {
-    box-shadow: 0 0 20px #ffaaa4, 0 0 25px #9571d8, 0 0 30px #1a5e8f;
-  }
-  75% {
-    box-shadow: 0 0 20px #00FF00, 0 0 25px #9000ff, 0 0 30px #5d56c0;
-  }
-  100% {
-    box-shadow: 0px 4px 45px #e44848, 0px 4px 50px #4a61e6, 0px 4px 55px #5d56c0;
-  }
-}
-  
-
-@keyframes secondaryGlow {
-  0% {
-    box-shadow: 0 0 20px #ffaaa4, 0 0 25px #9571d8, 0 0 30px #1a5e8f;
-  }
-  25% {
-    box-shadow: 0px 4px 55px #c781ec, 0px 4px 60px #40497c, 0px 4px 65px #b936da;
-  }
-  50% {
-    box-shadow: 0 0 20px #ffaaa4, 0 0 25px #9571d8, 0 0 30px #1a5e8f;
-  }
-  75% {
-    box-shadow: 0px 4px 45px #e44848, 0px 4px 50px #4a61e6, 0px 4px 55px #5d56c0;
-  }
-  100% {
-    box-shadow: 0 0 20px #00FF00, 0 0 25px #9000ff, 0 0 30px #5d56c0;
-  }
 }
 
 .login-autofit {
