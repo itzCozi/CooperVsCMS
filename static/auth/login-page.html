@@ -71,6 +71,13 @@
         `;
         document.head.appendChild(keyframes2);
       }
+  
+      document.addEventListener("DOMContentLoaded", function() {
+        addPrimaryAnimation();
+        const overlayFrame = document.getElementById("overlay-frame");
+        overlayFrame.style.animation = "randomGlow 3s infinite alternate";
+      });
+  
     </script>
     <!-- Login auth script -->
     <script type="module" defer>
@@ -145,13 +152,6 @@
           });
       });
     </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        addPrimaryAnimation();
-        const overlayFrame = document.getElementById("overlay-frame");
-        overlayFrame.style.animation = "randomGlow 3s infinite alternate;";
-      });
-  </script>
   </head>
 
   <body>
@@ -167,7 +167,6 @@
           <div class="login-autofit">
             <div class="text-wrapper">Login</div>
           </div>
-
 
           <div class="tooltip-icon" id="User registration">
             <img src="/register.png" alt="anonymous login" height="38" width="38" onclick="window.location.href = '/auth/register/register-page.html'">
