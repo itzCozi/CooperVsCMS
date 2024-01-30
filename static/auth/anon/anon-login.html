@@ -9,8 +9,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anonymous Authentication</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <!-- Login auth script -->
-  <script type="module" defer>
+  <script>
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function isValidEmail(email) {
+      // Regular expression pattern to validate email format
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      return emailPattern.test(email);
+    }
+
     // Function to set a cookie
     function setCookie(name, value, hours) {
       var expires = "";
@@ -48,6 +57,62 @@
       return null;
     }
 
+    function addPrimaryAnimation() {
+      const keyframes = document.createElement('style');
+      keyframes.innerHTML = `
+        @keyframes randomGlow {
+          0% {
+            box-shadow: 0px 0px 20px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+          }
+          25% {
+            box-shadow: 0px 4px 55px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+          }
+          50% {
+            box-shadow: 0px 0px 25px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+          }
+          75% {
+            box-shadow: 0px 0px 20px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+          }
+          100% {
+            box-shadow: 0px 4px 45px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+          }
+        }
+      `;
+      document.head.appendChild(keyframes);
+    }
+
+    function addSecondaryAnimation() {
+      const keyframes2 = document.createElement('style');
+      keyframes2.innerHTML = `
+        @keyframes randomGlow2 {
+          0% {
+            box-shadow: 0px 0px 20px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+          }
+          25% {
+            box-shadow: 0px 4px 55px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+          }
+          50% {
+            box-shadow: 0px 0px 25px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+          }
+          75% {
+            box-shadow: 0px 0px 20px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+          }
+          100% {
+            box-shadow: 0px 4px 45px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+          }
+        }
+      `;
+      document.head.appendChild(keyframes2);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      addPrimaryAnimation();
+      const overlayFrame = document.getElementById("overlay-frame");
+      overlayFrame.style.animation = "randomGlow 3s infinite alternate";
+    });
+  </script>
+  <!-- Login auth script -->
+  <script type="module" defer>
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
     import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
     import { getFirestore, collection, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
@@ -77,7 +142,8 @@
       e.preventDefault();
       const usersName = nameBox.value;
       const displayName = displayNameBox.value;
-      overlayFrame.style.animation = "secondaryGlow 3s infinite alternate";
+      addSecondaryAnimation();
+        overlayFrame.style.animation = "randomGlow2 5s infinite alternate";
 
       if (displayName == "" || usersName == "") {
         const validCredentialsPopup = document.getElementById("popup");
