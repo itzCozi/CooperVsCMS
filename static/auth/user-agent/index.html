@@ -17,6 +17,41 @@
       }
     };
   </script>
+  <script>
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function addPrimaryAnimation() {
+      const keyframes = document.createElement('style');
+      keyframes.innerHTML = `
+        @keyframes randomGlow {
+          0% {
+            box-shadow: 0px 0px 20px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+          }
+          25% {
+            box-shadow: 0px 4px 55px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+          }
+          50% {
+            box-shadow: 0px 0px 25px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+          }
+          75% {
+            box-shadow: 0px 0px 20px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+          }
+          100% {
+            box-shadow: 0px 4px 45px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
+          }
+        }
+      `;
+      document.head.appendChild(keyframes);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      addPrimaryAnimation();
+      const overlayFrame = document.getElementById("overlay-frame");
+      overlayFrame.style.animation = "randomGlow 3s infinite alternate";
+    });
+  </script>
 </head>
 
 <body>
@@ -27,9 +62,9 @@
     <div class="help-icon">
       <img src="/wiki.png" alt="Help" height="38" width="38" onclick="window.open('https://rentry.co/coopervscms', '_blank')">
     </div>
-    <div class="div">
+    <div class="div" id="overlay-frame">
       <div class="header">Access Denied</div>
-      <p class="error-msg">Sorry, this website is exclusively for ChromeOS... Please access it again, but this time using a ChromeOS device for the best experience.</p>
+      <p class="error-msg">Sorry, this website is for ChromeOS only... For the best experience revisit the site using a ChromeOS device, like a Chromebook.</p>
       <div class="overlap-group">
         <div class="USER-ID-LABEL" id="user-agent-label">Your User Agent:</div>
         <div class="USER-ID" id="user-agent">USER-ID</div>
