@@ -1,3 +1,8 @@
 # Cooper's Unblocker (CUB)
-[Click here](https://coopervscms.up.railway.app/), to be sent to CUB  
-PS: There is a lot of backup links made by me or a bot on the fly to bypass blocking, keep an eye out for new links being posted.
+**[Wiki Page](https://rentry.co/coopervscms)**
+
+### CooperVsCMS Link List
+* https://coopervscms.up.railway.app
+* https://cooper-hates-school.up.railway.app
+* https://code-is-cool.up.railway.app
+
