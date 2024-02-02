@@ -1,8 +1,8 @@
 TODO
-
+------------------------------------------------------------------------------------
 NOTE (Cozi8 is me itzCozi through command line i had issues logging into github)
 
-* Implement randomGlow in every page with a glow box (register, anon-login)
+* Add top bar from PiratesPaste (failed project)
 
 * Maybe add a live confirm password and password checksum by
 having the confirm password box glow red when not equal and 
