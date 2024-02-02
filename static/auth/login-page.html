@@ -156,39 +156,38 @@
   <body>
     <div class="desktop">
       <div class="overlap-group-wrapper">
-        <div class="home-icon">
-          <img src="/home.png" alt="Home" height="38" width="38" onclick="window.location.href = '/'">
-        </div>
-        <div class="help-icon">
-          <img src="/wiki.png" alt="Help" height="38" width="38" onclick="window.open('https://rentry.co/coopervscms', '_blank')">
+        <div class="top-bar">
+          <div class="left-icons">
+            <div class="icon home-icon">
+              <img src="/home.png" alt="Home" height="38" width="38" onclick="window.location.href = '/'"/>
+            </div>
+            <div class="icon help-icon">
+              <img src="/wiki.png" alt="Help" height="38" width="38" onclick="window.location.href = '/'"/>
+            </div>
+          </div>
+          <h1 class="header">CooperVsCMS</h1>
         </div>
         <div class="overlap-group" id="overlay-frame">
           <div class="login-autofit">
             <div class="text-wrapper">Login</div>
           </div>
-
           <div class="tooltip-icon" id="User registration">
             <img src="/register.png" alt="anonymous login" height="38" width="38" onclick="window.location.href = '/auth/register/register-page.html'">
           </div>
-          
           <div class="anonymous-icon" id="Anonymous login">
             <img src="/anon.png" alt="user registration" height="38" width="38" onclick="window.location.href = '/auth/anon/anon-login.html'">
           </div>
-
           <form id="login-form">
             <input type="text" name="email" id="email-field" class="email-box" placeholder="coopervscms@mail.com" />
             <input type="password" name="password" id="password-field" class="password-box" placeholder="password" />
             <input type="submit" value="Submit" id="login-form-submit" />
           </form>
-
           <div class="email-autofit">
             <div class="email-prompt">Email</div>
           </div>
-
           <div class="password-autofit">
             <div class="password-prompt">Password</div>
           </div>
-
         </div>
       </div>
     </div>
@@ -199,14 +198,12 @@
         <p>Invalid email address or password given. Please try again.</p>
       </div>
     </div>
-  
     <div id="valid-credentials-popup" class="popup">
       <div class="popup-content">
         <span class="close" onclick="hideWorkingPopup()"><i class="fas fa-times"></i></span>
         <p>placeholder (you shouldn't see this lol)</p>
       </div>
     </div>
-  
     <div id="invalid-input-popup" class="popup">
       <div class="popup-content">
         <span class="close" onclick="hideInvalidPopup()"><i class="fas fa-times"></i></span>
@@ -214,5 +211,4 @@
       </div>
     </div>
   </body>
-
 </html>
