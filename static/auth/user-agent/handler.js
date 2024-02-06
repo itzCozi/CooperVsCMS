@@ -1,6 +1,6 @@
 import { authFunction } from "../auth-script.js";
 
-const redirect = false; // dont redirect RN
+const redirect = false; // redirect RN
 
 const hasRedirected = document.cookie.includes("handlerVisited=true");
 const userAgent = navigator.userAgent;
