@@ -1,4 +1,177 @@
+/* Centering bold font sections */
+h1 {
+    text-align: center;
+    font-size: 45px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+/* Set text color */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+    color: #bebebe;
+}
+
+strong {
+    font-size: 16.8px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    margin-bottom: 20px; /* Add space below each FAQ item */
+}
+
+.blank-space {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.blank-space + strong {
+    color: #bebebe;
+}
+
+
+/* Reset default margin and padding */
+body,
+p,
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+/* Define general font styles and add padding to the body */
 body {
-    color: black;
- }
- 
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #1c1c1c;
+    padding-top: 60px; /* Add padding to the top of the body */
+    padding-bottom: 60px; /* Add padding to the bottom of the body */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #262626;
+    border-radius: 4px;
+}
+
+.long-words {
+    word-wrap: break-word;
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+.admonition {
+    border-radius: 2.5px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    padding: 10px;
+    background-color: #181818;
+}
+
+.admonition-title {
+    font-weight: bold;
+    font-size: 26.5px;
+}
+
+.info {
+    background-color: #2b383e;
+    color: #427ba7;
+}
+
+.info .admonition-title {
+    font-weight: bold;
+    color: #508ca4;
+}
+
+.info h3#site-link-list {
+    color: #508ca4;
+}
+
+.note {
+    background-color: #2d3829;
+    color: #5f805e;
+}
+
+.note .admonition-title {
+    font-weight: bold;
+    color: #628053;
+}
+
+.md-center {
+    text-align: center;
+}
+
+.md-align {
+    display: inline-block;
+}
+
+.h-align {
+    margin-top: 30px;
+}
+
+.headerlink {
+    text-decoration: none;
+    color: #333;
+}
+
+a {
+    color: #3a88d6;
+    text-decoration: none; /* Remove default underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+ul,
+ol {
+    margin-left: 20px;
+}
+
+ul ul,
+ol ol {
+    margin-left: 20px;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+code {
+    font-family: Consolas, monospace;
+    color: #101010;
+    background-color: #cccccc;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* Center text surrounded by "->" and "<-" */
+.md-align.md-center:before,
+.md-align.md-center:after {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 0;
+    visibility: hidden;
+    /* Hide the pseudo-elements */
+}
