@@ -186,6 +186,7 @@ code {
 .icon {
     cursor: pointer;
     margin-right: 18px;
+    margin-bottom: 18px;
 }
   
 .icon img {
