@@ -178,23 +178,23 @@ code {
 
 /* Bar Styles */
 .left-icons {
-  padding-left: 20px;
-  display: flex;
-  align-items: center;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
 }
   
 .icon {
-  cursor: pointer;
-  margin-right: 18px;
+    cursor: pointer;
+    margin-right: 18px;
 }
   
 .icon img {
-  width: 38px;
-  height: 38px;
-  transition: transform 0.3s ease-out;
+    width: 38px;
+    height: 38px;
+    transition: transform 0.3s ease-out;
 }
   
 .icon:hover img {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
   
