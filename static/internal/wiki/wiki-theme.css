@@ -56,8 +56,8 @@ body {
     font-size: 16px;
     line-height: 1.6;
     background-color: #1c1c1c;
-    padding-top: 60px; /* Add padding to the top of the body */
-    padding-bottom: 60px; /* Add padding to the bottom of the body */
+    padding-top: 25px; /* Add padding to the top of the page */
+    padding-bottom: 25px; /* Add padding to the bottom of the page */
 }
 
 .container {
@@ -131,7 +131,7 @@ body {
 }
 
 a {
-    color: #3a88d6;
+    color: #4790d8;
     text-decoration: none; /* Remove default underline */
 }
 
@@ -175,3 +175,26 @@ code {
     visibility: hidden;
     /* Hide the pseudo-elements */
 }
+
+/* Bar Styles */
+.left-icons {
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+  
+.icon {
+  cursor: pointer;
+  margin-right: 18px;
+}
+  
+.icon img {
+  width: 38px;
+  height: 38px;
+  transition: transform 0.3s ease-out;
+}
+  
+.icon:hover img {
+  transform: scale(1.2);
+}
+  

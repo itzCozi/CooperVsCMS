@@ -1,15 +1,5 @@
 <!-- 
-  This is from https://rentry.co/user-agreement then translated to html.
-  I have to replace all -> <- used to center with actaul css or rip that
-  code off of https://rentry.co (probaly easier)
-
-  TODO:
-    * I fr think ripping the styles from rentry.co is easier they have boxes
-      and other things that i used with the "!!!" inline
-      https://chrome.google.com/webstore/detail/pagerip-html-+-css-extrac/bkahkocegdkgicmmfpkoeipjmjaeohfn
-    * Ask chatGPT to clean this mess up
-    * Use this to make pdf files and png files 
-    https://www.convertapi.com/html-to-pdf
+  This is from https://rentry.co/coopervscms then translated to html.
 -->
 
 <!DOCTYPE html>
@@ -22,9 +12,17 @@
     <link rel="stylesheet" href="wiki-theme.css" />
     <meta name="CooperVsCMS Home Page & Wiki" content="The home page / wiki of CooperVsCMS" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=1" />
-  </head>
+</head>
 
-  <body class="m-0 p-0">
+<body class="m-0 p-0">
+    <div class="left-icons">
+      <div class="icon home-icon">
+        <img src="/home.png" alt="Home" height="38" width="38" onclick="window.location.href = '/'"/>
+      </div>
+      <div class="icon help-icon">
+        <img src="/wiki.png" alt="Help" height="38" width="38" onclick="window.location.href = '/'"/>
+      </div>
+    </div>
     <div class="container container-smooth">
       <div class="col-12">
         <div class="row no-gutters">
@@ -310,18 +308,6 @@
                     to the
                     <a href="https://github.com/itzCozi/CooperVsCMS">CooperVsCMS GitHub</a>, though this project is barely maintained so I would recommend just forking the CooperVsCMS repository.
                   </div>
-                  <script type="module">
-                    import ConvertApi from 'convertapi-js';
-                
-                    function convertToPDF() {
-                        let convertApi = ConvertApi.auth('lNs9pkMQPfKYdLyl');
-                        let elFileInput = document.getElementById('fileInput'); // assuming you have an input element with id 'fileInput'
-                        let params = convertApi.createParams();
-                        params.add('File', elFileInput.files[0]);
-                        let result = convertApi.convert('html', 'pdf', params);
-                    }
-                  </script>
-                  <button class="download" onclick="convertToPDF()">DOWNLOAD</button>
                 </div>
               </article>
             </div>
