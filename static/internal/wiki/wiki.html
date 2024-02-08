@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="wiki-theme.css" />
     <meta name="CooperVsCMS Home Page & Wiki" content="The home page / wiki of CooperVsCMS" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=1" />
-    <script type="module" src="convertPDF.js"></script>
   </head>
 
   <body class="m-0 p-0">
@@ -311,7 +310,18 @@
                     to the
                     <a href="https://github.com/itzCozi/CooperVsCMS">CooperVsCMS GitHub</a>, though this project is barely maintained so I would recommend just forking the CooperVsCMS repository.
                   </div>
-                  <div class="download" onclick="convertToPDF()">DOWNLOAD</div>
+                  <script type="module">
+                    import ConvertApi from 'convertapi-js';
+                
+                    function convertToPDF() {
+                        let convertApi = ConvertApi.auth('lNs9pkMQPfKYdLyl');
+                        let elFileInput = document.getElementById('fileInput'); // assuming you have an input element with id 'fileInput'
+                        let params = convertApi.createParams();
+                        params.add('File', elFileInput.files[0]);
+                        let result = convertApi.convert('html', 'pdf', params);
+                    }
+                  </script>
+                  <button class="download" onclick="convertToPDF()">DOWNLOAD</button>
                 </div>
               </article>
             </div>

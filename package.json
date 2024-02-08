@@ -27,6 +27,7 @@
   "dependencies": {
     "@tomphttp/bare-server-node": "1.0.4-deps1",
     "convertapi": "^1.14.0",
+    "convertapi-js": "~1.1",
     "serve-static": "^1.15.0"
   },
   "engines": {
