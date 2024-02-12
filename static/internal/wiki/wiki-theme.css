@@ -1,12 +1,16 @@
 /* Centering bold font sections */
 h1 {
-    text-align: center;
-    font-size: 48px;
+  text-align: center;
+  font-size: 48px;
 }
 
 h2 {
-    text-align: center;
-    font-size: 32px;
+  text-align: center;
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 26px;
 }
 
 /* Set text color */
@@ -18,26 +22,27 @@ h5,
 h6,
 p,
 li {
-    color: #bebebe;
+  color: #bebebe;
 }
 
 strong {
-    font-size: 17px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+  font-size: 17px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .faq-item {
-    margin-bottom: 20px; /* Add space below each FAQ item */
+  margin-bottom: 20px;
+  /* Add space below each FAQ item */
 }
 
 .blank-space {
-    margin-top: 25px;
-    margin-bottom: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
-.blank-space + strong {
-    color: #bebebe;
+.blank-space+strong {
+  color: #bebebe;
 }
 
 
@@ -46,174 +51,177 @@ body,
 p,
 ul,
 ol {
-    font-size: 18px;
-    margin: 0;
-    padding: 0;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
 }
 
 /* Define general font styles and add padding to the body */
 body {
-    font-family: Arial, sans-serif;
-    font-size: 17.25px;
-    line-height: 1.6;
-    background-color: #1c1c1c;
-    padding-top: 25px; /* Add padding to the top of the page */
-    padding-bottom: 50px; /* Add padding to the bottom of the page */
+  font-family: Arial, sans-serif;
+  font-size: 17.25px;
+  line-height: 1.6;
+  background-color: #1c1c1c;
+  padding-top: 25px;
+  /* Add padding to the top of the page */
+  padding-bottom: 50px;
+  /* Add padding to the bottom of the page */
 }
 
 .container {
-    max-width: 1200px;
-    margin: 60px auto 0;
-    padding: 20px;
-    background-color: #262626;
-    border-radius: 4px;
+  max-width: 1200px;
+  margin: 60px auto 0;
+  padding: 20px;
+  background-color: #262626;
+  border-radius: 4px;
 }
 
 .long-words {
-    word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .actions {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .admonition {
-    border-radius: 2.5px;
-    margin-top: 18px;
-    margin-bottom: 18px;
-    padding: 10px;
-    background-color: #181818;
+  border-radius: 2.5px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  padding: 10px;
+  background-color: #181818;
 }
 
 .admonition-title {
-    font-weight: bold;
-    font-size: 26.5px;
+  font-weight: bold;
+  font-size: 26.5px;
 }
 
 .info {
-    background-color: #2b383e;
-    color: #427ba7;
+  background-color: #2b383e;
+  color: #427ba7;
 }
 
 .info .admonition-title {
-    font-weight: bold;
-    color: #508ca4;
+  font-weight: bold;
+  color: #508ca4;
 }
 
 .info h3#site-link-list {
-    color: #508ca4;
+  color: #508ca4;
 }
 
 .note {
-    background-color: #2d3829;
-    color: #5f805e;
+  background-color: #2d3829;
+  color: #5f805e;
 }
 
 .note .admonition-title {
-    font-weight: bold;
-    color: #628053;
+  font-weight: bold;
+  color: #628053;
 }
 
 .md-center {
-    text-align: center;
+  text-align: center;
 }
 
 .md-align {
-    display: inline-block;
+  display: inline-block;
 }
 
 .h-align {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .headerlink {
-    text-decoration: none;
-    color: #333;
+  text-decoration: none;
+  color: #333;
 }
 
 a {
-    color: #4790d8;
-    text-decoration: none; /* Remove default underline */
+  color: #4790d8;
+  text-decoration: none;
+  /* Remove default underline */
 }
 
 a:hover {
-    text-decoration: underline; /* Add underline on hover */
+  text-decoration: underline;
+  /* Add underline on hover */
 }
 
 ul,
 ol {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 ul ul,
 ol ol {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 ul {
-    list-style-type: disc;
+  list-style-type: disc;
 }
 
 ol {
-    list-style-type: decimal;
+  list-style-type: decimal;
 }
 
 code {
-    font-family: Consolas, monospace;
-    color: #2c2c2c;
-    background-color: #cccccc;
-    padding: 2px 4px;
-    border-radius: 4px;
+  font-family: Consolas, monospace;
+  color: #2c2c2c;
+  background-color: #cccccc;
+  padding: 2px 4px;
+  border-radius: 4px;
 }
 
 .centered-text {
-    text-align: center;
+  text-align: center;
 }
 
 /* Center text surrounded by "->" and "<-" */
 .md-align.md-center:before,
 .md-align.md-center:after {
-    content: '';
-    display: inline-block;
-    width: 10px;
-    height: 0;
-    visibility: hidden;
-    /* Hide the pseudo-elements */
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 0;
+  visibility: hidden;
+  /* Hide the pseudo-elements */
 }
 
 /* Bar Styles */
 .top-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: transparent;
-    padding-bottom: 20px;
-    padding-top: 23px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  padding-bottom: 20px;
+  padding-top: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
 }
-  
+
 .left-icons {
-    padding-left: 20px;
-    display: flex;
-    align-items: center;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
 }
-  
+
 .icon {
-    cursor: pointer;
-    margin-right: 18px;
+  cursor: pointer;
+  margin-right: 18px;
 }
-  
+
 .icon img {
-    width: 38px;
-    height: 38px;
-    transition: transform 0.3s ease-out;
+  width: 38px;
+  height: 38px;
+  transition: transform 0.3s ease-out;
 }
-  
+
 .icon:hover img {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
-  
