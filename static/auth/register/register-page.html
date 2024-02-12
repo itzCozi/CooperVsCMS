@@ -13,6 +13,28 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <script src="popup.js"></script>
+    <script type="module"> // This is for the live confirm password
+      document.addEventListener("DOMContentLoaded", function() {
+        const confirmInput = document.getElementById("confirm-password-input");
+        const passwordInput = document.getElementById("password-input");
+        confirmInput.addEventListener("input", function() {
+          const confirmValue = confirmInput.value;
+          const passwordValue = passwordInput.value;
+    
+          if (confirmValue === passwordValue) {
+            confirmInput.style.borderColor = "#87DF6C";
+            confirmInput.style.borderWidth = "2px";
+            passwordInput.style.borderColor = "#87DF6C";
+            passwordInput.style.borderWidth = "2px";
+          } else {
+            passwordInput.style.borderColor = "#FF474D";
+            passwordInput.style.borderWidth = "2px";
+            confirmInput.style.borderColor = "#FF474D";
+            confirmInput.style.borderWidth = "2px";
+          }
+        });
+      });
+    </script>
     <script>
       function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -112,7 +134,7 @@
           const usersName = `${firstName.trim()} ${lastName.trim()}`;
           addSecondaryAnimation();
           overlayFrame.style.animation = "randomGlow2 5s infinite alternate";
-    
+
           // Check if first name and last name are blank
           if (firstName.trim() === "" || lastName.trim() === "") {
             displayErrorPopup("Please provide both your first name and last name.");
