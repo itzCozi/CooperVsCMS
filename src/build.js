@@ -72,7 +72,7 @@ function findFiles(directory, extension, fileList = []) {
     const stats = statSync(filePath);
     if (stats.isDirectory()) {
       findFiles(filePath, extension, fileList);
-    } else if (stats.isFile() && file.endsWith(extension)) {
+    } else if (stats.isFile() && file.endsWith(extension) && file !== 'build.js' | file !== 'index.js') { // Exclude npm scripts
       fileList.push(filePath);
     }
   });
@@ -140,9 +140,9 @@ async function processFiles() {
   const endTime = Date.now(); // End time
   const elapsedTime = (endTime - startTime) / 1000; // in seconds
   console.log(`\nTotal time taken: ${elapsedTime} seconds`);
-  // Start server
-  startServer();
 }
 
 // Entry point
 processFiles();
+// Start server
+startServer();
