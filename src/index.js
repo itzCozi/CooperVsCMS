@@ -8,14 +8,13 @@ import serveStatic from "serve-static";
 
 export function startServer() {
   const bare = createBareServer("/bare/");
-  
+
   // Determine the directory to serve static files from
   const staticDirectory = existsSync("../dist") ? "../dist" : "../static";
-
   const serve = serveStatic(fileURLToPath(new URL(staticDirectory, import.meta.url)), {
     fallthrough: false
   });
-  
+
   var server;
   if (existsSync("../ssl/key.pem") && existsSync("../ssl/cert.pem")) {
     server = createHttpsServer({
