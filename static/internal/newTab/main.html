@@ -19,14 +19,17 @@
       width: 100%;
       height: 100%;
     }
+
     /* Style for input */
     #input {
       display: flex;
       align-items: center;
     }
+
     #inputb {
       padding-right: 40px; /* Space for the image icon */
     }
+
     #inputimg {
       position: absolute;
       right: 10px;
@@ -65,28 +68,28 @@
     <h1 id="headtxt">Cooper's Unblocker</h1>
 
     <!-- Search Form -->
-    <forum id="input" onkeydown="if(event.key == 'Enter'){location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`}" onsubmit="location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`">
+    <form id="input" onkeydown="if(event.key == 'Enter'){location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`}" onsubmit="location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`">
       <input id="inputb" placeholder="Search...">
       <input id="inputimg" onclick="location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`" type="image" value="Login" src="/search.svg" height="24" width="24">
       <input type="submit" style="display: none">
-    </forum>
+    </form>
 
     <!-- Buttons -->
     <div class="btns">
       <!-- Existing buttons and links -->
-      <div onclick="location.href=__uv$config.prefix+xor.encode('https://youtube.com')" class="crm">
+      <div onclick="location.href=`${__uv$config.prefix}${xor.encode('https://youtube.com')}`" class="crm">
         <img class="icn" src="/yt.png" />
         <a class="btn">Youtube</a>
       </div>
-      <div onclick="location.href=__uv$config.prefix+xor.encode('https://himovies.sx/home')" class="crm">
+      <div onclick="location.href=`${__uv$config.prefix}${xor.encode('https://himovies.sx/home')}`" class="crm">
         <img class="icn" src="/movie.png" />
         <a class="btn">Free Movies</a>
       </div>
-      <div onclick=window.location="/internal/flow-field/index.html" class="crm">
+      <div onclick="location.href=`${__uv$config.prefix}${xor.encode('/internal/flow-field/index.html')}`" class="crm">
         <img class="icn" src="/lambda.png" />
         <a class="btn">Flow Field</a>
       </div>
-      <div onclick="location.href=__uv$config.prefix+xor.encode('https://discord.gg/56qC6PEN6v')" class="crm">
+      <div onclick="location.href=`${__uv$config.prefix}${xor.encode('https://discord.gg/56qC6PEN6v')}`" class="crm">
         <img class="icn" src="/dcd.png" />
         <a class="btn">Join My Discord</a>
       </div>

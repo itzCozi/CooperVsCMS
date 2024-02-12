@@ -1,32 +1,31 @@
-
 <!doctype html>
 <html>
 
-  <script type="module" src="/auth/user-agent/handler.js"></script>
+<script type="module" src="/auth/user-agent/handler.js"></script>
 
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Authentication</title>
-    <link rel="stylesheet" href="login-theme.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- Include Firebase Auth module script -->
-    <script type="module" src="https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js"></script>
-    <script src="popup.js"></script>
-    <script>
-      function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Authentication</title>
+  <link rel="stylesheet" href="login-theme.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Include Firebase Auth module script -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js"></script>
+  <script src="popup.js"></script>
+  <script>
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
-      function isValidEmail(email) {
-        // Regular expression pattern to validate email format
-        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-        return emailPattern.test(email);
-      }
+    function isValidEmail(email) {
+      // Regular expression pattern to validate email format
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      return emailPattern.test(email);
+    }
 
-      function addPrimaryAnimation() {
-        const keyframes = document.createElement('style');
-        keyframes.innerHTML = `
+    function addPrimaryAnimation() {
+      const keyframes = document.createElement('style');
+      keyframes.innerHTML = `
           @keyframes randomGlow {
             0% {
               box-shadow: 0px 0px 20px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
@@ -45,12 +44,12 @@
             }
           }
         `;
-        document.head.appendChild(keyframes);
-      }
+      document.head.appendChild(keyframes);
+    }
 
-      function addSecondaryAnimation() {
-        const keyframes2 = document.createElement('style');
-        keyframes2.innerHTML = `
+    function addSecondaryAnimation() {
+      const keyframes2 = document.createElement('style');
+      keyframes2.innerHTML = `
           @keyframes randomGlow2 {
             0% {
               box-shadow: 0px 0px 20px rgba(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, 0.8);
@@ -69,146 +68,146 @@
             }
           }
         `;
-        document.head.appendChild(keyframes2);
-      }
-  
-      document.addEventListener("DOMContentLoaded", function() {
-        addPrimaryAnimation();
-        const overlayFrame = document.getElementById("overlay-frame");
-        overlayFrame.style.animation = "randomGlow 3s infinite alternate";
-      });
-    </script>
-    <!-- Login auth script -->
-    <script type="module" defer>
-      import {
-        initializeApp
-      } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
-      import {
-        getAuth,
-        signInWithEmailAndPassword
-      } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
+      document.head.appendChild(keyframes2);
+    }
 
-      // Initialize Firebase with your config
-      const firebaseConfig = {
-        apiKey: "AIzaSyDCdqFYJy9aXN36hTNNdA-1Ks1oPZj3gE0",
-        authDomain: "coopervscms.firebaseapp.com",
-        projectId: "coopervscms",
-        storageBucket: "coopervscms.appspot.com",
-        messagingSenderId: "406730745781",
-        appId: "1:406730745781:web:7b537e28c024d898361bfc",
-        measurementId: "G-GTTF3XVXW0",
-      };
-
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const auth = getAuth(app);
-
-      const loginForm = document.getElementById("login-form");
-      const loginButton = document.getElementById("login-form-submit");
+    document.addEventListener("DOMContentLoaded", function() {
+      addPrimaryAnimation();
       const overlayFrame = document.getElementById("overlay-frame");
+      overlayFrame.style.animation = "randomGlow 3s infinite alternate";
+    });
+  </script>
+  <!-- Login auth script -->
+  <script type="module" defer>
+    import {
+      initializeApp
+    } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+    import {
+      getAuth,
+      signInWithEmailAndPassword
+    } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
 
-      loginButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        const email = loginForm.email.value;
-        const password = loginForm.password.value;
-        console.log(email);
-        console.log(password);
-        addSecondaryAnimation();
-        overlayFrame.style.animation = "randomGlow2 5s infinite alternate";
-        if (email == "") {
-          const validCredentialsPopup = document.getElementById("invalid-input-popup", );
+    // Initialize Firebase with your config
+    const firebaseConfig = {
+      apiKey: "AIzaSyDCdqFYJy9aXN36hTNNdA-1Ks1oPZj3gE0",
+      authDomain: "coopervscms.firebaseapp.com",
+      projectId: "coopervscms",
+      storageBucket: "coopervscms.appspot.com",
+      messagingSenderId: "406730745781",
+      appId: "1:406730745781:web:7b537e28c024d898361bfc",
+      measurementId: "G-GTTF3XVXW0",
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const loginForm = document.getElementById("login-form");
+    const loginButton = document.getElementById("login-form-submit");
+    const overlayFrame = document.getElementById("overlay-frame");
+
+    loginButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      const email = loginForm.email.value;
+      const password = loginForm.password.value;
+      console.log(email);
+      console.log(password);
+      addSecondaryAnimation();
+      overlayFrame.style.animation = "randomGlow2 5s infinite alternate";
+      if (email == "") {
+        const validCredentialsPopup = document.getElementById("invalid-input-popup", );
+        const popupContent = validCredentialsPopup.querySelector(".popup-content p");
+        popupContent.textContent = `Please provide a email address and password.`;
+        displayInvaildPopup();
+        return;
+      } else if (!isValidEmail(email)) {
+        const validCredentialsPopup = document.getElementById("invalid-input-popup", );
+        const popupContent = validCredentialsPopup.querySelector(".popup-content p");
+        popupContent.textContent = `Sorry, the email address: "${email}", is not valid.`;
+        displayInvaildPopup();
+        return;
+      }
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          const validCredentialsPopup = document.getElementById("valid-credentials-popup", );
           const popupContent = validCredentialsPopup.querySelector(".popup-content p");
-          popupContent.textContent = `Please provide a email address and password.`;
-          displayInvaildPopup();
-          return;
-        }
-        else if (!isValidEmail(email)) {
-          const validCredentialsPopup = document.getElementById("invalid-input-popup", );
-          const popupContent = validCredentialsPopup.querySelector(".popup-content p");
-          popupContent.textContent = `Sorry, the email address: "${email}", is not valid.`;
-          displayInvaildPopup();
-          return;
-        }
+          popupContent.textContent = `Welcome "${user.email}", close this popup to be redirected.`;
+          displayWorkingPopup();
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          if (
+            errorCode === "auth/invalid-login-credentials" || errorCode === "auth/invalid-password"
+          ) {
+            displayErrorPopup();
+          } else {
+            console.log(errorCode, errorMessage);
+          }
+        });
+    });
+  </script>
+</head>
 
-        signInWithEmailAndPassword(auth, email, password)
-          .then((userCredential) => {
-            const user = userCredential.user;
-            const validCredentialsPopup = document.getElementById("valid-credentials-popup", );
-            const popupContent = validCredentialsPopup.querySelector(".popup-content p");
-            popupContent.textContent = `Welcome "${user.email}", close this popup to be redirected.`;
-            displayWorkingPopup();
-          })
-          .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            if (
-              errorCode === "auth/invalid-login-credentials" || errorCode === "auth/invalid-password"
-            ) {
-              displayErrorPopup();
-            } else {
-              console.log(errorCode, errorMessage);
-            }
-          });
-      });
-    </script>
-  </head>
-
-  <body>
-    <div class="desktop">
-      <div class="overlap-group-wrapper">
-        <div class="top-bar">
-          <div class="left-icons">
-            <div class="icon home-icon">
-              <img src="/home.png" alt="Home" height="38" width="38" onclick="window.location.href = '/'"/>
-            </div>
-            <div class="icon help-icon">
-              <img src="/wiki.png" alt="Help" height="38" width="38" onclick="window.location.href = '/internal/wiki/wiki.html'"/>
-            </div>
+<body>
+  <div class="desktop">
+    <div class="overlap-group-wrapper">
+      <div class="top-bar">
+        <div class="left-icons">
+          <div class="icon home-icon">
+            <img src="/home.png" alt="Home" height="38" width="38" onclick="window.location.href = '/'" />
           </div>
-          <h1 class="header">CooperVsCMS</h1>
+          <div class="icon help-icon">
+            <img src="/wiki.png" alt="Help" height="38" width="38" onclick="window.location.href = '/internal/wiki/wiki.html'" />
+          </div>
         </div>
-        <div class="overlap-group" id="overlay-frame">
-          <div class="login-autofit">
-            <div class="text-wrapper">Login</div>
-          </div>
-          <div class="tooltip-icon" id="User registration">
-            <img src="/register.png" alt="anonymous login" height="38" width="38" onclick="window.location.href = '/auth/register/register-page.html'">
-          </div>
-          <div class="anonymous-icon" id="Anonymous login">
-            <img src="/anon.png" alt="user registration" height="38" width="38" onclick="window.location.href = '/auth/anon/anon-login.html'">
-          </div>
-          <form id="login-form">
-            <input type="text" name="email" id="email-field" class="email-box" placeholder="coopervscms@mail.com" />
-            <input type="password" name="password" id="password-field" class="password-box" placeholder="password" />
-            <input type="submit" value="Submit" id="login-form-submit" />
-          </form>
-          <div class="email-autofit">
-            <div class="email-prompt">Email</div>
-          </div>
-          <div class="password-autofit">
-            <div class="password-prompt">Password</div>
-          </div>
+        <h1 class="header">CooperVsCMS</h1>
+      </div>
+      <div class="overlap-group" id="overlay-frame">
+        <div class="login-autofit">
+          <div class="text-wrapper">Login</div>
+        </div>
+        <div class="tooltip-icon" id="User registration">
+          <img src="/register.png" alt="anonymous login" height="38" width="38" onclick="window.location.href = '/auth/register/register-page.html'">
+        </div>
+        <div class="anonymous-icon" id="Anonymous login">
+          <img src="/anon.png" alt="user registration" height="38" width="38" onclick="window.location.href = '/auth/anon/anon-login.html'">
+        </div>
+        <form id="login-form">
+          <input type="text" name="email" id="email-field" class="email-box" placeholder="coopervscms@mail.com" />
+          <input type="password" name="password" id="password-field" class="password-box" placeholder="password" />
+          <input type="submit" value="Submit" id="login-form-submit" />
+        </form>
+        <div class="email-autofit">
+          <div class="email-prompt">Email</div>
+        </div>
+        <div class="password-autofit">
+          <div class="password-prompt">Password</div>
         </div>
       </div>
     </div>
-    <!-- Popup containers -->
-    <div id="invalid-credentials-popup" class="popup">
-      <div class="popup-content">
-        <span class="close" onclick="hideErrorPopup()"><i class="fas fa-times"></i></span>
-        <p>Invalid email address or password given. Please try again.</p>
-      </div>
+  </div>
+  <!-- Popup containers -->
+  <div id="invalid-credentials-popup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="hideErrorPopup()"><i class="fas fa-times"></i></span>
+      <p>Invalid email address or password given. Please try again.</p>
     </div>
-    <div id="valid-credentials-popup" class="popup">
-      <div class="popup-content">
-        <span class="close" onclick="hideWorkingPopup()"><i class="fas fa-times"></i></span>
-        <p>placeholder (you shouldn't see this lol)</p>
-      </div>
+  </div>
+  <div id="valid-credentials-popup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="hideWorkingPopup()"><i class="fas fa-times"></i></span>
+      <p>placeholder (you shouldn't see this lol)</p>
     </div>
-    <div id="invalid-input-popup" class="popup">
-      <div class="popup-content">
-        <span class="close" onclick="hideInvalidPopup()"><i class="fas fa-times"></i></span>
-        <p>placeholder (you shouldn't see this either lmao)</p>
-      </div>
+  </div>
+  <div id="invalid-input-popup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="hideInvalidPopup()"><i class="fas fa-times"></i></span>
+      <p>placeholder (you shouldn't see this either lmao)</p>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
