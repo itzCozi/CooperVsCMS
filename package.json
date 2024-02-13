@@ -4,8 +4,7 @@
   "description": "Unblocker for school using a TompHTTP bare server.",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js",
-    "build": "node src/build.js"
+    "start": "node src/index.js"
   },
   "files": [
     "static",
